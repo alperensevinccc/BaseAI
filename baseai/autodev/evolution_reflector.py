@@ -321,7 +321,7 @@ async def _check_git_status(abs_filepath: str) -> Tuple[bool, str]:
     # Eğer dosya henüz mevcut değilse (YENİ_MODÜL durumu), 
     # Git kontrolü yapmaya gerek yoktur, yazmak güvenlidir.
     if not os.path.exists(abs_filepath):
-        log.debug(f"[AutoDev|Git] Hedef dosya mevcut değil ({abs_filepath}). Yazma güvenli.")
+        log.debug(f"[AutoDev|Git] Hedef dosya mevcut değil ({os.path.relpath(abs_filepath, PROJECT_ROOT_DIR)}). Yazma güvenli.")
         return True, "File does not exist (new module)."
     git_dir = os.path.join(PROJECT_ROOT_DIR, ".git")
     if not os.path.exists(git_dir):
