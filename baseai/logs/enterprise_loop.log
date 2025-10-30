@@ -659,3 +659,17 @@
 [2025-10-31 01:23:56] [REF-ACTIVATE] baseai/bridges/local_llm_bridge.py score=0.0 syntax_ok=False
 [2025-10-31 01:23:57] [REF-ERROR] baseai/bridges/local_llm_bridge.py: name 'traceback' is not defined
 [2025-10-31 01:23:57] [REF-ACTIVATE] baseai/bridges/vscode_bridge.py score=0.0 syntax_ok=False
+[2025-10-31 01:23:57] [REF-ERROR] baseai/bridges/vscode_bridge.py: name 'traceback' is not defined
+[2025-10-31 01:23:57] [REF-ACTIVATE] baseai/bridges/gpt.py score=0.0 syntax_ok=False
+[2025-10-31 01:23:57] [REF-ERROR] baseai/bridges/gpt.py: name 'traceback' is not defined
+[2025-10-31 01:23:57] [REF-ACTIVATE] baseai/log/logger.py score=0.0 syntax_ok=False
+[2025-10-31 01:23:58] [REF-ERROR] baseai/log/logger.py: name 'traceback' is not defined
+[2025-10-31 01:23:58] [REF-ACTIVATE] baseai/subai/triaport/logistics_intelligence.py score=0.0 syntax_ok=False
+[2025-10-31 01:23:58] [REF-ERROR] baseai/subai/triaport/logistics_intelligence.py: name 'traceback' is not defined
+[2025-10-31 01:23:58] [REF-ACTIVATE] baseai/subai/binai/futures_trading_logic.py score=0.0 syntax_ok=False
+[2025-10-31 01:23:58] [REF-ERROR] baseai/subai/binai/futures_trading_logic.py: name 'traceback' is not defined
+[2025-10-31 01:23:58] [REF-ACTIVATE] baseai/policy/guardrails.py score=0.0 syntax_ok=False
+[2025-10-31 01:23:59] [REF-ERROR] baseai/policy/guardrails.py: name 'traceback' is not defined
+[2025-10-31 01:23:59] [REF-ACTIVATE] baseai/policy/safety_rules.py score=0.0 syntax_ok=False
+[2025-10-31 01:23:59] [REF-ERROR] baseai/policy/safety_rules.py: name 'traceback' is not defined
+[2025-10-31 01:23:59] Scan done. files=37 fixed=0 threshold=92.0
