@@ -556,11 +556,26 @@ async def run_once() -> Dict[str, Any]:
             all_targets_written = expected_files_exec.issubset(set(written_files)) 
             no_failures = not result["files_lint_failed"] and not result["files_git_blocked"] and not result["files_failed_write"]
             
+           
             if all_targets_written and no_failures:
-                result["success"] = True
-                log.info("[AutoDev|StratejikEvrim] ✅ Görev başarıyla tamamlandı.")
-                if abs_paths_to_commit: await _git_add_commit(abs_paths_to_commit, result['task_description'])
-            else:
+                log.info("[AutoDev|StratejikEvrim] ✅ Görev başarıyla tamamlandı, commit atılıyor...")
+                
+                # --- Adım 9: Otomatik Commit ve Push ---
+                commit_success = False
+                if abs_paths_to_commit:
+                    # _git_add_commit artık push işlemini de içeriyor ve başarı/başarısızlık döndürüyor
+                    commit_success = await _git_add_commit(abs_filepaths, result['task_description'])
+                
+                if commit_success:
+                    result["success"] = True
+                    log.info("[AutoDev|StratejikEvrim] ✅ Görev başarıyla GitHub'a kaydedildi.")
+                else:
+                    # EĞER COMMIT VEYA PUSH BAŞARISIZ OLURSA (örn: Colab Yetki Hatası):
+                    result["success"] = False
+                    result["error"] = "Task completed but failed to commit or push to GitHub."
+                    log.error("[AutoDev|StratejikEvrim] ❌ Görev tamamlandı ancak GitHub'a push edilemedi.")
+
+            else: # Kısmi başarı veya tam başarısızlık (Lint, Git, Yazma)
                 result["success"] = False
                 errors = []
                 if result["files_lint_failed"]: errors.append(f"{len(result['files_lint_failed'])} lint errors")
@@ -573,6 +588,7 @@ async def run_once() -> Dict[str, Any]:
                      log.error("[AutoDev|StratejikEvrim] Lint Hata Detayları:")
                      for fname, msg in lint_failed_details.items():
                           log.error(f"  File: {fname} -> {msg}")
+      
 
     except Exception as e:
         detailed_error = traceback.format_exc()
