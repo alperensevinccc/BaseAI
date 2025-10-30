@@ -1,0 +1,41 @@
+"""
+ERROR: Missing required config: GEMINI_API_KEY
+"""
+
+from typing import Optional, Dict, Any
+
+
+class ConfigurationError(Exception):
+    pass
+
+
+def get_api_key(config: Dict[str, Any]) -> str:
+    """Retrieve the GEMINI API key from the config.
+
+    Args:
+        config (Dict[str, Any]): Configuration dictionary.
+
+    Returns:
+        str: The value of GEMINI_API_KEY.
+
+    Raises:
+        ConfigurationError: If GEMINI_API_KEY is missing.
+    """
+    api_key = config.get("GEMINI_API_KEY")
+    if api_key is None:
+        raise ConfigurationError("Missing required config: GEMINI_API_KEY")
+    return api_key
+
+
+def main(config: Dict[str, Any]) -> None:
+    """Main entry point for the evolution reflector.
+
+    Args:
+        config (Dict[str, Any]): Configuration dictionary.
+    """
+    try:
+        api_key = get_api_key(config)
+        # Perform operations with the api_key
+    except ConfigurationError as e:
+        print(e)
+        # Handle the missing config gracefully

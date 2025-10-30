@@ -1,0 +1,754 @@
+[REFACTOR-GPT] ✅ OK baseai/__init__.py sha=75bb22019022
+[DONE] Refactored baseai/__init__.py successfully
+[REFACTOR-GPT-ERR] baseai/core/api_orchestrator.py: Unterminated string starting at: line 2 column 40 (char 41)
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gpt.py", line 48, in generate_files
+    return json.loads(txt)
+           ^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Unterminated string starting at: line 2 column 40 (char 41)
+[REFACTOR-Gemini-ERR] baseai/core/api_orchestrator.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    genai.configure(api_key=require("GEMINI_API_KEY"))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/core/api_orchestrator.py
+[REFACTOR-GPT] ✅ OK baseai/core/__init__.py sha=065645b9234d
+[DONE] Refactored baseai/core/__init__.py successfully
+[COMPILE-FAIL] baseai/core/auditor.py: Sorry: IndentationError: unexpected indent (tmpnu_9prid.py, line 16)
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/core/auditor.py
+[REFACTOR-Gemini-ERR] baseai/core/auditor.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    genai.configure(api_key=require("GEMINI_API_KEY"))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/core/auditor.py
+[COMPILE-FAIL] baseai/core/intent_processor.py: Sorry: IndentationError: unexpected indent (tmpwd1fq2hv.py, line 11)
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/core/intent_processor.py
+[REFACTOR-Gemini-ERR] baseai/core/intent_processor.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    genai.configure(api_key=require("GEMINI_API_KEY"))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/core/intent_processor.py
+[COMPILE-FAIL] baseai/autodev/fix_all_now.py:   File "/var/folders/pn/34yfhskd43lb3xfcy3qb41nc0000gn/T/tmpkhdgss6l.py", line 10
+    """Recursively refactors Python files in the specified root directory."""
+       ^^^^^^^^^^^
+SyntaxError: invalid syntax
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/autodev/fix_all_now.py
+[REFACTOR-Gemini-ERR] baseai/autodev/fix_all_now.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    genai.configure(api_key=require("GEMINI_API_KEY"))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/autodev/fix_all_now.py
+[REFACTOR-GPT-ERR] baseai/autodev/evolution_reflector.py: Expecting ',' delimiter: line 2 column 48 (char 49)
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gpt.py", line 48, in generate_files
+    return json.loads(txt)
+           ^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 2 column 48 (char 49)
+[REFACTOR-Gemini-ERR] baseai/autodev/evolution_reflector.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    genai.configure(api_key=require("GEMINI_API_KEY"))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/autodev/evolution_reflector.py
+[COMPILE-FAIL] baseai/autodev/engine.py:   File "/var/folders/pn/34yfhskd43lb3xfcy3qb41nc0000gn/T/tmplsfkk4pb.py", line 63
+    """Writes files safely to the filesystem using atomic write."""
+                                                                ^
+SyntaxError: unterminated triple-quoted string literal (detected at line 77)
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/autodev/engine.py
+[REFACTOR-Gemini-ERR] baseai/autodev/engine.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    genai.configure(api_key=require("GEMINI_API_KEY"))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/autodev/engine.py
+[COMPILE-FAIL] baseai/autodev/enterprise_loop.py:   File "/var/folders/pn/34yfhskd43lb3xfcy3qb41nc0000gn/T/tmpz2je_1k0.py", line 17
+    """Logs messages to both file and stdout."""
+       ^^^^
+SyntaxError: invalid syntax
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/autodev/enterprise_loop.py
+[REFACTOR-Gemini-ERR] baseai/autodev/enterprise_loop.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    genai.configure(api_key=require("GEMINI_API_KEY"))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/autodev/enterprise_loop.py
+[COMPILE-FAIL] baseai/autodev/auto_refactor.py:   File "/var/folders/pn/34yfhskd43lb3xfcy3qb41nc0000gn/T/tmp7zolemd8.py", line 22
+    """Append message to log file with safety."""
+       ^^^^^^
+SyntaxError: invalid syntax
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/autodev/auto_refactor.py
+[REFACTOR-Gemini-ERR] baseai/autodev/auto_refactor.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    genai.configure(api_key=require("GEMINI_API_KEY"))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/autodev/auto_refactor.py
+[COMPILE-FAIL] baseai/autodev/self_heal_loop.py:   File "/var/folders/pn/34yfhskd43lb3xfcy3qb41nc0000gn/T/tmpp0e6uple.py", line 18
+    """Generate the SHA256 hash of a file."""
+       ^^^^^^^^
+SyntaxError: invalid syntax
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/autodev/self_heal_loop.py
+[REFACTOR-Gemini-ERR] baseai/autodev/self_heal_loop.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    genai.configure(api_key=require("GEMINI_API_KEY"))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/autodev/self_heal_loop.py
+[COMPILE-FAIL] baseai/autodev/live_refactor_watchdog.py:   File "/var/folders/pn/34yfhskd43lb3xfcy3qb41nc0000gn/T/tmpoj10yrjk.py", line 21
+    """Logs a message to the console and to a file."""
+       ^^^^
+SyntaxError: invalid syntax
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/autodev/live_refactor_watchdog.py
+[REFACTOR-Gemini-ERR] baseai/autodev/live_refactor_watchdog.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    genai.configure(api_key=require("GEMINI_API_KEY"))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/autodev/live_refactor_watchdog.py
+[REFACTOR-GPT] ✅ OK baseai/utils/hello.py sha=580040169008
+[DONE] Refactored baseai/utils/hello.py successfully
+[REFACTOR-GPT] ✅ OK baseai/utils/hello_gemini25.py sha=0bfba61733dc
+[DONE] Refactored baseai/utils/hello_gemini25.py successfully
+[COMPILE-FAIL] baseai/utils/test_gemini25.py:   File "/var/folders/pn/34yfhskd43lb3xfcy3qb41nc0000gn/T/tmpn5733yz9.py", line 1
+    """\nModule providing greeting functionality for Gemini 2.5 Pro BaseAI.\n\nReturns a greeting message.\n"""\n\nimport logging\n\n# Configure logging\nlogging.basicConfig(level=logging.INFO)\n\ndef greet() -> str:\n    """Return a greeting message."""\n    try:\n        message = "Hello from Gemini 2.5 Pro BaseAI!"\n        logging.info("Greeting generated successfully.")\n        return message\n    except Exception as e:\n        logging.error(f"Error generating greeting: {e}")\n        return "An error occurred while generating the greeting."
+                                                                                                                ^
+SyntaxError: unexpected character after line continuation character
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/utils/test_gemini25.py
+[REFACTOR-Gemini-ERR] baseai/utils/test_gemini25.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    genai.configure(api_key=require("GEMINI_API_KEY"))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/utils/test_gemini25.py
+[REFACTOR-GPT] ✅ OK baseai/utils/hello_gemini.py sha=320457b68ce0
+[DONE] Refactored baseai/utils/hello_gemini.py successfully
+[COMPILE-FAIL] baseai/utils/config_loader.py: Sorry: IndentationError: unexpected indent (tmp021c9ti1.py, line 17)
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/utils/config_loader.py
+[REFACTOR-Gemini-ERR] baseai/utils/config_loader.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    genai.configure(api_key=require("GEMINI_API_KEY"))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/utils/config_loader.py
+[COMPILE-FAIL] baseai/utils/fs_ops.py:   File "/var/folders/pn/34yfhskd43lb3xfcy3qb41nc0000gn/T/tmpwfcs7doj.py", line 14
+    """Compute SHA-256 hash of a given string."""
+       ^^^^^^^
+SyntaxError: invalid syntax
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/utils/fs_ops.py
+[REFACTOR-Gemini-ERR] baseai/utils/fs_ops.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    genai.configure(api_key=require("GEMINI_API_KEY"))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/utils/fs_ops.py
+[REFACTOR-GPT-ERR] baseai/bridges/gemini.py: Unterminated string starting at: line 2 column 31 (char 32)
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gpt.py", line 48, in generate_files
+    return json.loads(txt)
+           ^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Unterminated string starting at: line 2 column 31 (char 32)
+[REFACTOR-Gemini-ERR] baseai/bridges/gemini.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    genai.configure(api_key=require("GEMINI_API_KEY"))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/bridges/gemini.py
+[REFACTOR-GPT-ERR] baseai/bridges/gpt.py: Unterminated string starting at: line 2 column 30 (char 31)
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gpt.py", line 48, in generate_files
+    client = _client()
+           ^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Unterminated string starting at: line 2 column 30 (char 31)
+[REFACTOR-Gemini-ERR] baseai/bridges/gpt.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    genai.configure(api_key=require("GEMINI_API_KEY"))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/bridges/gpt.py
+[COMPILE-FAIL] baseai/log/logger.py:   File "/var/folders/pn/34yfhskd43lb3xfcy3qb41nc0000gn/T/tmpewkro26_.py", line 24
+    """Ensures that the log directory exists."""
+                                             ^
+SyntaxError: unterminated triple-quoted string literal (detected at line 32)
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/log/logger.py
+[REFACTOR-Gemini-ERR] baseai/log/logger.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    genai.configure(api_key=require("GEMINI_API_KEY"))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/log/logger.py
+[COMPILE-FAIL] baseai/policy/guardrails.py:   File "/var/folders/pn/34yfhskd43lb3xfcy3qb41nc0000gn/T/tmpkftusi1d.py", line 21
+    """Sanitizes the input text by blocking disallowed patterns."""
+       ^^^^^^^^^
+SyntaxError: invalid syntax
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/policy/guardrails.py
+[REFACTOR-Gemini-ERR] baseai/policy/guardrails.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    result: Dict[str, Any] = gen(prompt)
+                             ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    genai.configure(api_key=require("GEMINI_API_KEY"))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/policy/guardrails.py
+[REFACTOR-GPT] ✅ OK baseai/__init__.py sha=ac47b29dafe3
+[DONE] Refactored baseai/__init__.py successfully
+[REFACTOR-GPT-ERR] baseai/core/api_orchestrator.py: Unterminated string starting at: line 2 column 38 (char 39)
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gpt.py", line 48, in generate_files
+    client = _client()
+           ^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Unterminated string starting at: line 2 column 38 (char 39)
+[REFACTOR-Gemini-ERR] baseai/core/api_orchestrator.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    raw = (raw or "").strip()
+                            ^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/core/api_orchestrator.py
+[REFACTOR-GPT-ERR] baseai/core/__init__.py: Expecting ',' delimiter: line 2 column 32 (char 33)
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gpt.py", line 48, in generate_files
+    client = _client()
+           ^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 2 column 32 (char 33)
+[REFACTOR-Gemini-ERR] baseai/core/__init__.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    raw = (raw or "").strip()
+                            ^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/core/__init__.py
+[REFACTOR-GPT-ERR] baseai/core/auditor.py: Expecting ',' delimiter: line 2 column 33 (char 34)
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gpt.py", line 48, in generate_files
+    client = _client()
+           ^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 2 column 33 (char 34)
+[REFACTOR-Gemini-ERR] baseai/core/auditor.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    raw = (raw or "").strip()
+                            ^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/core/auditor.py
+[COMPILE-FAIL] baseai/core/intent_processor.py: Sorry: IndentationError: unexpected indent (tmpu_sgvbnu.py, line 11)
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/core/intent_processor.py
+[REFACTOR-Gemini-ERR] baseai/core/intent_processor.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    raw = (raw or "").strip()
+                            ^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/core/intent_processor.py
+[COMPILE-FAIL] baseai/autodev/fix_all_now.py:   File "/var/folders/pn/34yfhskd43lb3xfcy3qb41nc0000gn/T/tmptzshouxs.py", line 11
+    """Refactor all Python files in the specified directory."""
+       ^^^^^^^^
+SyntaxError: invalid syntax
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/autodev/fix_all_now.py
+[REFACTOR-Gemini-ERR] baseai/autodev/fix_all_now.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    raw = (raw or "").strip()
+                            ^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/autodev/fix_all_now.py
+[COMPILE-FAIL] baseai/autodev/evolution_reflector.py:   File "/var/folders/pn/34yfhskd43lb3xfcy3qb41nc0000gn/T/tmppaewk0xs.py", line 65
+    return (out or b""").decode(errors="ignore") + (err or b""").decode(errors="ignore").strip()
+                       ^
+SyntaxError: unmatched ')'
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/autodev/evolution_reflector.py
+[REFACTOR-Gemini-ERR] baseai/autodev/evolution_reflector.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    raw = (raw or "").strip()
+                            ^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/autodev/evolution_reflector.py
+[COMPILE-FAIL] baseai/autodev/engine.py:   File "/var/folders/pn/34yfhskd43lb3xfcy3qb41nc0000gn/T/tmps4d1ush_.py", line 19
+    """Merges two dictionaries into one."""
+       ^^^^^^
+SyntaxError: invalid syntax
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/autodev/engine.py
+[REFACTOR-Gemini-ERR] baseai/autodev/engine.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    raw = (raw or "").strip()
+                            ^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/autodev/engine.py
+[REFACTOR-GPT-ERR] baseai/autodev/enterprise_loop.py: Expecting ',' delimiter: line 2 column 42 (char 43)
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gpt.py", line 48, in generate_files
+    client = _client()
+           ^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 2 column 42 (char 43)
+[REFACTOR-Gemini-ERR] baseai/autodev/enterprise_loop.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    raw = (raw or "").strip()
+                            ^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/autodev/enterprise_loop.py
+[REFACTOR-GPT-ERR] baseai/autodev/auto_refactor.py: Expecting ',' delimiter: line 2 column 40 (char 41)
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gpt.py", line 48, in generate_files
+    client = _client()
+           ^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 2 column 40 (char 41)
+[REFACTOR-Gemini-ERR] baseai/autodev/auto_refactor.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    raw = (raw or "").strip()
+                            ^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/autodev/auto_refactor.py
+[COMPILE-FAIL] baseai/autodev/self_heal_loop.py:   File "/var/folders/pn/34yfhskd43lb3xfcy3qb41nc0000gn/T/tmpbdc11kwi.py", line 27
+    """Logs a message to both file and stdout."""
+       ^^^^
+SyntaxError: invalid syntax
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/autodev/self_heal_loop.py
+[REFACTOR-Gemini-ERR] baseai/autodev/self_heal_loop.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    raw = (raw or "").strip()
+                            ^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/autodev/self_heal_loop.py
+[COMPILE-FAIL] baseai/autodev/live_refactor_watchdog.py:   File "/var/folders/pn/34yfhskd43lb3xfcy3qb41nc0000gn/T/tmpf3d2tw9h.py", line 20
+    """Calculate SHA256 hash of a file."""
+       ^^^^^^^^^
+SyntaxError: invalid syntax
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/autodev/live_refactor_watchdog.py
+[REFACTOR-Gemini-ERR] baseai/autodev/live_refactor_watchdog.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    raw = (raw or "").strip()
+                            ^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/autodev/live_refactor_watchdog.py
+[REFACTOR-GPT] ✅ OK baseai/utils/hello.py sha=59c70a031c2f
+[DONE] Refactored baseai/utils/hello.py successfully
+[REFACTOR-GPT] ✅ OK baseai/utils/hello_gemini25.py sha=c50ea6173cbc
+[DONE] Refactored baseai/utils/hello_gemini25.py successfully
+[REFACTOR-GPT] ✅ OK baseai/utils/test_gemini25.py sha=eee9acad33fa
+[DONE] Refactored baseai/utils/test_gemini25.py successfully
+[REFACTOR-GPT-ERR] baseai/utils/hello_gemini.py: Expecting ',' delimiter: line 2 column 94 (char 95)
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gpt.py", line 48, in generate_files
+    client = _client()
+           ^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 2 column 94 (char 95)
+[REFACTOR-Gemini-ERR] baseai/utils/hello_gemini.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    raw = (raw or "").strip()
+                            ^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/utils/hello_gemini.py
+[COMPILE-FAIL] baseai/utils/config_loader.py:   File "/var/folders/pn/34yfhskd43lb3xfcy3qb41nc0000gn/T/tmp6p03dl59.py", line 34
+    """Get the value of the required environment variable, raises if missing."""
+                                                                             ^
+SyntaxError: unterminated triple-quoted string literal (detected at line 42)
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/utils/config_loader.py
+[REFACTOR-Gemini-ERR] baseai/utils/config_loader.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    raw = (raw or "").strip()
+                            ^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/utils/config_loader.py
+[COMPILE-FAIL] baseai/utils/fs_ops.py:   File "/var/folders/pn/34yfhskd43lb3xfcy3qb41nc0000gn/T/tmp481l47sa.py", line 15
+    """Generate SHA256 hash of the given text."""
+       ^^^^^^^^
+SyntaxError: invalid syntax
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/utils/fs_ops.py
+[REFACTOR-Gemini-ERR] baseai/utils/fs_ops.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    raw = (raw or "").strip()
+                            ^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/utils/fs_ops.py
+[REFACTOR-GPT-ERR] baseai/bridges/gemini.py: Unterminated string starting at: line 2 column 33 (char 34)
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gpt.py", line 48, in generate_files
+    client = _client()
+           ^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Unterminated string starting at: line 2 column 33 (char 34)
+[REFACTOR-Gemini-ERR] baseai/bridges/gemini.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    raw = (raw or "").strip()
+                            ^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/bridges/gemini.py
+[REFACTOR-GPT-ERR] baseai/bridges/gpt.py: Unterminated string starting at: line 2 column 30 (char 31)
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gpt.py", line 48, in generate_files
+    client = _client()
+           ^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.14_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Unterminated string starting at: line 2 column 30 (char 31)
+[REFACTOR-Gemini-ERR] baseai/bridges/gpt.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    raw = (raw or "").strip()
+                            ^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/bridges/gpt.py
+[COMPILE-FAIL] baseai/log/logger.py:   File "/var/folders/pn/34yfhskd43lb3xfcy3qb41nc0000gn/T/tmp95166c18.py", line 9
+    """Sets up a logger for the BaseAI application."""
+       ^^^^
+SyntaxError: invalid syntax
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/log/logger.py
+[REFACTOR-Gemini-ERR] baseai/log/logger.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    raw = (raw or "").strip()
+                            ^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/log/logger.py
+[COMPILE-FAIL] baseai/policy/guardrails.py: Sorry: IndentationError: unexpected indent (tmpat6lmdvx.py, line 22)
+[REFACTOR-GPT] ⚠️ Non-compilable content for baseai/policy/guardrails.py
+[REFACTOR-Gemini-ERR] baseai/policy/guardrails.py: Missing required config: GEMINI_API_KEY
+Traceback (most recent call last):
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/autodev/auto_refactor.py", line 81, in _try_generate
+    for gen, name in ((gpt_generate, "GPT"), (gemini_generate, "Gemini")):
+                                     ^^^^^^^^^^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/bridges/gemini.py", line 28, in generate_files
+    raw = (raw or "").strip()
+                            ^^
+  File "/Users/alperensevinc/Desktop/BaseAI/baseai/utils/config_loader.py", line 23, in require
+    raise RuntimeError(f"Missing required config: {key}")
+RuntimeError: Missing required config: GEMINI_API_KEY
+[FAIL] No successful refactor for baseai/policy/guardrails.py

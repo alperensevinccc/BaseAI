@@ -1,0 +1,27 @@
+# Python sanal ortamları
+.venv/
+venv/
+env/
+
+# Python cache dosyaları
+__pycache__/
+*.py[cod]
+
+# Geçici dosyalar ve loglar
+.tmp/
+*.log
+*.swp
+*.swo
+
+# İşletim sistemi dosyaları
+.DS_Store
+Thumbs.db
+
+# IDE ayarları
+.idea/
+.vscode/
+
+# Build ve dist çıktıları
+build/
+dist/
+*.egg-info/

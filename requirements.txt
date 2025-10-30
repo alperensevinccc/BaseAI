@@ -1,0 +1,35 @@
+# ===========================
+# BaseAI Core
+# ===========================
+python-dotenv
+requests
+httpx
+psutil
+watchdog
+
+# ===========================
+# Typing / Validation
+# ===========================
+pydantic>=2.0
+typing-extensions>=4.8
+
+# ===========================
+# OpenAI / GPT Bridge
+# ===========================
+openai>=1.0
+tiktoken
+
+# ===========================
+# Gemini / Google Bridge
+# ===========================
+# v1beta (0.8.x) sürümlerini engellemek için 0.9.0'dan başlat.
+# Diğer google-* paketleri (api-core, auth vb.)
+# ana paket tarafından otomatik olarak yüklenecektir.
+#google-genai>=1.0.0
+
+# ===========================
+# Dev / QA Tools
+# ===========================
+ruff
+black
+pytest

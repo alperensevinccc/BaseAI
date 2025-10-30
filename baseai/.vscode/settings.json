@@ -1,0 +1,16 @@
+{
+  "python.formatting.provider": "black",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+  "ruff.enable": true,
+  "ruff.lintOnSave": true,
+  "ruff.fixAll": true,
+  "terminal.integrated.env.osx": {
+    "PYTHONPATH": "${workspaceFolder}/src:${PYTHONPATH}",
+    "OPENAI_API_KEY": "${env:OPENAI_API_KEY}",
+    "GOOGLE_API_KEY": "${env:GOOGLE_API_KEY}"
+  }
+}
