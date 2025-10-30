@@ -17,9 +17,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 14.83,
-      "type": "YEN\u0130_MOD\u00dcL",
+      "type": "YENİ_MODÜL",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI i\u00e7in gelecek vadeli i\u015flemler ticaret stratejilerini geli\u015ftirecek temel mod\u00fcl\u00fc olu\u015ftur."
+      "description": "BinAI için gelecek vadeli işlemler ticaret stratejilerini geliştirecek temel modülü oluştur."
     },
     {
       "timestamp": 1761567806.0897129,
@@ -38,9 +38,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 15.69,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI'nin futures trading kapasitesini art\u0131rmak i\u00e7in mevcut ticaret algoritmalar\u0131n\u0131 geli\u015ftir ve optimize et."
+      "description": "BinAI'nin futures trading kapasitesini artırmak için mevcut ticaret algoritmalarını geliştir ve optimize et."
     },
     {
       "timestamp": 1761568721.775727,
@@ -59,9 +59,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 14.88,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI i\u00e7in futures trading algoritmalar\u0131n\u0131 geli\u015ftirerek finansal performans\u0131 ve karar verme s\u00fcre\u00e7lerini optimize et."
+      "description": "BinAI için futures trading algoritmalarını geliştirerek finansal performansı ve karar verme süreçlerini optimize et."
     },
     {
       "timestamp": 1761569636.667263,
@@ -80,9 +80,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 15.57,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI i\u00e7in futures trading algoritmalar\u0131n\u0131 geli\u015ftirerek finansal performans\u0131 optimize et ve risk y\u00f6netimini g\u00fc\u00e7lendir."
+      "description": "BinAI için futures trading algoritmalarını geliştirerek finansal performansı optimize et ve risk yönetimini güçlendir."
     },
     {
       "timestamp": 1761570552.173863,
@@ -101,9 +101,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 15.99,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI i\u00e7in futures trading algoritmalar\u0131n\u0131 geli\u015ftirerek finansal performans\u0131 art\u0131rmak ve risk y\u00f6netimini optimize etmek."
+      "description": "BinAI için futures trading algoritmalarını geliştirerek finansal performansı artırmak ve risk yönetimini optimize etmek."
     },
     {
       "timestamp": 1761571468.183478,
@@ -122,9 +122,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 15.55,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI i\u00e7in futures trading algoritmalar\u0131n\u0131 geli\u015ftirerek finansal performans\u0131 art\u0131rma ve risk y\u00f6netimini optimize etme."
+      "description": "BinAI için futures trading algoritmalarını geliştirerek finansal performansı artırma ve risk yönetimini optimize etme."
     },
     {
       "timestamp": 1761572383.74512,
@@ -143,9 +143,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 15.29,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI'nin futures trading zekas\u0131n\u0131 geli\u015ftirerek finansal piyasalarda daha do\u011fru ve etkili kararlar almas\u0131n\u0131 sa\u011fla."
+      "description": "BinAI'nin futures trading zekasını geliştirerek finansal piyasalarda daha doğru ve etkili kararlar almasını sağla."
     },
     {
       "timestamp": 1761573299.032386,
@@ -164,9 +164,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 19.78,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI'nin futures trading kapasitesini art\u0131rmak i\u00e7in mevcut ticaret algoritmalar\u0131n\u0131 geli\u015ftir ve optimize et."
+      "description": "BinAI'nin futures trading kapasitesini artırmak için mevcut ticaret algoritmalarını geliştir ve optimize et."
     },
     {
       "timestamp": 1761574218.828042,
@@ -185,9 +185,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 14.58,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI'nin futures trading kapasitesini art\u0131rmak i\u00e7in mevcut ticaret algoritmalar\u0131n\u0131 geli\u015ftir ve optimize et."
+      "description": "BinAI'nin futures trading kapasitesini artırmak için mevcut ticaret algoritmalarını geliştir ve optimize et."
     },
     {
       "timestamp": 1761575133.389581,
@@ -206,9 +206,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 51.91,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/core/api_orchestrator.py",
-      "description": "TriaportAI ve BinAI'nin BaseAI \u00e7ekirde\u011fi ile daha verimli entegrasyonunu sa\u011flamak i\u00e7in API orkestrasyon mant\u0131\u011f\u0131n\u0131 geli\u015ftir."
+      "description": "TriaportAI ve BinAI'nin BaseAI çekirdeği ile daha verimli entegrasyonunu sağlamak için API orkestrasyon mantığını geliştir."
     },
     {
       "timestamp": 1761576085.2766578,
@@ -227,9 +227,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 15.48,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI i\u00e7in futures trading algoritmalar\u0131n\u0131 geli\u015ftirerek finansal performans\u0131 ve stratejik karar verme yetene\u011fini art\u0131r."
+      "description": "BinAI için futures trading algoritmalarını geliştirerek finansal performansı ve stratejik karar verme yeteneğini artır."
     },
     {
       "timestamp": 1761577000.7602408,
@@ -248,9 +248,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 13.91,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI'nin futures trading yeteneklerini geli\u015ftirerek finansal piyasalarda daha do\u011fru ve etkili kararlar almas\u0131n\u0131 sa\u011fla."
+      "description": "BinAI'nin futures trading yeteneklerini geliştirerek finansal piyasalarda daha doğru ve etkili kararlar almasını sağla."
     },
     {
       "timestamp": 1761577914.691988,
@@ -269,9 +269,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 17.36,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI'nin futures trading zekas\u0131n\u0131 geli\u015ftirerek finansal piyasalarda daha do\u011fru ve etkili kararlar almas\u0131n\u0131 sa\u011fla."
+      "description": "BinAI'nin futures trading zekasını geliştirerek finansal piyasalarda daha doğru ve etkili kararlar almasını sağla."
     },
     {
       "timestamp": 1761578832.047498,
@@ -290,9 +290,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 16.47,
-      "type": "YEN\u0130_MOD\u00dcL",
+      "type": "YENİ_MODÜL",
       "target": "baseai/subai/triaport/logistics_intelligence.py",
-      "description": "Lojistik ve forwarder zekas\u0131n\u0131 geli\u015ftirmek i\u00e7in TriaportAI'ye \u00f6zel bir mod\u00fcl ekleyerek entegrasyon ve i\u015flevselli\u011fi art\u0131r."
+      "description": "Lojistik ve forwarder zekasını geliştirmek için TriaportAI'ye özel bir modül ekleyerek entegrasyon ve işlevselliği artır."
     },
     {
       "timestamp": 1761579748.489113,
@@ -311,9 +311,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 18.22,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI i\u00e7in futures trading zekas\u0131n\u0131 geli\u015ftirerek finansal piyasalarda daha etkin karar verme yetene\u011fi sa\u011fla."
+      "description": "BinAI için futures trading zekasını geliştirerek finansal piyasalarda daha etkin karar verme yeteneği sağla."
     },
     {
       "timestamp": 1761580666.678773,
@@ -332,9 +332,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 13.33,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI'nin gelecek ticaret stratejilerini geli\u015ftirerek finansal performans\u0131n\u0131 ve piyasa adaptasyonunu art\u0131r."
+      "description": "BinAI'nin gelecek ticaret stratejilerini geliştirerek finansal performansını ve piyasa adaptasyonunu artır."
     },
     {
       "timestamp": 1761581579.9850008,
@@ -353,9 +353,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 17.44,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI'nin gelecek piyasalar\u0131nda i\u015flem yapma yetene\u011fini geli\u015ftirerek finansal stratejilerin etkinli\u011fini art\u0131r."
+      "description": "BinAI'nin gelecek piyasalarında işlem yapma yeteneğini geliştirerek finansal stratejilerin etkinliğini artır."
     },
     {
       "timestamp": 1761582497.405969,
@@ -374,9 +374,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 13.0,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI'nin gelecek vadeli i\u015flem stratejilerini geli\u015ftirerek finansal performans\u0131n\u0131 ve piyasa adaptasyonunu art\u0131r."
+      "description": "BinAI'nin gelecek vadeli işlem stratejilerini geliştirerek finansal performansını ve piyasa adaptasyonunu artır."
     },
     {
       "timestamp": 1761583410.3918982,
@@ -395,9 +395,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 16.31,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI'nin gelecek ticaret stratejilerini geli\u015ftirerek finansal piyasalardaki performans\u0131n\u0131 ve do\u011frulu\u011funu art\u0131r."
+      "description": "BinAI'nin gelecek ticaret stratejilerini geliştirerek finansal piyasalardaki performansını ve doğruluğunu artır."
     },
     {
       "timestamp": 1761584326.705769,
@@ -416,9 +416,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 19.89,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI i\u00e7in mevcut futures trading mod\u00fcl\u00fcn\u00fc geli\u015ftirerek, algoritman\u0131n piyasa de\u011fi\u015fikliklerine daha h\u0131zl\u0131 ve etkin bir \u015fekilde yan\u0131t vermesini sa\u011fla."
+      "description": "BinAI için mevcut futures trading modülünü geliştirerek, algoritmanın piyasa değişikliklerine daha hızlı ve etkin bir şekilde yanıt vermesini sağla."
     },
     {
       "timestamp": 1761585246.561575,
@@ -437,9 +437,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 16.98,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI i\u00e7in futures trading algoritmalar\u0131n\u0131 geli\u015ftirerek finansal performans\u0131 ve karar verme s\u00fcre\u00e7lerini optimize et."
+      "description": "BinAI için futures trading algoritmalarını geliştirerek finansal performansı ve karar verme süreçlerini optimize et."
     },
     {
       "timestamp": 1761586163.5285702,
@@ -458,9 +458,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 15.82,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI'nin gelecek ticareti zekas\u0131n\u0131 geli\u015ftirerek finansal piyasalarda daha etkin ve do\u011fru tahminler yapmas\u0131n\u0131 sa\u011fla."
+      "description": "BinAI'nin gelecek ticareti zekasını geliştirerek finansal piyasalarda daha etkin ve doğru tahminler yapmasını sağla."
     },
     {
       "timestamp": 1761587079.339099,
@@ -479,9 +479,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 14.13,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI'nin gelecek ticareti zekas\u0131n\u0131 geli\u015ftirerek finansal piyasalardaki performans\u0131n\u0131 ve do\u011frulu\u011funu art\u0131r."
+      "description": "BinAI'nin gelecek ticareti zekasını geliştirerek finansal piyasalardaki performansını ve doğruluğunu artır."
     },
     {
       "timestamp": 1761587993.459606,
@@ -500,9 +500,9 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 130.57,
-      "type": "MEVCUT_MOD\u00dcL\u00dc_GEL\u0130\u015eT\u0130R",
+      "type": "MEVCUT_MODÜLÜ_GELİŞTİR",
       "target": "baseai/subai/binai/futures_trading_logic.py",
-      "description": "BinAI'nin futures trading zekas\u0131n\u0131 geli\u015ftirerek finansal piyasalardaki performans\u0131n\u0131 ve do\u011frulu\u011funu art\u0131r."
+      "description": "BinAI'nin futures trading zekasını geliştirerek finansal piyasalardaki performansını ve doğruluğunu artır."
     },
     {
       "timestamp": 1761589024.0198069,
@@ -515,7 +515,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 81.07
     },
     {
@@ -529,7 +529,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 81.53
     },
     {
@@ -543,7 +543,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 84.48
     },
     {
@@ -557,7 +557,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 112.64
     },
     {
@@ -571,7 +571,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 102.97
     },
     {
@@ -585,7 +585,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 114.02
     },
     {
@@ -599,7 +599,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 116.8
     },
     {
@@ -613,7 +613,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 119.54
     },
     {
@@ -627,7 +627,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 118.99
     },
     {
@@ -641,7 +641,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 69.22
     },
     {
@@ -655,7 +655,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 80.99
     },
     {
@@ -669,7 +669,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 110.57
     },
     {
@@ -683,7 +683,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 76.94
     },
     {
@@ -697,7 +697,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 93.74
     },
     {
@@ -711,7 +711,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 98.16
     },
     {
@@ -725,7 +725,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 97.32
     },
     {
@@ -739,7 +739,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 117.41
     },
     {
@@ -753,7 +753,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 97.26
     },
     {
@@ -767,7 +767,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 89.2
     },
     {
@@ -781,7 +781,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 100.0
     },
     {
@@ -795,7 +795,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 108.9
     },
     {
@@ -809,7 +809,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 104.11
     },
     {
@@ -823,7 +823,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 62.12
     },
     {
@@ -837,7 +837,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 107.68
     },
     {
@@ -851,7 +851,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 132.41
     },
     {
@@ -865,7 +865,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 115.03
     },
     {
@@ -879,7 +879,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 103.04
     },
     {
@@ -893,7 +893,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 92.02
     },
     {
@@ -907,7 +907,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 75.15
     },
     {
@@ -921,7 +921,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 101.69
     },
     {
@@ -935,7 +935,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 111.29
     },
     {
@@ -949,7 +949,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 84.5
     },
     {
@@ -963,7 +963,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 91.24
     },
     {
@@ -977,7 +977,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 101.09
     },
     {
@@ -991,7 +991,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 74.78
     },
     {
@@ -1005,7 +1005,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 101.7
     },
     {
@@ -1019,7 +1019,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 91.61
     },
     {
@@ -1033,7 +1033,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 105.76
     },
     {
@@ -1047,7 +1047,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 89.45
     },
     {
@@ -1061,7 +1061,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 113.57
     },
     {
@@ -1075,7 +1075,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 93.69
     },
     {
@@ -1089,7 +1089,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 100.34
     },
     {
@@ -1103,7 +1103,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 83.84
     },
     {
@@ -1117,7 +1117,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 73.78
     },
     {
@@ -1131,7 +1131,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 111.8
     },
     {
@@ -1145,7 +1145,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 105.96
     },
     {
@@ -1159,7 +1159,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 88.33
     },
     {
@@ -1173,7 +1173,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 83.43
     },
     {
@@ -1187,7 +1187,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 81.99
     },
     {
@@ -1201,7 +1201,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 120.97
     },
     {
@@ -1215,7 +1215,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 83.01
     },
     {
@@ -1229,7 +1229,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 56.26
     },
     {
@@ -1243,7 +1243,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 90.62
     },
     {
@@ -1257,7 +1257,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 81.12
     },
     {
@@ -1271,7 +1271,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 108.6
     },
     {
@@ -1285,7 +1285,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 65.34
     },
     {
@@ -1299,7 +1299,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 113.66
     },
     {
@@ -1313,7 +1313,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 110.28
     },
     {
@@ -1327,7 +1327,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 94.83
     },
     {
@@ -1341,7 +1341,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 88.72
     },
     {
@@ -1355,7 +1355,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 97.22
     },
     {
@@ -1369,7 +1369,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 101.73
     },
     {
@@ -1383,7 +1383,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 56.36
     },
     {
@@ -1397,7 +1397,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 109.69
     },
     {
@@ -1411,7 +1411,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 91.41
     },
     {
@@ -1425,7 +1425,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 72.39
     },
     {
@@ -1439,7 +1439,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 88.85
     },
     {
@@ -1453,7 +1453,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 73.88
     },
     {
@@ -1467,7 +1467,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 95.74
     },
     {
@@ -1481,7 +1481,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 111.8
     },
     {
@@ -1495,7 +1495,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 70.58
     },
     {
@@ -1509,7 +1509,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 82.98
     },
     {
@@ -1523,7 +1523,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 127.23
     },
     {
@@ -1537,7 +1537,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 95.82
     },
     {
@@ -1551,7 +1551,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 78.94
     },
     {
@@ -1565,7 +1565,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 133.73
     },
     {
@@ -1579,7 +1579,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 77.47
     },
     {
@@ -1593,7 +1593,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 90.32
     },
     {
@@ -1607,7 +1607,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 82.44
     },
     {
@@ -1621,7 +1621,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 100.32
     },
     {
@@ -1635,7 +1635,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 106.34
     },
     {
@@ -1649,7 +1649,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 94.69
     },
     {
@@ -1663,7 +1663,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 103.43
     },
     {
@@ -1677,7 +1677,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 93.84
     },
     {
@@ -1691,7 +1691,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 120.71
     },
     {
@@ -1705,7 +1705,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 98.36
     },
     {
@@ -1719,7 +1719,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 110.02
     },
     {
@@ -1733,7 +1733,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 98.72
     },
     {
@@ -1747,7 +1747,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 96.51
     },
     {
@@ -1761,7 +1761,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 75.56
     },
     {
@@ -1775,7 +1775,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 127.77
     },
     {
@@ -1789,7 +1789,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 85.19
     },
     {
@@ -1803,7 +1803,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 115.36
     },
     {
@@ -1817,7 +1817,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 51.94
     },
     {
@@ -1831,7 +1831,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 88.67
     },
     {
@@ -1845,7 +1845,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 96.51
     },
     {
@@ -1859,7 +1859,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 75.16
     },
     {
@@ -1873,7 +1873,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 85.57
     },
     {
@@ -1887,7 +1887,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 76.05
     },
     {
@@ -1901,7 +1901,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 81.41
     },
     {
@@ -1915,7 +1915,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 72.56
     },
     {
@@ -1929,7 +1929,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 96.23
     },
     {
@@ -1943,7 +1943,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 90.28
     },
     {
@@ -1957,7 +1957,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 86.39
     },
     {
@@ -1971,7 +1971,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 82.86
     },
     {
@@ -1985,7 +1985,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 107.01
     },
     {
@@ -1999,7 +1999,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 88.82
     },
     {
@@ -2013,7 +2013,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 69.78
     },
     {
@@ -2027,7 +2027,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 92.37
     },
     {
@@ -2041,7 +2041,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 104.0
     },
     {
@@ -2055,7 +2055,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 81.14
     },
     {
@@ -2069,7 +2069,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 102.85
     },
     {
@@ -2083,7 +2083,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 70.0
     },
     {
@@ -2097,7 +2097,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 89.81
     },
     {
@@ -2111,7 +2111,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 49.28
     },
     {
@@ -2125,7 +2125,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 96.62
     },
     {
@@ -2139,7 +2139,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 66.26
     },
     {
@@ -2153,7 +2153,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 102.97
     },
     {
@@ -2167,7 +2167,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 66.89
     },
     {
@@ -2181,7 +2181,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 115.13
     },
     {
@@ -2195,7 +2195,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 79.6
     },
     {
@@ -2209,7 +2209,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 102.46
     },
     {
@@ -2223,7 +2223,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 102.84
     },
     {
@@ -2237,7 +2237,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 67.44
     },
     {
@@ -2251,7 +2251,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 78.7
     },
     {
@@ -2265,7 +2265,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 69.5
     },
     {
@@ -2279,7 +2279,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 91.37
     },
     {
@@ -2293,7 +2293,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 87.66
     },
     {
@@ -2307,7 +2307,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 124.98
     },
     {
@@ -2321,7 +2321,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 96.3
     },
     {
@@ -2335,7 +2335,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 90.14
     },
     {
@@ -2349,7 +2349,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 88.95
     },
     {
@@ -2363,7 +2363,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 92.47
     },
     {
@@ -2377,7 +2377,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 99.71
     },
     {
@@ -2391,7 +2391,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 88.96
     },
     {
@@ -2405,7 +2405,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 111.62
     },
     {
@@ -2419,7 +2419,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 93.37
     },
     {
@@ -2433,7 +2433,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 102.17
     },
     {
@@ -2447,7 +2447,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 89.49
     },
     {
@@ -2461,7 +2461,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 96.11
     },
     {
@@ -2475,7 +2475,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 124.45
     },
     {
@@ -2489,7 +2489,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 108.47
     },
     {
@@ -2503,7 +2503,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 102.88
     },
     {
@@ -2517,7 +2517,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 93.84
     },
     {
@@ -2531,7 +2531,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 69.67
     },
     {
@@ -2545,7 +2545,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 101.46
     },
     {
@@ -2559,7 +2559,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 99.91
     },
     {
@@ -2573,7 +2573,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 101.69
     },
     {
@@ -2587,7 +2587,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 100.92
     },
     {
@@ -2601,7 +2601,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 97.44
     },
     {
@@ -2615,7 +2615,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 98.94
     },
     {
@@ -2629,7 +2629,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 75.62
     },
     {
@@ -2643,7 +2643,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 99.12
     },
     {
@@ -2657,7 +2657,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 95.56
     },
     {
@@ -2671,7 +2671,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 106.51
     },
     {
@@ -2685,7 +2685,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 117.26
     },
     {
@@ -2699,7 +2699,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 73.34
     },
     {
@@ -2713,7 +2713,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 103.8
     },
     {
@@ -2727,7 +2727,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 126.05
     },
     {
@@ -2741,7 +2741,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 84.69
     },
     {
@@ -2755,7 +2755,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 105.17
     },
     {
@@ -2769,7 +2769,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 95.32
     },
     {
@@ -2783,7 +2783,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 126.63
     },
     {
@@ -2797,7 +2797,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 112.78
     },
     {
@@ -2811,7 +2811,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 83.33
     },
     {
@@ -2825,7 +2825,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 120.0
     },
     {
@@ -2839,7 +2839,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 110.71
     },
     {
@@ -2853,7 +2853,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 83.82
     },
     {
@@ -2867,7 +2867,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 84.23
     },
     {
@@ -2881,7 +2881,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 98.22
     },
     {
@@ -2895,7 +2895,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 81.27
     },
     {
@@ -2909,7 +2909,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 116.8
     },
     {
@@ -2923,7 +2923,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 87.9
     },
     {
@@ -2937,7 +2937,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 82.91
     },
     {
@@ -2951,7 +2951,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 86.63
     },
     {
@@ -2965,7 +2965,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 115.21
     },
     {
@@ -2979,7 +2979,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 100.8
     },
     {
@@ -2993,7 +2993,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 84.51
     },
     {
@@ -3007,7 +3007,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 115.98
     },
     {
@@ -3021,7 +3021,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 60.15
     },
     {
@@ -3035,7 +3035,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 78.12
     },
     {
@@ -3049,7 +3049,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 72.06
     },
     {
@@ -3063,7 +3063,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 86.35
     },
     {
@@ -3077,7 +3077,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 94.93
     },
     {
@@ -3091,7 +3091,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 83.7
     },
     {
@@ -3105,7 +3105,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 74.53
     },
     {
@@ -3119,7 +3119,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 103.62
     },
     {
@@ -3133,7 +3133,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 105.29
     },
     {
@@ -3147,7 +3147,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 90.88
     },
     {
@@ -3161,7 +3161,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 87.01
     },
     {
@@ -3175,7 +3175,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 58.48
     },
     {
@@ -3189,7 +3189,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 95.52
     },
     {
@@ -3203,7 +3203,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 105.89
     },
     {
@@ -3217,7 +3217,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 110.78
     },
     {
@@ -3231,7 +3231,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 98.68
     },
     {
@@ -3245,7 +3245,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 98.43
     },
     {
@@ -3259,7 +3259,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 97.32
     },
     {
@@ -3273,7 +3273,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 104.42
     },
     {
@@ -3287,7 +3287,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 75.09
     },
     {
@@ -3301,7 +3301,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 71.33
     },
     {
@@ -3315,7 +3315,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 92.71
     },
     {
@@ -3329,7 +3329,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 136.31
     },
     {
@@ -3343,7 +3343,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 87.53
     },
     {
@@ -3357,7 +3357,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 82.41
     },
     {
@@ -3371,7 +3371,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 82.84
     },
     {
@@ -3385,7 +3385,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 107.38
     },
     {
@@ -3399,7 +3399,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 107.25
     },
     {
@@ -3413,7 +3413,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 79.62
     },
     {
@@ -3427,7 +3427,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 89.74
     },
     {
@@ -3441,7 +3441,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 89.23
     },
     {
@@ -3455,7 +3455,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 109.33
     },
     {
@@ -3469,7 +3469,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 71.75
     },
     {
@@ -3483,7 +3483,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 111.49
     },
     {
@@ -3497,7 +3497,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 83.79
     },
     {
@@ -3511,7 +3511,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 103.45
     },
     {
@@ -3525,7 +3525,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 119.94
     },
     {
@@ -3539,7 +3539,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 87.71
     },
     {
@@ -3553,7 +3553,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 103.63
     },
     {
@@ -3567,7 +3567,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 100.46
     },
     {
@@ -3581,7 +3581,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 101.92
     },
     {
@@ -3595,7 +3595,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 76.24
     },
     {
@@ -3609,7 +3609,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 92.53
     },
     {
@@ -3623,7 +3623,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 71.95
     },
     {
@@ -3637,7 +3637,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 85.09
     },
     {
@@ -3651,7 +3651,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 111.79
     },
     {
@@ -3665,7 +3665,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 80.3
     },
     {
@@ -3679,7 +3679,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 82.85
     },
     {
@@ -3693,7 +3693,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 84.57
     },
     {
@@ -3707,7 +3707,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 87.03
     },
     {
@@ -3721,7 +3721,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 81.4
     },
     {
@@ -3735,7 +3735,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 96.89
     },
     {
@@ -3749,7 +3749,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 73.25
     },
     {
@@ -3763,7 +3763,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 90.96
     },
     {
@@ -3777,7 +3777,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 100.82
     },
     {
@@ -3791,7 +3791,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 68.97
     },
     {
@@ -3805,7 +3805,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 74.2
     },
     {
@@ -3819,7 +3819,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 87.84
     },
     {
@@ -3833,7 +3833,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 99.09
     },
     {
@@ -3847,7 +3847,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 86.97
     },
     {
@@ -3861,7 +3861,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 63.74
     },
     {
@@ -3875,7 +3875,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 72.79
     },
     {
@@ -3889,7 +3889,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 82.0
     },
     {
@@ -3903,7 +3903,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 85.82
     },
     {
@@ -3917,7 +3917,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 112.38
     },
     {
@@ -3931,7 +3931,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 78.11
     },
     {
@@ -3945,7 +3945,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 78.89
     },
     {
@@ -3959,7 +3959,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 72.81
     },
     {
@@ -3973,7 +3973,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 140.29
     },
     {
@@ -3987,7 +3987,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 81.2
     },
     {
@@ -4001,7 +4001,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 80.04
     },
     {
@@ -4015,7 +4015,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 90.09
     },
     {
@@ -4029,7 +4029,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 92.1
     },
     {
@@ -4043,7 +4043,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 118.46
     },
     {
@@ -4057,7 +4057,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 69.15
     },
     {
@@ -4071,7 +4071,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 106.93
     },
     {
@@ -4085,7 +4085,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 109.83
     },
     {
@@ -4099,7 +4099,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 92.75
     },
     {
@@ -4113,7 +4113,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 79.51
     },
     {
@@ -4127,7 +4127,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 66.58
     },
     {
@@ -4141,7 +4141,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 85.13
     },
     {
@@ -4155,7 +4155,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 122.66
     },
     {
@@ -4169,7 +4169,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 71.66
     },
     {
@@ -4183,7 +4183,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 90.34
     },
     {
@@ -4197,7 +4197,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 105.31
     },
     {
@@ -4211,7 +4211,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 105.29
     },
     {
@@ -4225,7 +4225,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 92.78
     },
     {
@@ -4239,7 +4239,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 98.82
     },
     {
@@ -4253,7 +4253,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 78.71
     },
     {
@@ -4267,7 +4267,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 101.95
     },
     {
@@ -4281,7 +4281,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 130.12
     },
     {
@@ -4295,7 +4295,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 71.03
     },
     {
@@ -4309,7 +4309,7 @@
       "files_git_blocked": [],
       "files_written": [],
       "files_failed_write": [],
-      "error": "LLM desteklenmeyen/ayr\u0131\u015ft\u0131r\u0131lamayan bir g\u00f6rev tan\u0131m\u0131 \u00fcretti.",
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
       "duration_s": 53.51
     },
     {
@@ -4325,6 +4325,246 @@
       "files_failed_write": [],
       "error": null,
       "duration_s": 70.11
+    },
+    {
+      "timestamp": 1761827613.57323,
+      "success": false,
+      "task_type": "N/A",
+      "task_target": "N/A",
+      "task_description": "N/A",
+      "files_generated": [],
+      "files_lint_failed": [],
+      "files_git_blocked": [],
+      "files_written": [],
+      "files_failed_write": [],
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
+      "duration_s": 0.05
+    },
+    {
+      "timestamp": 1761827673.639609,
+      "success": false,
+      "task_type": "N/A",
+      "task_target": "N/A",
+      "task_description": "N/A",
+      "files_generated": [],
+      "files_lint_failed": [],
+      "files_git_blocked": [],
+      "files_written": [],
+      "files_failed_write": [],
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
+      "duration_s": 0.03
+    },
+    {
+      "timestamp": 1761827697.4598432,
+      "success": false,
+      "task_type": "N/A",
+      "task_target": "N/A",
+      "task_description": "N/A",
+      "files_generated": [],
+      "files_lint_failed": [],
+      "files_git_blocked": [],
+      "files_written": [],
+      "files_failed_write": [],
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
+      "duration_s": 0.04
+    },
+    {
+      "timestamp": 1761827745.7848141,
+      "success": false,
+      "task_type": "N/A",
+      "task_target": "N/A",
+      "task_description": "N/A",
+      "files_generated": [],
+      "files_lint_failed": [],
+      "files_git_blocked": [],
+      "files_written": [],
+      "files_failed_write": [],
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
+      "duration_s": 300.56
+    },
+    {
+      "timestamp": 1761828106.4595468,
+      "success": false,
+      "task_type": "N/A",
+      "task_target": "N/A",
+      "task_description": "N/A",
+      "files_generated": [],
+      "files_lint_failed": [],
+      "files_git_blocked": [],
+      "files_written": [],
+      "files_failed_write": [],
+      "error": null,
+      "duration_s": 271.36
+    },
+    {
+      "timestamp": 1761828412.381279,
+      "success": false,
+      "task_type": "N/A",
+      "task_target": "N/A",
+      "task_description": "N/A",
+      "files_generated": [],
+      "files_lint_failed": [],
+      "files_git_blocked": [],
+      "files_written": [],
+      "files_failed_write": [],
+      "error": "LLM desteklenmeyen/ayrıştırılamayan bir görev tanımı üretti.",
+      "duration_s": 900.46
+    },
+    {
+      "timestamp": 1761829372.904719,
+      "success": false,
+      "task_type": "N/A",
+      "task_target": "N/A",
+      "task_description": "N/A",
+      "files_generated": [],
+      "files_lint_failed": [],
+      "files_git_blocked": [],
+      "files_written": [],
+      "files_failed_write": [],
+      "error": null,
+      "duration_s": 712.68
+    },
+    {
+      "timestamp": 1761830412.249918,
+      "success": false,
+      "task_type": "YENİ_MODÜL",
+      "task_target": "baseai/core/code_analyzer.py",
+      "task_description": "BaseAI'nin harici LLM'lere olan bağımlılığını azaltmak için ilk adımı at. Python'un 'ast' (Abstract Syntax Tree) kütüphanesini kullanarak, verilen bir Python kod dizesini analiz edebilen (parse) ve içindeki fonksiyonları, sınıfları ve import'ları listeleyebilen temel bir 'CodeAnalyzer' sınıfı oluştur.",
+      "files_generated": [],
+      "files_lint_failed": [],
+      "files_git_blocked": [],
+      "files_written": [],
+      "files_failed_write": [],
+      "error": "LLM failed during task execution: ReadTimeout",
+      "duration_s": 1620.74
+    },
+    {
+      "timestamp": 1761832093.199191,
+      "success": false,
+      "task_type": "YENİ_MODÜL",
+      "task_target": "baseai/core/code_analyzer.py",
+      "task_description": "BaseAI'nin harici LLM'lere olan bağımlılığını azaltmak için ilk adımı at. Python'un 'ast' (Abstract Syntax Tree) kütüphanesini kullanarak, verilen bir Python kod dizesini analiz edebilen (parse) ve içindeki fonksiyonları, sınıfları ve import'ları listeleyebilen temel bir 'CodeAnalyzer' sınıfı oluştur.",
+      "files_generated": [
+        "BaseAI"
+      ],
+      "files_lint_failed": [],
+      "files_git_blocked": [],
+      "files_written": [],
+      "files_failed_write": [],
+      "error": "Lokal LLM yürütme sonucu beklenen hedef dosyaları içermiyor!",
+      "duration_s": 1583.65
+    },
+    {
+      "timestamp": 1761833736.868433,
+      "success": false,
+      "task_type": "YENİ_MODÜL",
+      "task_target": "baseai/core/code_analyzer.py",
+      "task_description": "BaseAI'nin harici LLM'lere olan bağımlılığını azaltmak için ilk adımı at. Python'un 'ast' (Abstract Syntax Tree) kütüphanesini kullanarak, verilen bir Python kod dizesini analiz edebilen (parse) ve içindeki fonksiyonları, sınıfları ve import'ları listeleyebilen temel bir 'CodeAnalyzer' sınıfı oluştur.",
+      "files_generated": [],
+      "files_lint_failed": [],
+      "files_git_blocked": [],
+      "files_written": [],
+      "files_failed_write": [],
+      "error": null,
+      "duration_s": 253.99
+    },
+    {
+      "timestamp": 1761834925.2597802,
+      "success": false,
+      "task_type": "YENİ_MODÜL",
+      "task_target": "baseai/core/code_analyzer.py",
+      "task_description": "BaseAI'nin harici LLM'lere olan bağımlılığını azaltmak için ilk adımı at. Python'un 'ast' (Abstract Syntax Tree) kütüphanesini kullanarak, verilen bir Python kod dizesini analiz edebilen (parse) ve içindeki fonksiyonları, sınıfları ve import'ları listeleyebilen temel bir 'CodeAnalyzer' sınıfı oluştur.",
+      "files_generated": [],
+      "files_lint_failed": [],
+      "files_git_blocked": [],
+      "files_written": [],
+      "files_failed_write": [],
+      "error": "LLM failed during task execution: JSON_FIX_PARSE_FAILED",
+      "duration_s": 673.61
+    },
+    {
+      "timestamp": 1761851707.272746,
+      "success": false,
+      "task_type": "YENİ_MODÜL",
+      "task_target": "baseai/core/code_analyzer.py",
+      "task_description": "BaseAI'nin harici LLM'lere olan bağımlılığını azaltmak için ilk adımı at. Python'un 'ast' (Abstract Syntax Tree) kütüphanesini kullanarak, verilen bir Python kod dizesini analiz edebilen (parse) ve içindeki fonksiyonları, sınıfları ve import'ları listeleyebilen temel bir 'CodeAnalyzer' sınıfı oluştur.",
+      "files_generated": [],
+      "files_lint_failed": [],
+      "files_git_blocked": [],
+      "files_written": [],
+      "files_failed_write": [],
+      "error": null,
+      "duration_s": 8.26
+    },
+    {
+      "timestamp": 1761851768.602098,
+      "success": false,
+      "task_type": "YENİ_MODÜL",
+      "task_target": "baseai/core/code_analyzer.py",
+      "task_description": "BaseAI'nin harici LLM'lere olan bağımlılığını azaltmak için ilk adımı at. Python'un 'ast' (Abstract Syntax Tree) kütüphanesini kullanarak, verilen bir Python kod dizesini analiz edebilen (parse) ve içindeki fonksiyonları, sınıfları ve import'ları listeleyebilen temel bir 'CodeAnalyzer' sınıfı oluştur.",
+      "files_generated": [],
+      "files_lint_failed": [],
+      "files_git_blocked": [],
+      "files_written": [],
+      "files_failed_write": [],
+      "error": "LLM failed during task execution: JSON_FIX_PARSE_FAILED",
+      "duration_s": 691.53
+    },
+    {
+      "timestamp": 1761852520.2091389,
+      "success": false,
+      "task_type": "YENİ_MODÜL",
+      "task_target": "baseai/core/code_analyzer.py",
+      "task_description": "BaseAI'nin harici LLM'lere olan bağımlılığını azaltmak için ilk adımı at. Python'un 'ast' (Abstract Syntax Tree) kütüphanesini kullanarak, verilen bir Python kod dizesini analiz edebilen (parse) ve içindeki fonksiyonları, sınıfları ve import'ları listeleyebilen temel bir 'CodeAnalyzer' sınıfı oluştur.",
+      "files_generated": [],
+      "files_lint_failed": [],
+      "files_git_blocked": [],
+      "files_written": [],
+      "files_failed_write": [],
+      "error": "LLM failed during task execution: JSON_FIX_PARSE_FAILED",
+      "duration_s": 711.99
+    },
+    {
+      "timestamp": 1761853292.1274838,
+      "success": false,
+      "task_type": "YENİ_MODÜL",
+      "task_target": "baseai/core/code_analyzer.py",
+      "task_description": "BaseAI'nin harici LLM'lere olan bağımlılığını azaltmak için ilk adımı at. Python'un 'ast' (Abstract Syntax Tree) kütüphanesini kullanarak, verilen bir Python kod dizesini analiz edebilen (parse) ve içindeki fonksiyonları, sınıfları ve import'ları listeleyebilen temel bir 'CodeAnalyzer' sınıfı oluştur.",
+      "files_generated": [],
+      "files_lint_failed": [],
+      "files_git_blocked": [],
+      "files_written": [],
+      "files_failed_write": [],
+      "error": null,
+      "duration_s": 698.53
+    },
+    {
+      "timestamp": 1761854371.5394719,
+      "success": false,
+      "task_type": "YENİ_MODÜL",
+      "task_target": "baseai/core/code_analyzer.py",
+      "task_description": "BaseAI'nin harici LLM'lere olan bağımlılığını azaltmak için ilk adımı at. Python'un 'ast' (Abstract Syntax Tree) kütüphanesini kullanarak, verilen bir Python kod dizesini analiz edebilen (parse) ve içindeki fonksiyonları, sınıfları ve import'ları listeleyebilen temel bir 'CodeAnalyzer' sınıfı oluştur.",
+      "files_generated": [],
+      "files_lint_failed": [],
+      "files_git_blocked": [],
+      "files_written": [],
+      "files_failed_write": [],
+      "error": null,
+      "duration_s": 201.49
+    },
+    {
+      "timestamp": 1761854878.682909,
+      "success": false,
+      "task_type": "YENİ_MODÜL",
+      "task_target": "baseai/core/code_analyzer.py",
+      "task_description": "BaseAI'nin harici LLM'lere olan bağımlılığını azaltmak için ilk adımı at. Python'un 'ast' (Abstract Syntax Tree) kütüphanesini kullanarak, verilen bir Python kod dizesini analiz edebilen (parse) ve içindeki fonksiyonları, sınıfları ve import'ları listeleyebilen temel bir 'CodeAnalyzer' sınıfı oluştur.",
+      "files_generated": [],
+      "files_lint_failed": [],
+      "files_git_blocked": [],
+      "files_written": [],
+      "files_failed_write": [],
+      "error": null,
+      "duration_s": 211.49
     }
   ]
 }

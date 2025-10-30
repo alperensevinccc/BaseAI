@@ -1,27 +1,74 @@
-# Python sanal ortamları
+# --- BaseAI Çekirdek Sistem (Cache) ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Sanal Ortamlar ve Bağımlılıklar (Kesinlikle Hariç Tutulmalı) ---
 .venv/
 venv/
 env/
+node_modules/
+pip-wheel-metadata/
 
-# Python cache dosyaları
-__pycache__/
-*.py[cod]
+# --- Güvenlik: Gizli Bilgiler ve Anahtarlar (KRİTİK) ---
+# ASLA GİZLİ BİLGİLERİ COMMIT ETME
+*.env
+.env.*
+!/.env.example
+secrets.yml
+local_settings.py
+*.pem
+*.key
+*.credential*
 
-# Geçici dosyalar ve loglar
-.tmp/
+# --- Loglar ve Çalışma Zamanı Çıktıları (Gürültü Engelleme) ---
 *.log
+*.out
+*.tmp
 *.swp
-*.swo
+*~
+# Otonom Evrim Döngüsü'nün çalışma zamanı verisi, kaynak kod DEĞİLDİR.
+evolution_data.json
 
-# İşletim sistemi dosyaları
+# --- Test, Lint ve Kod Kalitesi Raporları ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage*
+htmlcov/
+*.lcov
+nosetests.xml
+coverage.xml
+
+# --- İşletim Sistemi / Platform Artifaktları ---
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# IDE ayarları
+# --- IDE ve Editör Konfigürasyonları (Kullanıcıya Özel) ---
 .idea/
 .vscode/
+*.sublime-*
+*.project
+.settings/
 
-# Build ve dist çıktıları
+# --- Derleme ve Paketleme Artifaktları ---
 build/
 dist/
 *.egg-info/
+bin/
+obj/
+target/
+
+# --- Veri ve Yerel Veritabanları ---
+*.sqlite
+*.sqlite3
+*.db
+
+# --- Dökümantasyon ve DevOps Araçları ---
+site/
+_build/
+.serverless/
+aws-sam/
+terraform.tfstate*

@@ -4,6 +4,8 @@ BaseAI Lokal LLM Köprüsü (Ollama Entegrasyonu - Nihai Sürüm).
 Bu modül, GPT/Gemini gibi harici, maliyetli API'lere olan bağımlılığı
 ortadan kaldırır. BaseAI'nin 'Ollama' (ve Llama 3 gibi modeller) 
 üzerinden yerel olarak çalışmasını sağlar.
+
+SÜRÜM: 2.0 (Deterministik JSON Onarım Entegrasyonu)
 """
 
 from __future__ import annotations
@@ -38,19 +40,25 @@ OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3:8b-instruct-q5_K_M")
 OLLAMA_TIMEOUT = int(os.getenv("OLLAMA_TIMEOUT_SEC", "600")) 
 OLLAMA_API_URL = os.getenv("OLLAMA_API_URL", "http://127.0.0.1:11434/api/generate/") # Yönlendirme için / içerir
 
-# --- JSON İşleme ---
+# [YENİ] Programatik onarım için maksimum deneme sayısı
+MAX_JSON_FIX_ATTEMPTS = 15
+
+# --- JSON İşleme (Geliştirildi) ---
 def _clean_json_output(raw_text: Optional[str]) -> str:
     """Lokal modelin ham metin çıktısından JSON bloğunu ayıklar."""
     if not raw_text: return ""
     text = raw_text.strip()
     
+    # 1. Ham JSON bloğunu regex ile bul (en esnek yöntem)
     match = re.search(r"\{.*\}", text, re.DOTALL)
     if match:
         extracted = match.group(0).strip()
         log.debug(f"[LocalBridge|JSON] Regex ile JSON bloğu ayıklandı: {extracted[:100]}...")
-        extracted = extracted.replace(r'\"', '"').replace(r"\'", "'")
+        # [KALDIRILDI] Hatalı replace(r'\"', '"') çağrısı kaldırıldı.
+        # Bu, geçerli JSON'u bozuyordu.
         return extracted
         
+    # 2. Markdown çitlerini (```json ... ```) temizle
     try:
         if text.startswith("```"):
             parts = text.split("```")
@@ -59,7 +67,7 @@ def _clean_json_output(raw_text: Optional[str]) -> str:
                 if content.startswith("json"):
                     content = content[4:].strip()
                 log.debug(f"[LocalBridge|JSON] Markdown çitleri temizlendi: {content[:100]}...")
-                content = content.replace(r'\"', '"').replace(r"\'", "'")
+                # [KALDIRILDI] Hatalı replace çağrısı buradan da kaldırıldı.
                 return content
     except Exception:
         pass 
@@ -68,21 +76,73 @@ def _clean_json_output(raw_text: Optional[str]) -> str:
     return text
 
 def _safe_parse_json(json_string: str) -> Dict[str, str]:
-    """Temizlenmiş metni güvenli bir şekilde Dict[str, str]'ye dönüştürür."""
-    if not json_string: return {}
-    try:
-        data = json.loads(json_string)
-        if isinstance(data, dict):
-            return {str(k): str(v) for k, v in data.items()}
-        else:
+    """
+    [YENİDEN İNŞA EDİLDİ]
+    Metni güvenli bir şekilde Dict[str, str]'ye dönüştürür.
+    JSONDecodeError hatasını yakalar ve 'proaktif onarım' dener.
+    """
+    if not json_string: 
+        return {}
+
+    current_string = json_string
+    attempts = 0
+
+    while attempts < MAX_JSON_FIX_ATTEMPTS:
+        try:
+            data = json.loads(current_string)
+            if isinstance(data, dict):
+                # Başarılı onarım veya ilk denemede başarı
+                if attempts > 0:
+                    log.info(f"[LocalBridge|JSON] ✅ Programmatik JSON onarımı {attempts} denemede BAŞARILI.")
+                return {str(k): str(v) for k, v in data.items()}
+            else:
+                log.error(f"[LocalBridge|JSON] JSON geçerli ancak beklenen format (dict) değil. Tür: {type(data)}")
+                return {}
+        
+        except json.JSONDecodeError as e:
+            attempts += 1
+            pos = e.pos
+            
+            # Hata konumu dizenin dışındaysa veya onarılamaz bir hataysa dur.
+            if pos >= len(current_string):
+                log.error(f"[LocalBridge|JSON] Onarılamaz JSON hatası (pozisyon dışı): {e}")
+                log.debug(f"Hatalı JSON Metni:\n{current_string[:500]}")
+                return {}
+
+            # KÖK NEDEN: Kod içindeki kaçışsız tırnak işareti (").
+            # Hata mesajı genellikle 'Expecting ',' delimiter' olur.
+            # Hatanın olduğu pozisyondaki karakteri kontrol et.
+            # Eğer bu bir tırnak işaretiyse ve bir kaçış karakteri değilse,
+            # önüne bir kaçış karakteri (\) ekle.
+            
+            log.warning(
+                f"[LocalBridge|JSON] Programmatik Düzeltme Denemesi ({attempts}/{MAX_JSON_FIX_ATTEMPTS}): "
+                f"JSON hatası algılandı: {e.msg} (Pozisyon: {pos}). Onarım deniyor..."
+            )
+
+            # En yaygın hatayı (kaçışsız tırnak) onar
+            if current_string[pos] == '"' and (pos == 0 or current_string[pos-1] != '\\'):
+                # Hatalı pozisyona kaçış karakteri ekle
+                current_string = current_string[:pos] + '\\' + current_string[pos:]
+            elif current_string[pos] in ('\n', '\r', '\t'):
+                # Kaçışsız kontrol karakterlerini onar
+                replacement = {'\n': '\\n', '\r': '\\r', '\t': '\\t'}[current_string[pos]]
+                current_string = current_string[:pos] + replacement + current_string[pos+1:]
+            else:
+                # Başka bir karakterde beklenmedik hata, onarılamıyor.
+                log.error(f"[LocalBridge|JSON] Bilinmeyen JSON onarım hatası. Karakter: '{current_string[pos]}' (Pozisyon: {pos}). {e}")
+                log.debug(f"Hatalı JSON Metni:\n{current_string[:500]}")
+                return {}
+        
+        except Exception as e:
+            # json.loads dışında başka bir kritik hata
+            log.critical(f"[LocalBridge|JSON] JSON işlemede bilinmeyen kritik hata: {e}", exc_info=True)
             return {}
-    except json.JSONDecodeError as e:
-        log.error(f"[LocalBridge|JSON] JSON ayrıştırma hatası (JSONDecodeError): {e}")
-        log.debug(f"Hatalı JSON Metni (ilk 500 karakter):\n{json_string[:500]}")
-        return {}
-    except Exception as e:
-        log.error(f"[LocalBridge|JSON] JSON işlemede bilinmeyen kritik hata: {e}", exc_info=True)
-        return {}
+
+    log.error(f"[LocalBridge|JSON] ❌ Programmatik JSON onarımı BAŞARISIZ ({MAX_JSON_FIX_ATTEMPTS} deneme aşıldı).")
+    log.debug(f"Onarılamayan JSON Metni (ilk 500 karakter):\n{json_string[:500]}")
+    return {}
+
 
 # --- Sistem Talimatları (Lokal Model Uyumlu) ---
 SYSTEM_PROMPT_JSON = (
@@ -196,13 +256,15 @@ class LocalLLMBridge:
             )
             
             cleaned_text = _clean_json_output(raw_text) 
+            # [GÜNCELLENDİ] _safe_parse_json artık onarım yeteneğine sahip.
             data = _safe_parse_json(cleaned_text)
 
             if data:
                 log.info(f"[LocalBridge] ✅ Başarılı JSON üretimi ({len(data)} dosya).")
                 return data
 
-            log.warning("[LocalBridge] JSON ayrıştırma başarısız. Kendi kendini düzeltme deneniyor...")
+            # Eğer programmatik onarım başarısız olursa, LLM tabanlı onarımı dene.
+            log.warning("[LocalBridge] Programmatik JSON onarımı başarısız. LLM tabanlı 'Kendi kendini düzeltme' deneniyor...")
             fixer_prompt = f"Aşağıdaki metinden geçerli JSON nesnesini çıkar/düzelt:\n```\n{raw_text}\n```"
             
             fixed_raw_text = await self._internal_async_generate(
@@ -212,13 +274,16 @@ class LocalLLMBridge:
             )
             
             cleaned_fixed_text = _clean_json_output(fixed_raw_text)
+            # Programmatik onarımı burada tekrar dene
             fixed_data = _safe_parse_json(cleaned_fixed_text)
             
             if fixed_data:
-                log.info("[LocalBridge] ✅ JSON kendi kendini düzeltme BAŞARILI.")
+                log.info("[LocalBridge] ✅ LLM tabanlı kendi kendini düzeltme BAŞARILI.")
                 return fixed_data
             else:
-                log.error("[LocalBridge] ❌ JSON kendi kendini düzeltme BAŞARISIZ.")
+                log.error("[LocalBridge] ❌ Kendi kendini düzeltme (hem programmatik hem LLM) BAŞARISIZ.")
+                # Orijinal metni de logla
+                log.debug(f"Onarılamayan Orijinal Metin:\n{raw_text[:500]}")
                 return {"error": "JSON_FIX_PARSE_FAILED", "original_text": raw_text, "fixed_text": fixed_raw_text}
 
         except Exception as e:
