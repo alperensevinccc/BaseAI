@@ -311,9 +311,18 @@ async def _lint_code(code_content: str) -> tuple[bool, str, str]:
                 log.warning(f"[AutoDev|Lint] Geçici dosya silinemedi: {e}")
 
 async def _check_git_status(abs_filepath: str) -> Tuple[bool, str]:
-    """Verilen dosyanın Git durumunu kontrol eder."""
+    """
+    Verilen dosyanın Git durumunu kontrol eder.
+    """
     if not ENABLE_GIT_SAFETY_CHECK:
         return True, "Git safety check disabled."
+        
+    # --- YENİ GÜVENLİK KONTROLÜ (YENİ_MODÜL için) ---
+    # Eğer dosya henüz mevcut değilse (YENİ_MODÜL durumu), 
+    # Git kontrolü yapmaya gerek yoktur, yazmak güvenlidir.
+    if not os.path.exists(abs_filepath):
+        log.debug(f"[AutoDev|Git] Hedef dosya mevcut değil ({abs_filepath}). Yazma güvenli.")
+        return True, "File does not exist (new module)."
     git_dir = os.path.join(PROJECT_ROOT_DIR, ".git")
     if not os.path.exists(git_dir):
         log.warning("[AutoDev|Git] Proje bir Git deposu değil. Güvenlik kontrolü atlanıyor.")
