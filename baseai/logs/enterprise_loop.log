@@ -148,3 +148,228 @@
 [2025-10-31 01:01:30] [REF-ACTIVATE] baseai/policy/safety_rules.py score=0.0 syntax_ok=False
 [2025-10-31 01:01:30] [REF-ERROR] baseai/policy/safety_rules.py: name 'traceback' is not defined
 [2025-10-31 01:01:30] Scan done. files=37 fixed=0 threshold=92.0
+[2025-10-31 01:04:30] [REF-ACTIVATE] baseai/config.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:31] [REF-ERROR] baseai/config.py: name 'traceback' is not defined
+[2025-10-31 01:04:31] [REF-ACTIVATE] baseai/__init__.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:31] [REF-ERROR] baseai/__init__.py: name 'traceback' is not defined
+[2025-10-31 01:04:31] [REF-ACTIVATE] baseai/module1.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:31] [REF-ERROR] baseai/module1.py: name 'traceback' is not defined
+[2025-10-31 01:04:31] [REF-ACTIVATE] baseai/module2.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:32] [REF-ERROR] baseai/module2.py: name 'traceback' is not defined
+[2025-10-31 01:04:32] [REF-ACTIVATE] baseai/utils.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:32] [REF-ERROR] baseai/utils.py: name 'traceback' is not defined
+[2025-10-31 01:04:32] [REF-ACTIVATE] baseai/tools/baseai_runtime.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:32] [REF-ERROR] baseai/tools/baseai_runtime.py: name 'traceback' is not defined
+[2025-10-31 01:04:32] [REF-ACTIVATE] baseai/core/api_orchestrator.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:33] [REF-ERROR] baseai/core/api_orchestrator.py: name 'traceback' is not defined
+[2025-10-31 01:04:33] [REF-ACTIVATE] baseai/core/__init__.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:33] [REF-ERROR] baseai/core/__init__.py: name 'traceback' is not defined
+[2025-10-31 01:04:33] [REF-ACTIVATE] baseai/core/feature_flags.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:33] [REF-ERROR] baseai/core/feature_flags.py: name 'traceback' is not defined
+[2025-10-31 01:04:33] [REF-ACTIVATE] baseai/core/pipeline.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:34] [REF-ERROR] baseai/core/pipeline.py: name 'traceback' is not defined
+[2025-10-31 01:04:34] [REF-ACTIVATE] baseai/core/auditor.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:34] [REF-ERROR] baseai/core/auditor.py: name 'traceback' is not defined
+[2025-10-31 01:04:34] [REF-ACTIVATE] baseai/core/intent_processor.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:34] [REF-ERROR] baseai/core/intent_processor.py: name 'traceback' is not defined
+[2025-10-31 01:04:34] [REF-ACTIVATE] baseai/autodev/fix_all_now.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:35] [REF-ERROR] baseai/autodev/fix_all_now.py: name 'traceback' is not defined
+[2025-10-31 01:04:35] [REF-ACTIVATE] baseai/autodev/dual_brain_controller.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:35] [REF-ERROR] baseai/autodev/dual_brain_controller.py: name 'traceback' is not defined
+[2025-10-31 01:04:35] [REF-ACTIVATE] baseai/autodev/evolution_reflector.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:35] [REF-ERROR] baseai/autodev/evolution_reflector.py: name 'traceback' is not defined
+[2025-10-31 01:04:35] [REF-ACTIVATE] baseai/autodev/engine.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:36] [REF-ERROR] baseai/autodev/engine.py: name 'traceback' is not defined
+[2025-10-31 01:04:36] [REF-ACTIVATE] baseai/autodev/enterprise_loop.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:36] [REF-ERROR] baseai/autodev/enterprise_loop.py: name 'traceback' is not defined
+[2025-10-31 01:04:36] [REF-ACTIVATE] baseai/autodev/self_startup.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:36] [REF-ERROR] baseai/autodev/self_startup.py: name 'traceback' is not defined
+[2025-10-31 01:04:36] [REF-ACTIVATE] baseai/autodev/auto_refactor.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:37] [REF-ERROR] baseai/autodev/auto_refactor.py: name 'traceback' is not defined
+[2025-10-31 01:04:37] [REF-ACTIVATE] baseai/autodev/self_heal_loop.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:37] [REF-ERROR] baseai/autodev/self_heal_loop.py: name 'traceback' is not defined
+[2025-10-31 01:04:37] [REF-ACTIVATE] baseai/autodev/live_refactor_watchdog.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:37] [REF-ERROR] baseai/autodev/live_refactor_watchdog.py: name 'traceback' is not defined
+[2025-10-31 01:04:37] [REF-ACTIVATE] baseai/utils/config_loader.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:38] [REF-ERROR] baseai/utils/config_loader.py: name 'traceback' is not defined
+[2025-10-31 01:04:38] [REF-ACTIVATE] baseai/utils/__init__.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:38] [REF-ERROR] baseai/utils/__init__.py: name 'traceback' is not defined
+[2025-10-31 01:04:38] [REF-ACTIVATE] baseai/utils/json_utils.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:38] [REF-ERROR] baseai/utils/json_utils.py: name 'traceback' is not defined
+[2025-10-31 01:04:38] [REF-ACTIVATE] baseai/models/__init__.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:39] [REF-ERROR] baseai/models/__init__.py: name 'traceback' is not defined
+[2025-10-31 01:04:39] [REF-ACTIVATE] baseai/models/model.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:39] [REF-ERROR] baseai/models/model.py: name 'traceback' is not defined
+[2025-10-31 01:04:39] [REF-ACTIVATE] baseai/bridges/bridge_common.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:39] [REF-ERROR] baseai/bridges/bridge_common.py: name 'traceback' is not defined
+[2025-10-31 01:04:39] [REF-ACTIVATE] baseai/bridges/diagnostics.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:40] [REF-ERROR] baseai/bridges/diagnostics.py: name 'traceback' is not defined
+[2025-10-31 01:04:40] [REF-ACTIVATE] baseai/bridges/__init__.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:40] [REF-ERROR] baseai/bridges/__init__.py: name 'traceback' is not defined
+[2025-10-31 01:04:40] [REF-ACTIVATE] baseai/bridges/local_llm_bridge.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:40] [REF-ERROR] baseai/bridges/local_llm_bridge.py: name 'traceback' is not defined
+[2025-10-31 01:04:40] [REF-ACTIVATE] baseai/bridges/vscode_bridge.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:41] [REF-ERROR] baseai/bridges/vscode_bridge.py: name 'traceback' is not defined
+[2025-10-31 01:04:41] [REF-ACTIVATE] baseai/bridges/gpt.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:41] [REF-ERROR] baseai/bridges/gpt.py: name 'traceback' is not defined
+[2025-10-31 01:04:41] [REF-ACTIVATE] baseai/log/logger.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:42] [REF-ERROR] baseai/log/logger.py: name 'traceback' is not defined
+[2025-10-31 01:04:42] [REF-ACTIVATE] baseai/subai/triaport/logistics_intelligence.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:42] [REF-ERROR] baseai/subai/triaport/logistics_intelligence.py: name 'traceback' is not defined
+[2025-10-31 01:04:42] [REF-ACTIVATE] baseai/subai/binai/futures_trading_logic.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:42] [REF-ERROR] baseai/subai/binai/futures_trading_logic.py: name 'traceback' is not defined
+[2025-10-31 01:04:42] [REF-ACTIVATE] baseai/policy/guardrails.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:43] [REF-ERROR] baseai/policy/guardrails.py: name 'traceback' is not defined
+[2025-10-31 01:04:43] [REF-ACTIVATE] baseai/policy/safety_rules.py score=0.0 syntax_ok=False
+[2025-10-31 01:04:43] [REF-ERROR] baseai/policy/safety_rules.py: name 'traceback' is not defined
+[2025-10-31 01:04:43] Scan done. files=37 fixed=0 threshold=92.0
+[2025-10-31 01:07:43] [REF-ACTIVATE] baseai/config.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:43] [REF-ERROR] baseai/config.py: name 'traceback' is not defined
+[2025-10-31 01:07:43] [REF-ACTIVATE] baseai/__init__.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:44] [REF-ERROR] baseai/__init__.py: name 'traceback' is not defined
+[2025-10-31 01:07:44] [REF-ACTIVATE] baseai/module1.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:44] [REF-ERROR] baseai/module1.py: name 'traceback' is not defined
+[2025-10-31 01:07:44] [REF-ACTIVATE] baseai/module2.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:44] [REF-ERROR] baseai/module2.py: name 'traceback' is not defined
+[2025-10-31 01:07:44] [REF-ACTIVATE] baseai/utils.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:45] [REF-ERROR] baseai/utils.py: name 'traceback' is not defined
+[2025-10-31 01:07:45] [REF-ACTIVATE] baseai/tools/baseai_runtime.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:45] [REF-ERROR] baseai/tools/baseai_runtime.py: name 'traceback' is not defined
+[2025-10-31 01:07:45] [REF-ACTIVATE] baseai/core/api_orchestrator.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:45] [REF-ERROR] baseai/core/api_orchestrator.py: name 'traceback' is not defined
+[2025-10-31 01:07:45] [REF-ACTIVATE] baseai/core/__init__.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:46] [REF-ERROR] baseai/core/__init__.py: name 'traceback' is not defined
+[2025-10-31 01:07:46] [REF-ACTIVATE] baseai/core/feature_flags.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:46] [REF-ERROR] baseai/core/feature_flags.py: name 'traceback' is not defined
+[2025-10-31 01:07:46] [REF-ACTIVATE] baseai/core/pipeline.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:46] [REF-ERROR] baseai/core/pipeline.py: name 'traceback' is not defined
+[2025-10-31 01:07:46] [REF-ACTIVATE] baseai/core/auditor.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:47] [REF-ERROR] baseai/core/auditor.py: name 'traceback' is not defined
+[2025-10-31 01:07:47] [REF-ACTIVATE] baseai/core/intent_processor.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:47] [REF-ERROR] baseai/core/intent_processor.py: name 'traceback' is not defined
+[2025-10-31 01:07:47] [REF-ACTIVATE] baseai/autodev/fix_all_now.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:47] [REF-ERROR] baseai/autodev/fix_all_now.py: name 'traceback' is not defined
+[2025-10-31 01:07:47] [REF-ACTIVATE] baseai/autodev/dual_brain_controller.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:48] [REF-ERROR] baseai/autodev/dual_brain_controller.py: name 'traceback' is not defined
+[2025-10-31 01:07:48] [REF-ACTIVATE] baseai/autodev/evolution_reflector.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:48] [REF-ERROR] baseai/autodev/evolution_reflector.py: name 'traceback' is not defined
+[2025-10-31 01:07:48] [REF-ACTIVATE] baseai/autodev/engine.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:48] [REF-ERROR] baseai/autodev/engine.py: name 'traceback' is not defined
+[2025-10-31 01:07:48] [REF-ACTIVATE] baseai/autodev/enterprise_loop.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:49] [REF-ERROR] baseai/autodev/enterprise_loop.py: name 'traceback' is not defined
+[2025-10-31 01:07:49] [REF-ACTIVATE] baseai/autodev/self_startup.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:49] [REF-ERROR] baseai/autodev/self_startup.py: name 'traceback' is not defined
+[2025-10-31 01:07:49] [REF-ACTIVATE] baseai/autodev/auto_refactor.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:49] [REF-ERROR] baseai/autodev/auto_refactor.py: name 'traceback' is not defined
+[2025-10-31 01:07:49] [REF-ACTIVATE] baseai/autodev/self_heal_loop.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:50] [REF-ERROR] baseai/autodev/self_heal_loop.py: name 'traceback' is not defined
+[2025-10-31 01:07:50] [REF-ACTIVATE] baseai/autodev/live_refactor_watchdog.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:50] [REF-ERROR] baseai/autodev/live_refactor_watchdog.py: name 'traceback' is not defined
+[2025-10-31 01:07:50] [REF-ACTIVATE] baseai/utils/config_loader.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:50] [REF-ERROR] baseai/utils/config_loader.py: name 'traceback' is not defined
+[2025-10-31 01:07:50] [REF-ACTIVATE] baseai/utils/__init__.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:51] [REF-ERROR] baseai/utils/__init__.py: name 'traceback' is not defined
+[2025-10-31 01:07:51] [REF-ACTIVATE] baseai/utils/json_utils.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:51] [REF-ERROR] baseai/utils/json_utils.py: name 'traceback' is not defined
+[2025-10-31 01:07:51] [REF-ACTIVATE] baseai/models/__init__.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:51] [REF-ERROR] baseai/models/__init__.py: name 'traceback' is not defined
+[2025-10-31 01:07:51] [REF-ACTIVATE] baseai/models/model.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:51] [REF-ERROR] baseai/models/model.py: name 'traceback' is not defined
+[2025-10-31 01:07:52] [REF-ACTIVATE] baseai/bridges/bridge_common.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:52] [REF-ERROR] baseai/bridges/bridge_common.py: name 'traceback' is not defined
+[2025-10-31 01:07:52] [REF-ACTIVATE] baseai/bridges/diagnostics.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:52] [REF-ERROR] baseai/bridges/diagnostics.py: name 'traceback' is not defined
+[2025-10-31 01:07:52] [REF-ACTIVATE] baseai/bridges/__init__.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:52] [REF-ERROR] baseai/bridges/__init__.py: name 'traceback' is not defined
+[2025-10-31 01:07:52] [REF-ACTIVATE] baseai/bridges/local_llm_bridge.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:53] [REF-ERROR] baseai/bridges/local_llm_bridge.py: name 'traceback' is not defined
+[2025-10-31 01:07:53] [REF-ACTIVATE] baseai/bridges/vscode_bridge.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:53] [REF-ERROR] baseai/bridges/vscode_bridge.py: name 'traceback' is not defined
+[2025-10-31 01:07:53] [REF-ACTIVATE] baseai/bridges/gpt.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:53] [REF-ERROR] baseai/bridges/gpt.py: name 'traceback' is not defined
+[2025-10-31 01:07:53] [REF-ACTIVATE] baseai/log/logger.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:54] [REF-ERROR] baseai/log/logger.py: name 'traceback' is not defined
+[2025-10-31 01:07:54] [REF-ACTIVATE] baseai/subai/triaport/logistics_intelligence.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:54] [REF-ERROR] baseai/subai/triaport/logistics_intelligence.py: name 'traceback' is not defined
+[2025-10-31 01:07:54] [REF-ACTIVATE] baseai/subai/binai/futures_trading_logic.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:54] [REF-ERROR] baseai/subai/binai/futures_trading_logic.py: name 'traceback' is not defined
+[2025-10-31 01:07:54] [REF-ACTIVATE] baseai/policy/guardrails.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:55] [REF-ERROR] baseai/policy/guardrails.py: name 'traceback' is not defined
+[2025-10-31 01:07:55] [REF-ACTIVATE] baseai/policy/safety_rules.py score=0.0 syntax_ok=False
+[2025-10-31 01:07:55] [REF-ERROR] baseai/policy/safety_rules.py: name 'traceback' is not defined
+[2025-10-31 01:07:55] Scan done. files=37 fixed=0 threshold=92.0
+[2025-10-31 01:10:55] [REF-ACTIVATE] baseai/config.py score=0.0 syntax_ok=False
+[2025-10-31 01:10:55] [REF-ERROR] baseai/config.py: name 'traceback' is not defined
+[2025-10-31 01:10:55] [REF-ACTIVATE] baseai/__init__.py score=0.0 syntax_ok=False
+[2025-10-31 01:10:56] [REF-ERROR] baseai/__init__.py: name 'traceback' is not defined
+[2025-10-31 01:10:56] [REF-ACTIVATE] baseai/module1.py score=0.0 syntax_ok=False
+[2025-10-31 01:10:56] [REF-ERROR] baseai/module1.py: name 'traceback' is not defined
+[2025-10-31 01:10:56] [REF-ACTIVATE] baseai/module2.py score=0.0 syntax_ok=False
+[2025-10-31 01:10:56] [REF-ERROR] baseai/module2.py: name 'traceback' is not defined
+[2025-10-31 01:10:56] [REF-ACTIVATE] baseai/utils.py score=0.0 syntax_ok=False
+[2025-10-31 01:10:57] [REF-ERROR] baseai/utils.py: name 'traceback' is not defined
+[2025-10-31 01:10:57] [REF-ACTIVATE] baseai/tools/baseai_runtime.py score=0.0 syntax_ok=False
+[2025-10-31 01:10:57] [REF-ERROR] baseai/tools/baseai_runtime.py: name 'traceback' is not defined
+[2025-10-31 01:10:57] [REF-ACTIVATE] baseai/core/api_orchestrator.py score=0.0 syntax_ok=False
+[2025-10-31 01:10:58] [REF-ERROR] baseai/core/api_orchestrator.py: name 'traceback' is not defined
+[2025-10-31 01:10:58] [REF-ACTIVATE] baseai/core/__init__.py score=0.0 syntax_ok=False
+[2025-10-31 01:10:58] [REF-ERROR] baseai/core/__init__.py: name 'traceback' is not defined
+[2025-10-31 01:10:58] [REF-ACTIVATE] baseai/core/feature_flags.py score=0.0 syntax_ok=False
+[2025-10-31 01:10:58] [REF-ERROR] baseai/core/feature_flags.py: name 'traceback' is not defined
+[2025-10-31 01:10:58] [REF-ACTIVATE] baseai/core/pipeline.py score=0.0 syntax_ok=False
+[2025-10-31 01:10:58] [REF-ERROR] baseai/core/pipeline.py: name 'traceback' is not defined
+[2025-10-31 01:10:58] [REF-ACTIVATE] baseai/core/auditor.py score=0.0 syntax_ok=False
+[2025-10-31 01:10:59] [REF-ERROR] baseai/core/auditor.py: name 'traceback' is not defined
+[2025-10-31 01:10:59] [REF-ACTIVATE] baseai/core/intent_processor.py score=0.0 syntax_ok=False
+[2025-10-31 01:10:59] [REF-ERROR] baseai/core/intent_processor.py: name 'traceback' is not defined
+[2025-10-31 01:10:59] [REF-ACTIVATE] baseai/autodev/fix_all_now.py score=0.0 syntax_ok=False
+[2025-10-31 01:10:59] [REF-ERROR] baseai/autodev/fix_all_now.py: name 'traceback' is not defined
+[2025-10-31 01:10:59] [REF-ACTIVATE] baseai/autodev/dual_brain_controller.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:00] [REF-ERROR] baseai/autodev/dual_brain_controller.py: name 'traceback' is not defined
+[2025-10-31 01:11:00] [REF-ACTIVATE] baseai/autodev/evolution_reflector.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:00] [REF-ERROR] baseai/autodev/evolution_reflector.py: name 'traceback' is not defined
+[2025-10-31 01:11:00] [REF-ACTIVATE] baseai/autodev/engine.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:00] [REF-ERROR] baseai/autodev/engine.py: name 'traceback' is not defined
+[2025-10-31 01:11:00] [REF-ACTIVATE] baseai/autodev/enterprise_loop.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:01] [REF-ERROR] baseai/autodev/enterprise_loop.py: name 'traceback' is not defined
+[2025-10-31 01:11:01] [REF-ACTIVATE] baseai/autodev/self_startup.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:01] [REF-ERROR] baseai/autodev/self_startup.py: name 'traceback' is not defined
+[2025-10-31 01:11:01] [REF-ACTIVATE] baseai/autodev/auto_refactor.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:01] [REF-ERROR] baseai/autodev/auto_refactor.py: name 'traceback' is not defined
+[2025-10-31 01:11:01] [REF-ACTIVATE] baseai/autodev/self_heal_loop.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:02] [REF-ERROR] baseai/autodev/self_heal_loop.py: name 'traceback' is not defined
+[2025-10-31 01:11:02] [REF-ACTIVATE] baseai/autodev/live_refactor_watchdog.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:02] [REF-ERROR] baseai/autodev/live_refactor_watchdog.py: name 'traceback' is not defined
+[2025-10-31 01:11:02] [REF-ACTIVATE] baseai/utils/config_loader.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:02] [REF-ERROR] baseai/utils/config_loader.py: name 'traceback' is not defined
+[2025-10-31 01:11:02] [REF-ACTIVATE] baseai/utils/__init__.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:03] [REF-ERROR] baseai/utils/__init__.py: name 'traceback' is not defined
+[2025-10-31 01:11:03] [REF-ACTIVATE] baseai/utils/json_utils.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:03] [REF-ERROR] baseai/utils/json_utils.py: name 'traceback' is not defined
+[2025-10-31 01:11:03] [REF-ACTIVATE] baseai/models/__init__.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:03] [REF-ERROR] baseai/models/__init__.py: name 'traceback' is not defined
+[2025-10-31 01:11:03] [REF-ACTIVATE] baseai/models/model.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:04] [REF-ERROR] baseai/models/model.py: name 'traceback' is not defined
+[2025-10-31 01:11:04] [REF-ACTIVATE] baseai/bridges/bridge_common.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:04] [REF-ERROR] baseai/bridges/bridge_common.py: name 'traceback' is not defined
+[2025-10-31 01:11:04] [REF-ACTIVATE] baseai/bridges/diagnostics.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:04] [REF-ERROR] baseai/bridges/diagnostics.py: name 'traceback' is not defined
+[2025-10-31 01:11:04] [REF-ACTIVATE] baseai/bridges/__init__.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:05] [REF-ERROR] baseai/bridges/__init__.py: name 'traceback' is not defined
+[2025-10-31 01:11:05] [REF-ACTIVATE] baseai/bridges/local_llm_bridge.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:05] [REF-ERROR] baseai/bridges/local_llm_bridge.py: name 'traceback' is not defined
+[2025-10-31 01:11:05] [REF-ACTIVATE] baseai/bridges/vscode_bridge.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:05] [REF-ERROR] baseai/bridges/vscode_bridge.py: name 'traceback' is not defined
+[2025-10-31 01:11:05] [REF-ACTIVATE] baseai/bridges/gpt.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:06] [REF-ERROR] baseai/bridges/gpt.py: name 'traceback' is not defined
+[2025-10-31 01:11:06] [REF-ACTIVATE] baseai/log/logger.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:06] [REF-ERROR] baseai/log/logger.py: name 'traceback' is not defined
+[2025-10-31 01:11:06] [REF-ACTIVATE] baseai/subai/triaport/logistics_intelligence.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:06] [REF-ERROR] baseai/subai/triaport/logistics_intelligence.py: name 'traceback' is not defined
+[2025-10-31 01:11:06] [REF-ACTIVATE] baseai/subai/binai/futures_trading_logic.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:07] [REF-ERROR] baseai/subai/binai/futures_trading_logic.py: name 'traceback' is not defined
+[2025-10-31 01:11:07] [REF-ACTIVATE] baseai/policy/guardrails.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:07] [REF-ERROR] baseai/policy/guardrails.py: name 'traceback' is not defined
+[2025-10-31 01:11:07] [REF-ACTIVATE] baseai/policy/safety_rules.py score=0.0 syntax_ok=False
+[2025-10-31 01:11:07] [REF-ERROR] baseai/policy/safety_rules.py: name 'traceback' is not defined
+[2025-10-31 01:11:07] Scan done. files=37 fixed=0 threshold=92.0
