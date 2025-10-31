@@ -1,7 +1,1 @@
-import ast
-class CodeAnalyzer:
-    def __init__(self, code):
-        self.code = code
-    def parse(self):
-        tree = ast.parse(self.code)
-        return tree
+{"import ast\nimport inspect\nimport re\nfrom typing import Dict, List\n\nclass CodeAnalyzer:\n    def __init__(self, code: str):\n        self.code = code\n        self.ast_tree = None\n\n    def parse_code(self) -> None:\n        try:\n            self.ast_tree = ast.parse(self.code)\n        except SyntaxError as e:\n            print(f'Syntax Error: {e}\n')\n\n    def get_functions(self) -> List[str]:\n        functions = []\n        for node in ast.walk(self.ast_tree):\n            if isinstance(node, ast.FunctionDef):\n                functions.append(node.name)\n        return functions\n\n    def get_classes(self) -> List[str]:\n        classes = []\n        for node in ast.walk(self.ast_tree):\n            if isinstance(node, ast.ClassDef):\n                classes.append(node.name)\n        return classes\n\n    def get_imports(self) -> Dict[str, str]:\n        imports = {}\n        for node in ast.walk(self.ast_tree):\n            if isinstance(node, ast.Import):\n                for alias in node.names:\n                    imports[alias.name] = alias.asname or alias.name\n        return imports\n": '', 'baseai/core/code_analyzer': {'__init__': None, 'parse_code': None, 'get_functions': None, 'get_classes': None, 'get_imports': None}}
