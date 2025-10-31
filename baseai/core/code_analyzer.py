@@ -1,12 +1,19 @@
+
 import ast
 
 class CodeAnalyzer:
     def __init__(self, code: str):
         self.code = code
 
-    def parse(self) -> dict:
+    def analyze(self) -> dict:
         tree = ast.parse(self.code)
-        return {
-            'functions': [node.id for node in tree.body if isinstance(node, ast.FunctionDef)],
-            'classes': [node.name for node in tree.body if isinstance(node, ast.ClassDef)],
-            'imports': [line.split('=')[0].strip() for line in self.code.splitlines() if line.startswith('import') or line.startswith('from')]}
+        modules = {}
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Module):
+                module_name = node.name
+                if module_name not in modules:
+                    modules[module_name] = []
+                for child in ast.iter_child_nodes(node):
+                    if isinstance(child, (ast.FunctionDef, ast.ClassDef)):
+                        modules[module_name].append(str(child.name))
+        return modules
