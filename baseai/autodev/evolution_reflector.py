@@ -564,7 +564,7 @@ async def run_once() -> Dict[str, Any]:
                 commit_success = False
                 if abs_paths_to_commit:
                     # _git_add_commit artık push işlemini de içeriyor ve başarı/başarısızlık döndürüyor
-                    commit_success = await _git_add_commit(abs_filepaths, result['task_description'])
+                    commit_success = await _git_add_commit(abs_paths_to_commit, result['task_description'])
                 
                 if commit_success:
                     result["success"] = True
