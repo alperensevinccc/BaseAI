@@ -1,19 +1,23 @@
+
 import ast
+import logging
+
+log = logging.getLogger(__name__)
+
 class CodeAnalyzer:
+    """
+    Kod tabanını (AST kullanarak) analiz eden temel BaseAI modülü.
+    Bu dosya, LLM kilitlenmesini aşmak için manuel olarak enjekte edilmiştir.
+    """
     def __init__(self, code_string: str):
-        self.ast_tree = ast.parse(code_string)
+        self.code_string = code_string
+        try:
+            self.ast_tree = ast.parse(self.code_string)
+        except SyntaxError as e:
+            log.error(f"AST Ayrıştırma Hatası: {e}")
+            self.ast_tree = None
 
-    def get_functions(self) -> list[ast.FunctionDef]:
-        return [node for node in self.ast_tree.body if isinstance(node, ast.FunctionDef)]
-
-    def get_classes(self) -> list[ast.ClassDef]:
-        return [node for node in self.ast_tree.body if isinstance(node, ast.ClassDef)]
-
-    def get_imports(self) -> list[str]:
-        imports = set()
-        for node in self.ast_tree.body:
-            if isinstance(node, ast.Import):
-                imports.update({alias.name for alias in node.names})
-            elif isinstance(node, ast.ImportFrom):
-                imports.add(node.module)
-        return list(imports)
+    def get_functions(self) -> list:
+        if not self.ast_tree:
+            return []
+        return [node.name for node in ast.walk(self.ast_tree) if isinstance(node, ast.FunctionDef)]
