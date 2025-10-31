@@ -1,0 +1,1 @@
+{'import': 'importlib', 'class': 'CodeAnalyzer', 'methods': [{'name': '__init__', 'params': ['self', 'code']}, {'name': 'parse', 'return': 'tree'}, {'name': 'get_functions', 'return': 'functions'}, {'name': 'get_classes', 'return': 'classes'}, {'name': 'get_imports', 'return': 'imports'}]}
