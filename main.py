@@ -1,21 +1,20 @@
 import sys
-from typing import Optional
+from typing import Optional, Tuple, Any
 
 try:
     from config import config
     from core.intent_processor import IntentProcessor
     from core.api_orchestrator import ApiOrchestrator
     from core.auditor import CodeAuditor
+    from core.file_writer import FileWriter  # <-- [ONARIM] Import aktifleştirildi
 except ImportError as e:
     print(f"[BaseAI: KRİTİK HATA] Çekirdek modüller yüklenemedi: {e}")
     print("Lütfen 'requirements.txt' bağımlılıklarının kurulu olduğundan emin olun.")
+    print("Ayrıca 'core/intent_processor.py', 'core/auditor.py' ve 'core/file_writer.py' dosyalarının mevcut olduğunu doğrulayın.")
     sys.exit(1)
 except Exception as e:
     print(f"[BaseAI: KRİTİK HATA] Beklenmedik başlatma hatası: {e}")
     sys.exit(1)
-
-# TODO: Gelecek adımda 'FileWriter' modülü buraya eklenecek.
-# from core.file_writer import FileWriter
 
 
 class BaseAI:
@@ -36,17 +35,19 @@ class BaseAI:
         self.processor = IntentProcessor()
         self.orchestrator = ApiOrchestrator()
         self.auditor = CodeAuditor()
-        # self.writer = FileWriter() # Gelecek adım
+        self.writer = FileWriter()  # <-- [ONARIM] Modül başlatıldı
 
         print("\n--- [BaseAI Çekirdeği Başarıyla Başlatıldı] ---")
         print(f"[BaseAI] Durum: Aktif. Ortam: {self.config.environment}")
-        print("[BaseAI] Stratejik Çevirmen, Orkestratör ve Denetçi modülleri devrede.")
+        print("[BaseAI] Stratejik Çevirmen, Orkestratör, Denetçi ve Yazıcı modülleri devrede.")
 
-    def execute_full_pipeline(self, raw_intent: str) -> Optional[str]:
+    def execute_full_pipeline(self, raw_intent: str) -> Tuple[Optional[str], Optional[Any]]:
         """
         BaseAI'nin tam üretim boru hattını çalıştırır.
         Niyet -> Blueprint -> Ham Kod -> Denetim -> Onaylanmış Kod
+        [ONARIM] Artık (approved_code, blueprint) döndürür.
         """
+        blueprint: Optional[Any] = None
         try:
             # 1. NİYET İŞLEME (PROCESS)
             print("-" * 30)
@@ -62,7 +63,7 @@ class BaseAI:
                 print(
                     "[BaseAI Pipeline: BAŞARISIZ] Orkestratör kod üretemedi. API bağlantısını kontrol edin."
                 )
-                return None
+                return None, None
 
             # 3. DENETİM (AUDIT)
             print("\n[BaseAI Pipeline: Adım 3/3] Kod denetleniyor...")
@@ -70,18 +71,19 @@ class BaseAI:
 
             print("-" * 30)
             if is_valid:
-                print("\n[BaseAI Pipeline: BAŞARILI]")
+                print("\n[BaseAI Pipeline: BAŞARILI (DENETİM)]")
                 print(f"Denetçi Raporu: {report}")
-                return audited_code
+                # [ONARIM] Kodu ve planı birlikte döndür
+                return audited_code, blueprint
             else:
-                print("\n[BaseAI Pipeline: BAŞARISIZ]")
+                print("\n[BaseAI Pipeline: BAŞARISIZ (DENETİM)]")
                 print(f"Denetçi Raporu: {report}")
                 print("Üretilen kod reddedildi. Proje dosyalarına yazılmayacak.")
-                return None
+                return None, None
 
         except Exception as e:
             print(f"[BaseAI Pipeline: KRİTİK HATA] Boru hattı çalışırken çöktü: {e}")
-            return None
+            return None, None
 
 
 def run_interactive_mode(base_ai: BaseAI):
@@ -102,14 +104,26 @@ def run_interactive_mode(base_ai: BaseAI):
                 continue
 
             # Tam boru hattını çalıştır
-            approved_code = base_ai.execute_full_pipeline(raw_intent)
+            # [ONARIM] Artık kod ve blueprint'i alıyor
+            approved_code, blueprint = base_ai.execute_full_pipeline(raw_intent)
 
-            if approved_code:
-                print("\n--- [ONAYLANMIŞ KOD ÇIKTISI] ---")
-                print(approved_code)
-                print("---------------------------------")
-                # Gelecek Adım: Bu kod 'FileWriter'a gönderilecek.
-                # self.writer.write_to_project(approved_code, blueprint)
+            if approved_code and blueprint:
+                # [ONARIM] Yazıcı modülü aktifleştirildi.
+                # Otonom döngü tamamlandı.
+                print("\n[BaseAI Pipeline: Adım 4/4] Kod yazıcıya gönderiliyor...")
+                output_path = base_ai.writer.write_to_project(approved_code, blueprint)
+
+                if output_path:
+                    print(f"\n--- [OTONOM ÜRETİM TAMAMLANDI] ---")
+                    print(f"Sonuç: {output_path.relative_to(PROJECT_ROOT)}")
+                    print("---------------------------------")
+                else:
+                    print(f"\n--- [YAZMA HATASI] ---")
+                    print("Kod denetimden geçti ancak dosyaya yazılamadı.")
+                    print("----------------------")
+            
+            elif approved_code and not blueprint:
+                 print("\n[BaseAI: KRİTİK HATA] Kod üretildi ancak 'blueprint' kayıp. Yazma işlemi yapılamıyor.")
 
         except KeyboardInterrupt:
             print("\n[BaseAI] Manuel kapatma algılandı. Oturum sonlandırılıyor.")
