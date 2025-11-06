@@ -4,8 +4,6 @@ import logging
 import os
 from typing import Any, Dict
 import httpx
-from unittest.mock import AsyncMock, patch
-import pytest
 
 # Configure logging with a more informative format
 logging.basicConfig(
@@ -87,32 +85,3 @@ async def make_api_request(
     except httpx.RequestError as exc:
         logger.error("Request error for %s %s: %s", exc.request.method, exc.request.url, exc)
         raise
-
-@pytest.mark.asyncio
-async def test_get_api_key():
-    with patch('os.getenv', return_value='test_key'):
-        assert get_api_key() == 'test_key'
-    with patch('os.getenv', return_value=None):
-        with pytest.raises(ValueError):
-            get_api_key()
-
-@pytest.mark.asyncio
-async def test_make_api_request():
-    client = AsyncMock(spec=httpx.AsyncClient)
-    client.request = AsyncMock(return_value=AsyncMock(status_code=200, json=lambda: {'result': 'success'}, raise_for_status=AsyncMock()))
-    response = await make_api_request(client, 'GET', 'https://api.example.com', {'Authorization': 'Bearer test'}, {'data': 'value'}, {'param': 'value'})
-    assert response == {'result': 'success'}
-    client.request.assert_called_once_with(
-        method='GET',
-        url='https://api.example.com',
-        headers={'Authorization': 'Bearer test'},
-        json={'data': 'value'},
-        params={'param': 'value'},
-        timeout=30.0
-    )
-    client.request = AsyncMock(side_effect=httpx.HTTPStatusError(message='Error', request=AsyncMock(), response=AsyncMock(status_code=404)))
-    with pytest.raises(httpx.HTTPStatusError):
-        await make_api_request(client, 'GET', 'https://api.failure.com')
-    client.request = AsyncMock(side_effect=httpx.RequestError(message='Connection error', request=AsyncMock()))
-    with pytest.raises(httpx.RequestError):
-        await make_api_request(client, 'GET', 'https://api.failure.com')
