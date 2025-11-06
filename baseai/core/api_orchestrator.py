@@ -85,3 +85,4 @@ async def make_api_request(
     except httpx.RequestError as exc:
         logger.error("Request error for %s %s: %s", exc.request.method, exc.request.url, exc)
         raise
+        
