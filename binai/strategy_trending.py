@@ -1,104 +1,142 @@
 """
-BaseAI - BinAI v11.0 Mimari Yükseltmesi
-"Trend Takip" (Trend Following) Stratejisi
-Strateji: MA Crossover + Güven Puanı (v12.3 Onarımı)
+BaseAI - BinAI v21.0 Mimari Yükseltmesi
+"Trend Takip" (Trend Following) Stratejisi (Enterprise Core)
+Strateji: MA Crossover + RSI Filtresi + Hacim Onayı (pandas-ta optimizeli)
+
+v21.0 Yükseltmeleri:
+- 'strategy.py' (v21.0 Yönlendirici) ile tam entegrasyon.
+- Fonksiyon imzası 'analyze(df, params)' olarak güncellendi.
+- 'pd.DataFrame' oluşturma gibi gereksiz (redundant) Veri Hazırlama adımları 
+  kaldırıldı (Artık 'df' hazır geliyor).
+- Tüm 'yerel' (manual) TA hesaplamaları (MA, RSI, Hacim) 'pandas-ta'
+  kütüphanesi ile değiştirildi (%100 doğru ve çok daha hızlı).
+- Sütun adları, 'config' dosyasına göre 'dinamik' hale getirildi.
 """
+
 import pandas as pd
-import config
-from logger import log
-import numpy as np # RSI hesaplaması için
+import pandas_ta as ta # v21.0: Endüstri standardı TA kütüphanesi
+from typing import Dict, Any, Tuple
 
-# v9.0 GÜNCELLEMESİ: Fonksiyon 'params' (parametreler) sözlüğü kabul ediyor
-def analyze_symbol(symbol, klines_data, params={}):
+# === BİNAİ MODÜLLERİ ===
+try:
+    from binai import config
+    from binai.logger import log
+except ImportError as e:
+    print(f"KRİTİK HATA (strategy_trending.py): BinAI modülleri bulunamadı. {e}")
+    sys.exit(1)
+
+
+# === ANA ANALİZ MOTORU (v21.0) ===
+
+def analyze(df: pd.DataFrame, params: Dict[str, Any]) -> Tuple[str, float]:
+    """
+    "Trend Takip" (Trend Following) stratejisini çalıştırır.
+    'strategy.py' (v21.0 Yönlendirici) tarafından çağrılır.
     
-    # 1. VERİ HAZIRLAMA
-    slow_ma_period = int(params.get('SLOW_MA_PERIOD', config.SLOW_MA_PERIOD))
+    Parametreler:
+        df (pd.DataFrame): 'strategy.py' tarafından önceden hazırlanmış
+                           ve ADX/ATR içeren ana DataFrame.
+        params (Dict): Bu sembol için 'Hafıza'dan (DB) veya 'config'den
+                       gelen optimize edilmiş/varsayılan parametreler.
+                       
+    Döndürür (Return):
+        (str, float): (Sinyal ["LONG", "SHORT", "NEUTRAL"], Güven Puanı [0.0 - 1.0])
+    """
     
-    if len(klines_data) < slow_ma_period + 2:
-        return "NEUTRAL", 0.0, 0.0
+    # 1. PARAMETRELERİ AL (v21.0)
+    # Gerekli parametreleri 'params' (DB'den) veya 'config' (varsayılan) al
+    try:
+        fast_ma_period = int(params.get('FAST_MA_PERIOD', config.FAST_MA_PERIOD))
+        slow_ma_period = int(params.get('SLOW_MA_PERIOD', config.SLOW_MA_PERIOD))
+        rsi_period = int(params.get('RSI_PERIOD', config.RSI_PERIOD))
+        volume_avg_period = int(params.get('VOLUME_AVG_PERIOD', config.VOLUME_AVG_PERIOD))
+        
+        min_signal_confidence = float(params.get('MIN_SIGNAL_CONFIDENCE', config.MIN_SIGNAL_CONFIDENCE))
+        rsi_overbought = float(params.get('RSI_OVERBOUGHT', config.RSI_OVERBOUGHT))
+        rsi_oversold = float(params.get('RSI_OVERSOLD', config.RSI_OVERSOLD))
+        
+    except Exception as e:
+        log.error(f"Trend stratejisi parametreleri okunamadı: {e}", exc_info=True)
+        return "NEUTRAL", 0.0
 
-    df = pd.DataFrame(klines_data, columns=[
-        'OpenTime', 'Open', 'High', 'Low', 'Close', 'Volume', 
-        'CloseTime', 'QuoteAssetVolume', 'NumTrades', 
-        'TakerBuyBase', 'TakerBuyQuote', 'Ignore'
-    ])
-
-    df['Close'] = pd.to_numeric(df['Close'])
-    df['Volume'] = pd.to_numeric(df['Volume'])
-
-    # 2. TEKNİK ANALİZ (Yerel Pandas - v9.0 Parametreleri)
+    # 2. TEKNİK ANALİZ (v21.0 - pandas-ta)
+    # (v21.0: 'df' zaten hazır, 'prepare_dataframe' adımı yok)
     
-    # A. Hareketli Ortalamalar (MA)
-    fast_ma_period = int(params.get('FAST_MA_PERIOD', config.FAST_MA_PERIOD))
-    df['SMA_FAST'] = df['Close'].rolling(window=fast_ma_period).mean()
-    df['SMA_SLOW'] = df['Close'].rolling(window=slow_ma_period).mean()
+    try:
+        # Dinamik sütun adları (Enterprise Standardı)
+        fast_ma_col = f"SMA_{fast_ma_period}"
+        slow_ma_col = f"SMA_{slow_ma_period}"
+        rsi_col = f"RSI_{rsi_period}"
+        vol_col = f"VOL_AVG_{volume_avg_period}"
+
+        # A. Hareketli Ortalamalar (MA)
+        df[fast_ma_col] = ta.sma(df['Close'], length=fast_ma_period)
+        df[slow_ma_col] = ta.sma(df['Close'], length=slow_ma_period)
+        
+        # B. Hacim Ortalaması (Volume Analysis - Süper Özellik 1)
+        # (ta.sma'yı 'Volume' sütununda çalıştırıyoruz)
+        df[vol_col] = ta.sma(df['Volume'], length=volume_avg_period)
+
+        # C. RSI
+        df[rsi_col] = ta.rsi(df['Close'], length=rsi_period)
+
+        # Hesaplamalardan sonra oluşabilecek 'NaN' (Boş) değerleri temizle
+        df.dropna(inplace=True)
+        if df.empty or len(df) < 2:
+            log.debug(f"Trend analizi için veri yetersiz (NaN drop sonrası).")
+            return "NEUTRAL", 0.0
+
+    except Exception as e:
+        log.error(f"Trend stratejisi TA (pandas-ta) hesaplaması başarısız: {e}", exc_info=True)
+        return "NEUTRAL", 0.0
+
+    # 3. SİNYAL VE GÜVEN PUANI HESAPLAMA (v11.0 Mantığı, v21.0 Kodu)
     
-    # B. Hacim Ortalaması (Volume Analysis)
-    volume_avg_period = int(params.get('VOLUME_AVG_PERIOD', config.VOLUME_AVG_PERIOD))
-    df['VOLUME_AVG'] = df['Volume'].rolling(window=volume_avg_period).mean()
-
-    # C. RSI (Yerel Pandas ile Hesaplama)
-    rsi_period = int(params.get('RSI_PERIOD', config.RSI_PERIOD))
-    delta = df['Close'].diff()
-    gain = (delta.where(delta > 0, 0)).rolling(window=rsi_period).mean()
-    loss = (-delta.where(delta < 0, 0)).rolling(window=rsi_period).mean()
-    
-    # Sıfıra bölme hatasını (division by zero) önle
-    rs = gain / loss
-    df['RSI'] = 100 - (100 / (1 + rs))
-    df['RSI'] = df['RSI'].replace([np.inf, -np.inf], 100).fillna(50) # Hataları ve NaN'leri yönet
-
-    df.dropna(inplace=True)
-    if df.empty or len(df) < 2:
-        log.debug(f"{symbol} için analiz verisi yetersiz (NA drop sonrası).")
-        return "NEUTRAL", 0.0, 0.0
-
     last_row = df.iloc[-1]
     prev_row = df.iloc[-2]
-    current_price = last_row['Close']
 
-    # 3. GÜVEN PUANI HESAPLAMA (v9.0 Parametreleri)
-    
     signal = "NEUTRAL"
     confidence = 0.0
     
-    is_long_crossover = (prev_row['SMA_FAST'] <= prev_row['SMA_SLOW']) and (last_row['SMA_FAST'] > last_row['SMA_SLOW'])
+    # === LONG Sinyal Koşulu ===
+    is_long_crossover = (prev_row[fast_ma_col] <= prev_row[slow_ma_col]) and \
+                        (last_row[fast_ma_col] > last_row[slow_ma_col])
     
     if is_long_crossover:
         signal = "LONG"
         confidence = 0.5 # Temel Sinyal Puanı
         
-        rsi_overbought = float(params.get('RSI_OVERBOUGHT', config.RSI_OVERBOUGHT))
-        if last_row['RSI'] < (rsi_overbought - 10):
+        # Güven Artırıcı 1: RSI (Aşırı Alımda Değil)
+        if last_row[rsi_col] < (rsi_overbought - 10): # (örn: 70 - 10 = 60'ın altında)
             confidence += 0.25
-        if last_row['Volume'] > last_row['VOLUME_AVG'] * 1.2:
+        
+        # Güven Artırıcı 2: Hacim (Ortalamanın Üstünde)
+        if last_row['Volume'] > (last_row[vol_col] * 1.2): # (Ortalamanın %20 üstünde)
             confidence += 0.25
 
-    # === v12.3 HATA DÜZELTMESİ (KeyError: 'FAST_MA') ===
-    # HATALI KOD:
-    # is_short_crossover = (prev_row['FAST_MA'] >= prev_row['SLOW_MA']) and (last_row['FAST_MA'] < last_row['SLOW_MA'])
-    
-    # ONARILMIŞ KOD:
-    is_short_crossover = (prev_row['SMA_FAST'] >= prev_row['SMA_SLOW']) and (last_row['SMA_FAST'] < last_row['SMA_SLOW'])
-    # === DÜZELTME SONU ===
+    # === SHORT Sinyal Koşulu ===
+    # (v12.3 Hata Düzeltmesi korunarak v21.0'a taşındı)
+    is_short_crossover = (prev_row[fast_ma_col] >= prev_row[slow_ma_col]) and \
+                         (last_row[fast_ma_col] < last_row[slow_ma_col])
     
     if is_short_crossover:
         signal = "SHORT"
         confidence = 0.5 # Temel Sinyal Puanı
         
-        rsi_oversold = float(params.get('RSI_OVERSOLD', config.RSI_OVERSOLD))
-        if last_row['RSI'] > (rsi_oversold + 10):
+        # Güven Artırıcı 1: RSI (Aşırı Satımda Değil)
+        if last_row[rsi_col] > (rsi_oversold + 10): # (örn: 30 + 10 = 40'ın üstünde)
             confidence += 0.25
-        if last_row['Volume'] > last_row['VOLUME_AVG'] * 1.2:
+            
+        # Güven Artırıcı 2: Hacim (Ortalamanın Üstünde)
+        if last_row['Volume'] > (last_row[vol_col] * 1.2):
             confidence += 0.25
 
-    # 4. SONUÇ
-    min_signal_confidence = float(params.get('MIN_SIGNAL_CONFIDENCE', config.MIN_SIGNAL_CONFIDENCE))
-    
+    # 4. SONUÇ FİLTRELEME
     if confidence < min_signal_confidence:
         signal = "NEUTRAL"
     
     if signal != "NEUTRAL":
-        pass
+        log.info(f"STRATEJİ (TREND): {signal} sinyali {confidence:.2f} güven puanı ile bulundu.")
     
-    return signal, confidence, current_price
+    # v21.0: Yönlendirici (Router) sadece (sinyal, güven) bekliyor.
+    return signal, confidence
