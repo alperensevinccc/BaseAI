@@ -18,7 +18,7 @@ import contextlib
 from typing import (
     Any, Dict, Optional, List, Callable, Awaitable, AsyncIterable, Union, cast
 )
-
+import traceback
 # HTTP istemcisi için (Ollama API'si ile konuşmak)
 import httpx
 

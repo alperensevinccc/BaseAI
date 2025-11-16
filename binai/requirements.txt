@@ -1,0 +1,13 @@
+# Binance API
+python-binance
+
+# Veri işleme ve teknik analiz (Gelecekteki stratejiler için eklendi)
+numpy
+pandas
+
+
+# HTTP talepleri
+requests
+
+# Loglama için
+coloredlogs

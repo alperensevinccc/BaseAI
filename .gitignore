@@ -1,0 +1,29 @@
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Sistem
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+# BaseAI Otonomi
+*.log
+*.err
+*.out
+*.bak
+*.save
+*.tmp
+evolution_data.json
+
+# KRİTİK: API Anahtarlarını ASLA YÜKLEME
+.env

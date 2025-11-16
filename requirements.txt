@@ -1,35 +1,43 @@
-# ===========================
-# BaseAI Core
-# ===========================
-python-dotenv
+# Web Framework
+Flask
+gunicorn
+fastapi
+uvicorn[standard]
+
+# HTTP / API
 requests
 httpx
-psutil
-watchdog
 
-# ===========================
-# Typing / Validation
-# ===========================
-pydantic>=2.0
-typing-extensions>=4.8
+# Binance API
+python-binance
 
-# ===========================
-# OpenAI / GPT Bridge
-# ===========================
-openai>=1.0
-tiktoken
+# Asynchronous & Scheduling
+aiohttp
+asyncio
+APScheduler
 
-# ===========================
-# Gemini / Google Bridge
-# ===========================
-# v1beta (0.8.x) sürümlerini engellemek için 0.9.0'dan başlat.
-# Diğer google-* paketleri (api-core, auth vb.)
-# ana paket tarafından otomatik olarak yüklenecektir.
-#google-genai>=1.0.0
+# Data Handling & Analysis
+pandas
+numpy
+pandas-ta
 
-# ===========================
-# Dev / QA Tools
-# ===========================
-ruff
-black
+# Logging & Monitoring
+loguru
+sentry-sdk
+
+# Environment & Security
+python-dotenv
+cryptography
+
+# Testing
 pytest
+pytest-asyncio
+coverage
+
+# Utility
+pytz
+tenacity  # Retry mekanizmaları için
+rich      # Konsol çıktıları için gelişmiş format
+
+# Loglama için
+coloredlogs

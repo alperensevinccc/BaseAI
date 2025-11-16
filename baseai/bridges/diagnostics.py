@@ -6,6 +6,7 @@ import contextlib
 from typing import Dict, Any
 
 from baseai.log.logger import bridge_logger as log
+import traceback
 
 # Sadece GPTDiagnostics'i dahil etmeye çalış. Eğer GPTBridge içinde bu sınıf yoksa,
 # hata vermemek için contextlib.suppress kullanıyoruz ve manuel olarak ekliyoruz.
