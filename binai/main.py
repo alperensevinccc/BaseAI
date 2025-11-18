@@ -253,16 +253,16 @@ class BinAIEngine:
             self.shutdown()
             return
             
-        # === BURAYA YAPIŞTIR (v23.0 Doktor Başlatma) ===
+        # === v23.1 DOKTORU BAŞLAT (AKTİF) ===
         from binai import doctor
-        log.info("v23.0: Doktor (Gözetmen) başlatılıyor...")
+        log.info("v23.1: Akıllı Doktor (Gözetmen) başlatılıyor...")
         self.doctor_thread = threading.Thread(target=doctor.start_doctor, daemon=True)
         self.doctor_thread.start()
-        # ===============================================
+        # =====================================
 
         self._run_main_trade_loop()
 
-        
+
     def shutdown(self):
         """
         Sistemi 'temiz' (gracefully) kapatır.
