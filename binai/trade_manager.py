@@ -1,23 +1,20 @@
 """
-BaseAI - BinAI v21.2 Mimari Yükseltmesi
+BaseAI - BinAI v21.5 Mimarisi (TAM SÜRÜM - EKSİKSİZ)
 "Dinamik Risk Yöneticisi" (Dynamic Risk Manager)
 
-v21.2 Yükseltmeleri (Enterprise+++):
-- "Süper Özellik #2: Dinamik Pozisyon Boyutu" (Volatilite Tabanlı Risk) eklendi.
-- '_open_position_logic' (v21.2) fonksiyonu, 'config.USE_DYNAMIC_POSITION_SIZING'
-  ayarını okuyacak şekilde yeniden yazıldı.
-- 'Dinamik' (v21.2) modda, 'quantity' (Miktar) artık 'sabit' (static) 
-  'POSITION_SIZE_PERCENT' ile değil, 'RISK_PER_TRADE_PERCENT' (örn: Kasanın %2'si)
-  ve 'sl_distance' (Volatilite) kullanılarak otonom olarak (otomatik) hesaplanır.
-- Bu, 'Milyarder Trader' (Quant) seviyesinde 'Kasa Yönetimi' (Bankroll) sağlar.
+v21.5 Yükseltmeleri (Enterprise+++):
+- MARJIN TİPİ DEĞİŞİMİ: '_open_position_logic' fonksiyonuna, pozisyon açmadan 
+  önce marjin tipini (ISOLATED/CROSSED) ayarlayan kod bloğu eklendi.
+- SÜPER ÖZELLİKLER (#1, #2, #4) TAM ENTEGRE.
+- Hata Yönetimi ve Loglama: Hiçbir satır kısaltılmadı.
 """
 
 from binance.exceptions import BinanceAPIException
-from binance.client import Client # v21.0: Tip (Type Hinting) için eklendi
+from binance.client import Client 
 import threading
 import time
 import pandas as pd
-from typing import Dict, Any, Optional, Tuple
+from typing import Dict, Any, Optional, Tuple, Callable, List
 
 # === BİNAİ MODÜLLERİ ===
 try:
@@ -30,16 +27,19 @@ except ImportError as e:
     sys.exit(1)
 
 
-# === v21.0 DURUM (STATE) YÖNETİMİ (ENTERPRISE) ===
-# (v21.2'de değişiklik yok)
+# === v21.0 DURUM (STATE) YÖNETİMİ ===
+# Aktif pozisyonların durumunu (state) tutar
 active_positions: Dict[str, Dict] = {}
+# 'active_positions' (Hafıza) sözlüğünü koruyan kilit
 _active_positions_lock = threading.Lock()
 
 
 def cleanup_orphan_positions(client: Client):
     """
     v17.0 "Sıfır Güven" (Zero Trust) Protokolü.
-    (v21.2'de değişiklik yok. Bu, 'startup'ta (başlangıçta) çalışır.)
+    Canlı Bot (main.py) başladığında, 'Hafıza' (active_positions)
+    ile senkronize olmayan tüm "Yetim" (Orphan) pozisyonları
+    otonom olarak kapatır.
     """
     log.info("--- [v17.0 'Sıfır Güven' Protokolü] ---")
     log.info("Mevcut 'Hafıza' (active_positions) boş.")
@@ -53,21 +53,26 @@ def cleanup_orphan_positions(client: Client):
             symbol = pos['symbol']
             quantity = float(pos.get('positionAmt', 0.0))
             
+            # 1. Pozisyon var mı?
             if quantity != 0.0:
+                # 2. "Hafıza"da (active_positions) var mı?
                 if symbol not in active_positions:
+                    # HATA: "Yetim" (Orphan) pozisyon tespit edildi.
                     orphans_found += 1
                     log.warning(f"DİKKAT: 'Yetim' (Orphan) Pozisyon Tespiti: {symbol} | Miktar: {quantity}")
                     
+                    # 3. Otonom Kapatma (v17.0)
                     log.warning(f"v17.0: {symbol} için açık SL/TP emirleri (Yetim) iptal ediliyor...")
                     client.futures_cancel_all_open_orders(symbol=symbol)
                     
+                    # 4. Pozisyonu Kapat
                     log.warning(f"v17.0: 'Yetim' (Orphan) pozisyon ({symbol}) piyasa (market) emriyle kapatılıyor...")
                     client.futures_create_order(
                         symbol=symbol,
-                        side="BUY" if quantity < 0 else "SELL",
+                        side="BUY" if quantity < 0 else "SELL", # Miktar negatifse (SHORT) 'BUY' yap
                         positionSide="SHORT" if quantity < 0 else "LONG",
                         type='MARKET',
-                        quantity=abs(quantity) # v17.1 ONARIMI
+                        quantity=abs(quantity) 
                     )
                     log.warning(f"v17.0: 'Yetim' (Orphan) pozisyon ({symbol}) başarıyla temizlendi.")
 
@@ -82,20 +87,21 @@ def cleanup_orphan_positions(client: Client):
         log.error(f"v17.0: 'Yetim' (Orphan) pozisyon temizliği genel hata: {e}", exc_info=True)
 
 
-# === v21.2 ÖZEL (PRIVATE) FONKSİYONLAR (SÜPER ÖZELLİK #2) ===
+# === v21.5 ÖZEL (PRIVATE) FONKSİYONLAR ===
 
 def _open_position_logic(
     client: Client, 
     symbol: str, 
     signal: str, 
     current_price: float, 
-    last_atr: float,  # v21.0 YENİ: Volatilite (Oynaklık)
+    last_atr: float,  # v21.1: Volatilite (Oynaklık)
     exchange_rules: Dict
 ):
     """
-    v21.2: Yeni bir pozisyon açan (API çağrıları) çekirdek mantık.
+    v21.5: Yeni bir pozisyon açan (API çağrıları) çekirdek mantık.
     - Süper Özellik #1: 'Dinamik SL/TP' (v21.1) kullanır.
     - Süper Özellik #2: 'Dinamik Pozisyon Boyutu' (v21.2) kullanır.
+    - v21.5: 'ISOLATED' Marjin tipini ayarlar.
     """
     
     # === Adım 1: Bakiye (Balance) Al ===
@@ -106,7 +112,7 @@ def _open_position_logic(
             if asset['asset'] == 'USDT':
                 usdt_balance = float(asset['balance'])
                 break
-        if usdt_balance <= 10: # Minimum bakiye kontrolü
+        if usdt_balance <= 10: 
             log.error(f"{symbol} pozisyon açmak için yeterli USDT bakiyesi (10$) yok.")
             return False
     except Exception as e:
@@ -122,18 +128,16 @@ def _open_position_logic(
     price_precision = rules.get("pricePrecision")
 
     # === Adım 3: SL/TP Mesafelerini (Distance) Hesapla (Süper Özellik #1) ===
-    # (Bu, 'Miktar' (quantity) hesaplamasından ÖNCE yapılmalıdır)
-    
-    sl_distance_per_unit = 0.0 # Birim (coin) başına $ cinsinden SL mesafesi
-    tp_distance_per_unit = 0.0 # Birim (coin) başına $ cinsinden TP mesafesi
+    sl_distance_per_unit = 0.0 
+    tp_distance_per_unit = 0.0 
     
     if config.USE_DYNAMIC_SLTP and last_atr > 0:
-        # === Dinamik (Volatilite Tabanlı) SL/TP ===
+        # Dinamik (Volatilite Tabanlı) SL/TP
         log.info(f"v21.1: 'Dinamik SL/TP' kullanılıyor (ATR: {last_atr:.4f})")
         sl_distance_per_unit = last_atr * config.ATR_STOP_LOSS_MULTIPLIER
         tp_distance_per_unit = last_atr * config.ATR_TAKE_PROFIT_MULTIPLIER
     else:
-        # === Statik (v6.1 Fallback) SL/TP ===
+        # Statik (v6.1 Fallback) SL/TP
         log.info(f"v21.0: 'Statik SL/TP' kullanılıyor (Dinamik kapalı veya ATR=0)")
         sl_distance_per_unit = current_price * config.STOP_LOSS_PERCENT
         tp_distance_per_unit = current_price * config.TAKE_PROFIT_PERCENT
@@ -143,55 +147,51 @@ def _open_position_logic(
         return False
 
     # === Adım 4: Pozisyon Miktarını (Quantity) Hesapla (Süper Özellik #2) ===
-    
     quantity = 0.0
     
     if config.USE_DYNAMIC_POSITION_SIZING:
-        # === Dinamik (Risk Tabanlı) Miktar ===
+        # Dinamik (Risk Tabanlı) Miktar
         log.info(f"v21.2: 'Dinamik Pozisyon Boyutu' kullanılıyor (Risk: {config.RISK_PER_TRADE_PERCENT*100}%)")
-        
-        # 1. Kasa (Bankroll) başına ne kadar $ riske atılacak?
-        # (örn: 1000$ * %2 = 20$)
         risk_amount_usdt = usdt_balance * config.RISK_PER_TRADE_PERCENT
-        
-        # 2. Miktarı (Quantity) Hesapla
-        # (örn: Miktar = 20$ (Risk) / 0.15$ (SL Mesafesi) = 133.33 adet)
         quantity = risk_amount_usdt / sl_distance_per_unit
         log.info(f"v21.2: Dinamik Miktar Hesabı: {risk_amount_usdt:.2f}$ (Risk) / {sl_distance_per_unit:.4f}$ (SL Mesafesi) = {quantity:.4f} (Miktar)")
-        
     else:
-        # === Statik (v5.3 Fallback) Miktar ===
+        # Statik (v5.3 Fallback) Miktar
         log.info(f"v21.2: 'Statik Pozisyon Boyutu' kullanılıyor (Kasanın {config.POSITION_SIZE_PERCENT*100}%)")
-        
-        # 1. Kasanın %X'i ile ne kadar $ (Kaldıraçsız) pozisyon açılacak?
-        # (örn: 1000$ * %50 = 500$)
         position_size_usdt = usdt_balance * config.POSITION_SIZE_PERCENT
-        
-        # 2. Kaldıraçlı (Notional) Miktarı (Quantity) Hesapla
-        # (örn: Miktar = (500$ * 10x Kaldıraç) / 10$ (Fiyat) = 500 adet)
         quantity = (position_size_usdt * config.LEVERAGE) / current_price
     
-    # Miktarı (Quantity) hassasiyete (precision) göre yuvarla
+    # Miktarı hassasiyete göre yuvarla
     quantity = round(quantity, qty_precision)
     
     if quantity == 0.0:
         log.warning(f"{symbol} için hesaplanan miktar 0'a yuvarlandı. Emir gönderilmiyor.")
         return False
 
-    # === Adım 5: Kaldıraç, Emir ve SL/TP'yi Ayarla ===
+    # === Adım 5: Borsa Ayarları ve Emir Gönderme ===
     try:
-        # 5.1. Kaldıraç Ayarlama
+        # 5.1. Marjin Tipi (ISOLATED/CROSSED) Ayarlama (v21.5 YENİ)
+        try:
+            # config.MARGIN_TYPE ('ISOLATED' veya 'CROSSED') kullanılır
+            client.futures_change_margin_type(symbol=symbol, marginType=config.MARGIN_TYPE)
+            log.info(f"{symbol} marjin tipi '{config.MARGIN_TYPE}' olarak ayarlandı.")
+        except BinanceAPIException as e:
+            # "No need to change margin type" (-4046) hatasını yoksay
+            if "No need to change" not in str(e):
+                log.warning(f"{symbol} marjin tipi ayarlanamadı (Hata: {e})")
+
+        # 5.2. Kaldıraç Ayarlama
         try:
             client.futures_change_leverage(symbol=symbol, leverage=config.LEVERAGE)
         except BinanceAPIException as e:
             if "leverage not modified" not in str(e):
                 log.warning(f"{symbol} kaldıraç ayarlanamadı (muhtemelen zaten ayarlı): {e}")
         
-        # 5.2. Emir Gönderme (Piyasa Emri)
+        # 5.3. Emir Gönderme (Piyasa Emri)
         order_side = "BUY" if signal == "LONG" else "SELL"
         position_side = "LONG" if signal == "LONG" else "SHORT"
         
-        log.info(f"--- [EMİR GÖNDERİLİYOR (v21.2)] ---")
+        log.info(f"--- [EMİR GÖNDERİLİYOR (v21.5 {config.MARGIN_TYPE})] ---")
         log.info(f"Sembol: {symbol} | Taraf: {position_side}")
         log.info(f"Miktar: {quantity} | Fiyat: {current_price}")
         
@@ -200,7 +200,7 @@ def _open_position_logic(
             type='MARKET', quantity=quantity
         )
         
-        # 5.3. SL/TP Fiyatlarını Hesapla (Adım 3'teki mesafelere göre)
+        # 5.4. SL/TP Fiyatlarını Hesapla
         if signal == "LONG":
             sl_price = current_price - sl_distance_per_unit
             tp_price = current_price + tp_distance_per_unit
@@ -215,7 +215,7 @@ def _open_position_logic(
         sl_price = round(sl_price, price_precision)
         tp_price = round(tp_price, price_precision)
 
-        # 5.4. SL/TP Emirlerini Gönderme
+        # 5.5. SL/TP Emirlerini Gönderme
         client.futures_create_order(
             symbol=symbol, side=sl_side, positionSide=position_side,
             type='STOP_MARKET', stopPrice=sl_price, closePosition=True
@@ -226,7 +226,7 @@ def _open_position_logic(
         )
         log.info(f"{symbol} için SL ({sl_price}) ve TP ({tp_price}) emirleri ayarlandı.")
         
-        # 5.5. "Hafıza"yı (RAM) Güncelle (v21.0: Kilitli)
+        # 5.6. "Hafıza"yı (RAM) Güncelle (Kilitli)
         with _active_positions_lock:
             active_positions[symbol] = {
                 "side": position_side,
@@ -244,14 +244,12 @@ def _open_position_logic(
         log.error(f"{symbol} için bilinmeyen emir hatası: {e}", exc_info=True)
         return False
 
-
 def _get_weakest_open_position() -> Tuple[Optional[str], Optional[float]]:
     """
     v21.0: "Fırsatçı Yeniden Dengeleme" (v16.0) için "en zayıf" pozisyonu
     artık 'Hafıza'dan (RAM - active_positions) okur. (API ÇAĞRISI YOK)
-    (v21.2'de değişiklik yok)
     """
-    with _active_positions_lock: 
+    with _active_positions_lock: # Okuma (read) işlemi için de kilitli
         if not active_positions:
             return None, None
         
@@ -264,7 +262,7 @@ def _get_weakest_open_position() -> Tuple[Optional[str], Optional[float]]:
 
         for symbol, pos_data in active_positions.items():
             pnl = float(pos_data.get('unRealizedProfit', 0.0))
-            if pnl <= weakest_pnl:
+            if pnl <= weakest_pnl: # '<=' (küçük eşit) en zayıfı bulur
                 weakest_pnl = pnl
                 weakest_symbol = symbol
         
@@ -274,7 +272,6 @@ def _close_position_by_symbol(client: Client, symbol: str, reason_log: str):
     """
     v16.0: "Fırsatçı Yeniden Dengeleme" için "en zayıf" pozisyonu
     otonom olarak kapatır.
-    (v21.2'de değişiklik yok)
     """
     log.warning(f"--- [v16.0 FIRSATÇI KAPATMA] ---")
     log.warning(f"POZİSYON: {symbol} | NEDEN: {reason_log}")
@@ -295,7 +292,7 @@ def _close_position_by_symbol(client: Client, symbol: str, reason_log: str):
             side="BUY" if pos_data['side'] == "SHORT" else "SELL",
             positionSide=pos_data['side'],
             type='MARKET',
-            quantity=abs(float(pos_data['quantity'])) # v21.0
+            quantity=abs(float(pos_data['quantity'])) # v21.0: tam miktar
         )
         
         log.warning(f"--- [v16.0 FIRSATÇI KAPATMA TAMAMLANDI] ---")
@@ -310,54 +307,68 @@ def _close_position_by_symbol(client: Client, symbol: str, reason_log: str):
                 del active_positions[symbol]
 
 
-# === v13.0 KORELASYONLU RİSK YÖNETİMİ ===
-# (v21.2'de değişiklik yok)
-def _check_correlation_risk(client: Client, new_symbol: str, new_signal: str) -> bool:
+# === v21.4 "SÜPER ÖZELLİK #4" (IŞIK HIZI KORELASYON) ===
+def _check_correlation_risk(
+    get_klines_func: Callable, # v21.4 YENİ: Bağımlılık Enjeksiyonu
+    new_symbol: str, 
+    new_signal: str
+) -> bool:
+    """
+    v21.4: "Süper Özellik #4: Dinamik Korelasyon Filtresi".
+    'main.py' (v21.4) tarafından "enjekte edilen" (inject) 'get_klines_func'
+    fonksiyonunu kullanarak "ışık hızında" (RAM hızı) korelasyon kontrolü yapar.
+    """
     
     with _active_positions_lock:
         if not config.CORRELATION_CHECK_ENABLED or not active_positions:
-            return False 
+            return False # Risk Yok
         active_positions_copy = dict(active_positions)
         
     try:
-        new_klines_raw = market_data.get_klines(client, new_symbol, config.INTERVAL, config.CORRELATION_KLINE_LIMIT)
-        if not new_klines_raw: return False
+        new_klines_raw = get_klines_func(new_symbol)
+        
+        if not new_klines_raw or len(new_klines_raw) < 100: 
+            log.warning(f"v21.4: {new_symbol} için korelasyon önbelleği (cache) yetersiz. Risk kontrolü atlanıyor.")
+            return False 
+            
         df_new = pd.DataFrame(new_klines_raw, columns=['OpenTime', 'Open', 'High', 'Low', 'Close', 'Volume', 'CloseTime', 'QuoteAssetVolume', 'NumTrades', 'TakerBuyBase', 'TakerBuyQuote', 'Ignore'])
         series_new = pd.to_numeric(df_new['Close'])
         
         for existing_symbol, position_data in active_positions_copy.items():
-            existing_klines_raw = market_data.get_klines(client, existing_symbol, config.INTERVAL, config.CORRELATION_KLINE_LIMIT)
-            if not existing_klines_raw: continue
+            existing_klines_raw = get_klines_func(existing_symbol)
+            
+            if not existing_klines_raw or len(existing_klines_raw) < 100:
+                continue 
+                
             df_existing = pd.DataFrame(existing_klines_raw, columns=['OpenTime', 'Open', 'High', 'Low', 'Close', 'Volume', 'CloseTime', 'QuoteAssetVolume', 'NumTrades', 'TakerBuyBase', 'TakerBuyQuote', 'Ignore'])
             series_existing = pd.to_numeric(df_existing['Close'])
             
             aligned_series_new, aligned_series_existing = series_new.align(series_existing, join='inner')
-            if aligned_series_new.empty:
-                continue
+            if aligned_series_new.empty or len(aligned_series_new) < 50:
+                continue 
 
             correlation = aligned_series_new.corr(aligned_series_existing)
             existing_signal = position_data.get("side")
             
-            log.debug(f"v13.0: Korelasyon Taraması: {new_symbol} vs {existing_symbol} = {correlation:.4f}")
+            log.debug(f"v21.4: Korelasyon Taraması (RAM): {new_symbol} vs {existing_symbol} = {correlation:.4f}")
             
             if correlation > config.CORRELATION_THRESHOLD and new_signal == existing_signal:
-                log.warning(f"--- [v13.0 RİSK YÖNETİMİ REDDETTİ] ---")
+                log.warning(f"--- [v21.4 RİSK YÖNETİMİ REDDETTİ (IŞIK HIZI)] ---")
                 log.warning(f"SİNYAL: {new_symbol} | {new_signal}")
                 log.warning(f"NEDEN: Yüksek Korelasyon ({correlation:.4f} > {config.CORRELATION_THRESHOLD})")
                 log.warning(f"VE Aynı Yön ({new_signal}) ile MEVCUT POZİSYON: {existing_symbol} | {existing_signal}")
                 return True # Risk Var
                 
     except Exception as e:
-        log.error(f"v13.0: Korelasyon hesaplaması sırasında kritik hata: {e}", exc_info=True)
+        log.error(f"v21.4: 'Işık Hızı' Korelasyon hesaplaması sırasında kritik hata: {e}", exc_info=True)
         return False 
         
     return False # Risk Yok
 
-# === v5.0 PNL RAPORLAMA (Aynı kalır, v12.0 DB Entegrasyonu) ===
+# === v5.0 PNL RAPORLAMA ===
 def log_closed_position_pnl(client: Client, symbol: str, position_data: Dict):
     """
     Kapanan pozisyonun PnL'ini (Kâr/Zarar) hesaplar ve DB'ye (v21.0) kaydeder.
-    (v21.2'de değişiklik yok)
     """
     log.info(f"Kapanan pozisyon ({symbol}) için PNL hesaplanıyor...")
     
@@ -371,7 +382,6 @@ def log_closed_position_pnl(client: Client, symbol: str, position_data: Dict):
             real_pnl = float(trade['realizedPnl'])
             if real_pnl != 0:
                 total_realized_pnl += real_pnl
-                # v21.2: Daha sağlam Neden (Reason) tespiti
                 if trade['orderId'] == trade['id'] and trade['positionSide'] != "BOTH":
                     close_reason = "TakeProfit" if real_pnl > 0 else "StopLoss"
 
@@ -389,11 +399,10 @@ def log_closed_position_pnl(client: Client, symbol: str, position_data: Dict):
     except Exception as e:
         log.error(f"{symbol} PNL hesaplama/kaydetme hatası: {e}", exc_info=True)
 
-# === v21.0 POZİSYON GÜNCELLEME (Optimize Edildi) ===
+# === v21.0 POZİSYON GÜNCELLEME ===
 def check_and_update_positions(client: Client):
     """
     v21.0: 'Hafıza'yı (RAM - active_positions) Binance ile senkronize eder.
-    (v21.2'de değişiklik yok)
     """
     
     with _active_positions_lock:
@@ -425,7 +434,6 @@ def check_and_update_positions(client: Client):
                     log_data = active_positions.pop(symbol) # 'Hafıza'dan (RAM) sil
             
             if log_data:
-                # (Kilidi (lock) bıraktıktan sonra PnL'i hesapla)
                 log_closed_position_pnl(client, symbol, log_data)
 
     except BinanceAPIException as e:
@@ -434,15 +442,16 @@ def check_and_update_positions(client: Client):
         log.error(f"check_and_update_positions genel hata: {e}", exc_info=True)
 
 
-# === v21.2 ANA GİRİŞ NOKTASI (Entry Point) ===
+# === v21.4 ANA GİRİŞ NOKTASI (Entry Point) ===
 def manage_risk_and_open_position(
     client: Client, 
     symbol: str, 
     signal: str, 
     confidence: float, 
     current_price: float, 
-    last_atr: float, # v21.0: Volatilite
-    exchange_rules: Dict
+    last_atr: float, # v21.1: Volatilite
+    exchange_rules: Dict,
+    get_klines_func: Callable # v21.4 YENİ: "Süper Özellik #4" Bağımlılık Enjeksiyonu
 ):
     
     # KONTROL 1: (v16.0) Pozisyon zaten açık mı?
@@ -451,8 +460,8 @@ def manage_risk_and_open_position(
             log.debug(f"{symbol} atlanıyor (zaten pozisyonda).")
             return
 
-    # KONTROL 2: (v13.0) Korelasyon Riski var mı?
-    if _check_correlation_risk(client, symbol, signal):
+    # KONTROL 2: (v21.4) "Işık Hızı" Korelasyon Riski var mı?
+    if _check_correlation_risk(get_klines_func, symbol, signal):
         return # Emir atlandı
 
     # KONTROL 3: (v16.0) "Kasa"da (Slot) yer var mı?
@@ -463,14 +472,14 @@ def manage_risk_and_open_position(
         # EVET. "Kasa"da (Slot) yer var (örn: 0/2 veya 1/2).
         log.info(f"Kasa (Slot) mevcut ({current_pos_count}/{config.MAX_CONCURRENT_POSITIONS}). Yeni pozisyon açılıyor...")
         
-        # v21.2: 'Süper Özellik #1' (ATR) ve 'Süper Özellik #2' (Dinamik Miktar)
-        # mantığını içeren 'v21.2' fonksiyonunu çağır.
+        # v21.2: "Süper Özellik #1" (ATR) ve "Süper Özellik #2" (Dinamik Miktar)
         _open_position_logic(client, symbol, signal, current_price, last_atr, exchange_rules)
     
-    # KONTROL 4: (v16.0) "Fırsatçı Yeniden Dengeleme"
+    # KONTROL 4: (v16.0) "Fırsatçı Yeniden Dengeleme" (TAM SÜRÜM)
     elif config.OPPORTUNISTIC_REBALANCE_ENABLED:
         # HAYIR. "Kasa" (Slot) dolu (örn: 2/2).
         
+        # Sinyal, "Mükemmel" (A++) (v16.0) eşiğini (örn: 0.95) aşıyor mu?
         if confidence >= config.OPPORTUNISTIC_REBALANCE_THRESHOLD:
             log.warning(f"--- [v16.0 FIRSATÇI YENİDEN DENGELEME] ---")
             log.warning(f"MÜKEMMEL SİNYAL TESPİT EDİLDİ: {symbol} (Güven: {confidence:.2f})")
@@ -487,16 +496,17 @@ def manage_risk_and_open_position(
                 
                 # 3. "Mükemmel" (A++) sinyali aç
                 log.info(f"v16.0: Boşalan slota 'Mükemmel' sinyal ({symbol}) yerleştiriliyor...")
-                # v21.2: 'Süper Özellik #1' (ATR) ve 'Süper Özellik #2' (Dinamik Miktar)
-                # mantığını içeren 'v21.2' fonksiyonunu çağır.
+                # v21.2: "Süper Özellik #1" (ATR) ve "Süper Özellik #2" (Dinamik Miktar)
                 _open_position_logic(client, symbol, signal, current_price, last_atr, exchange_rules)
                 
             else:
                 log.error("v16.0: Yeniden dengeleme başarısız. 'En Zayıf' pozisyon bulunamadı (Hafıza (RAM) boş mu?).")
         
         else:
+            # Sinyal "iyi" (örn: 0.85) ancak "mükemmel" (örn: 0.95) değil.
             log.warning(f"Sinyal bulundu: {symbol} (Güven: {confidence:.2f}).")
             log.warning(f"Kasa (Slot) dolu (2/2) ve sinyal 'Fırsatçı' (v16.0) eşiğini ({config.OPPORTUNISTIC_REBALANCE_THRESHOLD}) aşamadı. Emir atlanıyor.")
     
     else:
+        # Kasa (Slot) dolu (2/2) ve "Fırsatçı Yeniden Dengeleme" (v16.0) kapalı.
         log.warning(f"Kasa (Slot) dolu (2/2). {symbol} için yeni pozisyon açılmıyor (v16.0 Yeniden Dengeleme Kapalı).")

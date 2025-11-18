@@ -1,22 +1,24 @@
 """
-BaseAI - BinAI v21.1 Mimari Yükseltmesi
-"Kurumsal Çekiredek" (Enterprise Core) Mimari
+BaseAI - BinAI v21.4 Mimarisi
+"Kusursuz" (Flawless) Kurumsal Çekirdek (Enterprise Core)
 
-v21.1 Yükseltmeleri (Enterprise+++):
-- 'db_manager.py' (v21.0) Entegrasyonu: 'shutdown()' metoduna 
-  'db_manager.shutdown_db_writer()' çağrısı eklendi.
-  Bu, 'Asenkron Yazıcı Thread'in (Async Writer Thread) 'temiz kapatma' 
-  (graceful shutdown) yapmasını garanti eder.
+v21.4 Yükseltmeleri (Enterprise+++):
+- "Süper Özellik #4: Dinamik Korelasyon Filtresi" (Işık Hızı) Entegrasyonu.
+- '_run_main_trade_loop' (v21.4) içindeki 'trade_manager.manage_risk_and_open_position' 
+  çağrısı, 'get_klines_func=websocket_manager.get_klines_from_cache' 
+  parametresini (argümanını) "enjekte" (inject) edecek şekilde güncellendi.
+- Bu, 'trade_manager'ın (v21.4) korelasyonu (correlation) "API hızı" 
+  (yavaş) yerine "RAM hızı" (ışık hızı) ile hesaplamasını sağlar.
+- v21.3 "Reaktif Otonomi" (Reactive Autonomy) mantığı korundu.
 """
 
 # === 1. KURULUM (GEREKLİ KÜTÜPHANELER) ===
 import time
 import threading
 import sys
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, Callable # v21.4: Callable eklendi
 
 # === 2. BİNAİ MODÜLLERİNİ İÇERİ AKTARMA ===
-# Bu modüllerin 'binai' klasörü içinde olduğunu varsayıyoruz.
 try:
     from binai import config
     from binai.logger import log  # 'logger.py' dosyasından 'log' objesini al
@@ -28,8 +30,6 @@ try:
     from binai import optimizer
     from binai import websocket_manager
 except ImportError as e:
-    # Bu kritik bir hatadır. Eğer 'binai' klasörü Python path'inde değilse
-    # (örn: 'pip install -e .' yapılmadıysa) bu hata oluşur.
     print(f"KRİTİK HATA (main.py): BinAI modülleri bulunamadı. {e}")
     print("Lütfen 'run.py' dosyasını ana dizinden çalıştırdığınızdan emin olun.")
     sys.exit(1)
@@ -39,31 +39,32 @@ except ImportError as e:
 
 class BinAIEngine:
     """
-    BinAI (v21.1) sisteminin ana motor sınıfı.
-    Tüm durumları (state) ve alt sistemleri (threads) yönetir.
+    BinAI (v21.4) sisteminin ana motor sınıfı.
+    "Kusursuz" (Flawless) mimari.
     """
     
     def __init__(self):
-        log.info("BinAI Motoru (v21.1 'Kurumsal Çekirdek') başlatılıyor...")
+        log.info("BinAI Motoru (v21.4 'Kusursuz Çekirdek') başlatılıyor...")
         
         # --- Durum (State) Yönetimi ---
         self.optimization_in_progress: bool = False
-        self.last_optimization_time: float = 0.0
+        self.last_analysis_time: float = 0.0
         self.main_loop_running: bool = True
+        self.doctor_thread = None
 
         # --- Alt Sistem Bileşenleri ---
-        self.client: Optional[Any] = None  # Binance Client
+        self.client: Optional[Any] = None
         self.exchange_rules: Optional[Dict[str, Any]] = None
         self.ws_thread: Optional[threading.Thread] = None
 
     def _initialize_systems(self) -> bool:
-        """Tüm veritabanlarını ve Binance API bağlantısını başlatır."""
+        """
+        Tüm veritabanlarını ve Binance API bağlantısını başlatır.
+        (v21.4'te değişiklik yok)
+        """
         try:
-            # v21.1 Not: 'initialize_database()' artık 'Yazıcı Thread'i (Writer Thread)
-            # otonom olarak (otomatik) başlatır.
             log.info("Adım 1/5: Veritabanları ve 'Hafıza Yazıcısı' (v21.0) başlatılıyor...")
             db_manager.initialize_database()
-            # (initialize_strategy_db() artık 'initialize_database' içinden çağrılıyor)
 
             log.info("Adım 2/5: Binance API istemcisi alınıyor...")
             self.client = market_data.get_binance_client()
@@ -88,28 +89,29 @@ class BinAIEngine:
             return False
 
     def _start_websocket_manager(self):
-        """v20.0 WebSocket Motorunu ayrı bir Thread'de başlatır."""
+        """
+        v20.0 WebSocket Motorunu ayrı bir Thread'de başlatır.
+        (v21.4'te değişiklik yok)
+        """
         log.info("v20.0: 'Gerçek Zamanlı (WebSocket) Motoru' başlatılıyor (arka planda)...")
         self.ws_thread = threading.Thread(
             target=websocket_manager.start_websocket_listener, 
-            daemon=True  # Ana program kapanınca bu thread'in de kapanmasını sağlar
+            daemon=True
         )
         self.ws_thread.start()
 
-    def _wait_for_cache_readiness(self, timeout_sec: int = 180) -> bool:
+    def _wait_for_cache_readiness(self) -> bool:
         """
-        v21.0 'Akıllı Bekleme': Körü körüne 120sn beklemek yerine, 
-        WebSocket önbelleğinin dolmasını aktif olarak bekler.
+        v21.0 'Akıllı Bekleme': WebSocket önbelleğinin dolmasını aktif olarak bekler.
+        (v21.4'te değişiklik yok)
         """
         log.info(f"v21.0: 'Gerçek Zamanlı Önbellek' (Cache) bekleniyor...")
-        log.info(f"(Hedef: en az {config.MIN_CACHE_SYMBOLS} sembol. Zaman aşımı: {timeout_sec}sn)")
+        log.info(f"(Hedef: en az {config.MIN_CACHE_SYMBOLS} sembol. Zaman aşımı: 180sn)")
         
         start_time = time.time()
         
         while True:
             try:
-                # 'websocket_manager.py' (v21.0) içindeki 'is_cache_ready'
-                # fonksiyonunu çağırıyoruz.
                 is_ready = websocket_manager.is_cache_ready(config.MIN_CACHE_SYMBOLS)
             
             except Exception as e:
@@ -122,62 +124,67 @@ class BinAIEngine:
                 log.info(f"v21.0: Önbellek {ready_time:.1f} saniyede hazırlandı. Ana döngü başlıyor.")
                 return True
 
-            if (time.time() - start_time) > timeout_sec:
-                log.critical(f"v21.0: Önbellek {timeout_sec} saniyede hazır olamadı! Sistem durduruluyor.")
-                log.critical("Olası sebepler: İnternet bağlantısı, Binance API sorunu veya config.MIN_CACHE_SYMBOLS çok yüksek.")
+            if (time.time() - start_time) > 180:
+                log.critical(f"v21.0: Önbellek 180 saniyede hazır olamadı! Sistem durduruluyor.")
                 return False
 
             log.info(f"v21.0: Önbellek dolduruluyor... ({websocket_manager.get_cache_size()} / {config.MIN_CACHE_SYMBOLS} sembol)")
-            time.sleep(5) # 5 saniyede bir tekrar kontrol et
+            time.sleep(5) 
 
-    def _run_autonomous_evolution_cycle(self):
-        """v15.0 Otonom Evrim Motoru (Ayrı Thread'de çalışır)."""
+    def _run_reactive_optimization_check(self):
+        """
+        v21.3 "SÜPER ÖZELLİK #3" (Reaktif Otonomi).
+        (v21.4'te değişiklik yok)
+        """
         if self.optimization_in_progress:
-            log.warning("v15.0: Otonom Evrim zaten çalışıyor. Yeni döngü atlanıyor.")
+            log.warning("v21.3: Reaktif Analiz zaten çalışıyor. Yeni döngü atlanıyor.")
             return
             
-        log.info("--- [v15.0 OTONOM EVRİM BAŞLATILDI] ---")
+        log.info("--- [v21.3 REAKTİF OTONOMİ KONTROLÜ BAŞLATILDI] ---")
         self.optimization_in_progress = True
+        self.last_analysis_time = time.time() 
+        
         try:
-            log.info("v15.0: Adım 1/3 - Otonom 'Akıllı Analiz' (v14.0) çalıştırılıyor...")
+            log.info("v21.3: Adım 1/3 - Otonom 'Akıllı Analiz' (v21.1) çalıştırılıyor...")
             is_stale = analyzer.analyze_performance(is_autonomous_cycle=True)
             
             if is_stale:
-                log.info("v15.0: Adım 2/3 - 'Bayatlamış Beyin' (Stale Brain) tespiti.")
-                log.info("v15.0: 'Evrim Motoru' (v18.1 'Yaratıcı Zeka') çalıştırılıyor...")
-                optimizer.run_optimizer()
+                log.warning("v21.3: Adım 2/3 - 'Bayatlamış Beyin' (Stale Brain) TESPİT EDİLDİ.")
+                log.warning("v21.3: 'ACİL DURUM OPTİMİZASYONU' tetikleniyor...")
+                log.info("v21.3: 'Evrim Motoru' (v21.1 'Yaratıcı Zeka') çalıştırılıyor...")
                 
-                log.info("v15.0: Adım 3/3 - 'Evrim Motoru' (v18.1) tamamlandı.")
-                log.info("v15.0: 'Hafıza' (strategy_params.db) güncellendi.")
-                self.last_optimization_time = time.time()
+                optimizer.run_optimizer() 
+                
+                log.info("v21.3: Adım 3/3 - 'Evrim Motoru' (v21.1) tamamlandı.")
+                log.info("v21.3: 'Hafıza' (strategy_params.db) güncellendi.")
             else:
-                log.info("v15.0: Adım 2/3 - Performans hedefler dahilinde. Optimizasyon gerekmiyor.")
-                self.last_optimization_time = time.time()
-                
+                log.info("v21.3: Adım 2/3 - Performans hedeflerin dahilinde. Optimizasyon gerekmiyor.")
+            
         except Exception as e:
-            log.error(f"v15.0: Otonom Evrim Döngüsü kritik hata: {e}", exc_info=True)
+            log.error(f"v21.3: Reaktif Otonomi Döngüsü kritik hata: {e}", exc_info=True)
         finally:
             self.optimization_in_progress = False
-            log.info("--- [v15.0 OTONOM EVRİM TAMAMLANDI] ---")
+            log.info("--- [v21.3 REAKTİF OTONOMİ KONTROLÜ TAMAMLANDI] ---")
 
     def _run_main_trade_loop(self):
-        """v21.0 Gerçek Zamanlı (Real-Time) Ticaret Döngüsü."""
+        """v21.4 Gerçek Zamanlı (Real-Time) Ticaret Döngüsü."""
         
-        log.info("Ana işlem döngüsü (v21.1 'Kurumsal Çekirdek') başlatıldı. Çıkmak için Ctrl+C.")
-        self.last_optimization_time = time.time()
+        log.info("Ana işlem döngüsü (v21.4 'Kusursuz Çekirdek') başlatıldı. Çıkmak için Ctrl+C.")
+        self.last_analysis_time = time.time()
 
         while self.main_loop_running:
             try:
-                # === 1. OTONOM EVRİM ZAMANLAYICI (v15.0) ===
+                # === 1. "SÜPER ÖZELLİK #3" ZAMANLAYICI (v21.3) ===
                 current_time = time.time()
-                if (current_time - self.last_optimization_time) > (config.OPTIMIZATION_INTERVAL_HOURS * 3600):
-                    log.info("v15.0: Otonom Evrim zamanı geldi. Ayrı bir thread başlatılıyor...")
-                    evo_thread = threading.Thread(target=self._run_autonomous_evolution_cycle, daemon=True)
+                analysis_interval_seconds = config.REACTIVE_ANALYSIS_INTERVAL_MINUTES * 60
+                
+                if (current_time - self.last_analysis_time) > analysis_interval_seconds:
+                    log.info(f"v21.3: Reaktif Analiz (Stale Brain Check) zamanı geldi ({config.REACTIVE_ANALYSIS_INTERVAL_MINUTES}dk).")
+                    
+                    evo_thread = threading.Thread(target=self._run_reactive_optimization_check, daemon=True)
                     evo_thread.start()
-                    # Zamanlayıcıyı hemen sıfırla ki tekrar tetiklenmesin
-                    self.last_optimization_time = current_time 
             
-                # === 2. GERÇEK ZAMANLI TİCARET DÖNGÜSÜ (v21.0) ===
+                # === 2. GERÇEK ZAMANLI TİCARET DÖNGÜSÜ (v21.4) ===
                 
                 # 2.1. (v21.0) Kapanan pozisyonları kontrol ET ve anlık PnL'i GÜNCELLE
                 trade_manager.check_and_update_positions(self.client)
@@ -198,32 +205,34 @@ class BinAIEngine:
                     klines = websocket_manager.get_klines_from_cache(symbol)
                     
                     if not klines or len(klines) < config.MIN_KLINES_FOR_STRATEGY:
-                        # (Önbellek (Cache) henüz dolu değil veya strateji için yetersiz veri)
                         continue 
                     
                     # 2.4. (v21.0) "Büyük Usta" (Grandmaster) Analizi
-                    # (Dönen Değerler: signal, confidence, current_price, last_atr)
                     signal, confidence, current_price, last_atr = strategy.analyze_symbol(symbol, klines)
                     
                     if signal != "NEUTRAL":
-                        # 2.5. (v21.0) "Büyük Usta" (Grandmaster) Emir Yönetimi
-                        # (Artık 'last_atr' (Volatilite) verisini de iletiyor)
+                        
+                        # === 2.5. (v21.4) "Büyük Usta" (Grandmaster) Emir Yönetimi ===
+                        # (v21.4 YÜKSELTMESİ: "Süper Özellik #4" Entegrasyonu)
+                        # 'trade_manager' (v21.4) fonksiyonuna "bana mum ver" (get_klines_func)
+                        # fonksiyonunu "enjekte" (inject) et.
                         trade_manager.manage_risk_and_open_position(
                             client=self.client, 
                             symbol=symbol, 
                             signal=signal, 
                             confidence=confidence, 
                             current_price=current_price, 
-                            last_atr=last_atr, # v21.0 YENİ (Dinamik SL/TP için)
-                            exchange_rules=self.exchange_rules
+                            last_atr=last_atr, # v21.1 (Dinamik SL/TP)
+                            exchange_rules=self.exchange_rules,
+                            get_klines_func=websocket_manager.get_klines_from_cache # v21.4 (Işık Hızı Korelasyon)
                         )
                 
-                log.info(f"Analiz döngüsü (v21.1) tamamlandı. {config.MAIN_LOOP_SLEEP_SECONDS} saniye bekleniyor...")
+                log.info(f"Analiz döngüsü (v21.4) tamamlandı. {config.MAIN_LOOP_SLEEP_SECONDS} saniye bekleniyor...")
                 time.sleep(config.MAIN_LOOP_SLEEP_SECONDS)
 
             except KeyboardInterrupt:
                 log.info("Ana döngüde 'Ctrl+C' algılandı. Kapatma işlemi başlatılıyor.")
-                self.main_loop_running = False # Döngüyü durdur
+                self.main_loop_running = False
                 break
             except Exception as e:
                 log.error(f"Ana döngüde kritik hata: {e}. {config.CRITICAL_ERROR_SLEEP_SECONDS} saniye sonra yeniden denenecek.", exc_info=True)
@@ -241,24 +250,34 @@ class BinAIEngine:
 
         if not self._wait_for_cache_readiness():
             log.critical("Önbellek zaman aşımına uğradı. Çıkılıyor.")
-            self.shutdown() # WebSocket'i ve DB'yi düzgünce kapat
+            self.shutdown()
             return
             
-        # Ana Ticaret Döngüsü (Bloklayan kısım)
+        # === BURAYA YAPIŞTIR (v23.0 Doktor Başlatma) ===
+        from binai import doctor
+        log.info("v23.0: Doktor (Gözetmen) başlatılıyor...")
+        self.doctor_thread = threading.Thread(target=doctor.start_doctor, daemon=True)
+        self.doctor_thread.start()
+        # ===============================================
+
         self._run_main_trade_loop()
 
+        
     def shutdown(self):
-        """Sistemi 'temiz' (gracefully) kapatır."""
-        log.warning("BinAI Motoru (v21.1) kapatma işlemi başlatılıyor...")
+        """
+        Sistemi 'temiz' (gracefully) kapatır.
+        (v21.1 Entegrasyonu)
+        """
+        log.warning("BinAI Motoru (v21.4) kapatma işlemi başlatılıyor...")
         self.main_loop_running = False
         
         # === v21.1 TEMİZ KAPATMA (GRACEFUL SHUTDOWN) ===
         
-        # 1. WebSocket'i durdur (Yeni veri gelmesin)
+        # 1. WebSocket'i durdur
         log.info("WebSocket Yöneticisi durduruluyor...")
         websocket_manager.stop_websocket_listener()
         
-        # 2. Veritabanı Yazıcısını (DB Writer) durdur (Sıradaki (Queue) işleri bitirsin)
+        # 2. Veritabanı Yazıcısını (DB Writer) durdur
         log.info("v21.1: 'Hafıza' (DB) Yazıcı Thread'i durduruluyor...")
         db_manager.shutdown_db_writer()
         # === v21.1 YÜKSELTME SONU ===
@@ -268,14 +287,13 @@ class BinAIEngine:
             if self.ws_thread.is_alive():
                 log.error("WebSocket thread'i 5 saniyede kapanmadı!")
         
-        log.info("BinAI Motoru (v21.1) başarıyla durduruldu.")
+        log.info("BinAI Motoru (v21.4) başarıyla durduruldu.")
 
 
 # === 4. BAŞLATMA NOKTASI (ENTRY POINT) ===
 def main():
     """
     Bu, 'binai/main.py' dosyasının ana başlatma fonksiyonudur.
-    'run.py' tarafından çağırıldığında DEĞİL, doğrudan çalıştırıldığında kullanılır.
     """
     engine = BinAIEngine()
     try:
@@ -285,8 +303,6 @@ def main():
     except Exception as e:
         log.critical(f"Motor 'main' fonksiyonunda yakalanamayan kritik hata: {e}", exc_info=True)
     finally:
-        # 'engine.run()' içindeki döngüden çıkılsa veya hata olsa bile,
-        # bu 'shutdown' metodunun çağrılmasını garanti eder.
         engine.shutdown()
 
 if __name__ == "__main__":

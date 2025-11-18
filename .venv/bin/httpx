@@ -1,4 +1,4 @@
-#!/Users/alperensevinc/Desktop/BaseAI/.venv/bin/python3.11
+#!/Users/alperensevinc/Desktop/BaseAI/.venv/bin/python3.10
 import sys
 from httpx import main
 if __name__ == '__main__':

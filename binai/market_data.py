@@ -39,21 +39,27 @@ EXCHANGE_INFO_CACHE_TTL_SECONDS = 300
 def get_binance_client() -> Optional[Client]:
     """
     config.py'deki ayarlara göre Testnet veya Üretim client'ı döndürür.
-    v21.0: Tip (Type Hinting) ve sağlamlaştırılmış (hardening) hata yönetimi eklendi.
+    v22.3: 'recvWindow' parametresi MANUEL olarak ayarlandı (Kütüphane bug'ını aşmak için).
     """
     try:
+        # v22.1: Zaman Senkronizasyonu için tolerans
+        RECV_WINDOW = 60000 
+
         if config.USE_TESTNET:
             log.warning("Sistem TESTNET modunda çalışıyor.")
+            # 1. Client'ı SADECE API key'ler ile başlat (extra parametre verme)
             client = Client(config.TESTNET_API_KEY, config.TESTNET_API_SECRET, testnet=True)
-            # testnet=True Spot testnet'i ayarlar. URL'leri Futures için manuel ezmeliyiz.
             client.API_URL = "https://testnet.binancefuture.com/fapi"
         else:
             log.warning("DİKKAT: Sistem ÜRETİM (GERÇEK PARA) modunda çalışıyor.")
+            # 1. Client'ı SADECE API key'ler ile başlat (extra parametre verme)
             client = Client(config.API_KEY, config.API_SECRET)
-            # (v21.0 Not: python-binance'in yeni sürümleri için 'fapi' 
-            # URL'lerini manuel ayarlamak gerekmeyebilir, ancak bu 'garanti' yöntemdir.)
             client.API_URL = "https://fapi.binance.com/fapi"
 
+        # 2. 'recvWindow' ayarını MANUEL olarak yapılandır
+        # (Bu yöntem, kütüphanenin __init__ fonksiyonundaki hatayı atlatır)
+        client.recv_window = RECV_WINDOW
+        
         # API Anahtarlarını ve Bağlantıyı Doğrula
         client.futures_ping()
         

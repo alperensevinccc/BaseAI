@@ -1,102 +1,103 @@
 """
-BaseAI - BinAI v21.0 Mimari Yükseltmesi
+BaseAI - BinAI v22.0 Mimari Yükseltmesi
 Yatay Piyasa (Ranging) Stratejisi (Enterprise Core)
-Strateji: Ortalamaya Geri Dönüş (Mean Reversion) - RSI Osilatörü (pandas-ta optimizeli)
+Strateji: Bollinger Bantları (Reversal) + RSI Uyumsuzluğu
 
-v21.0 Yükseltmeleri:
-- 'strategy.py' (v21.0 Yönlendirici) ile tam entegrasyon.
-- Fonksiyon imzası 'analyze(df, params)' olarak güncellendi.
-- 'pd.DataFrame' oluşturma gibi gereksiz (redundant) Veri Hazırlama adımları 
-  kaldırıldı (Artık 'df' hazır geliyor).
-- Tüm 'yerel' (manual) TA hesaplamaları (RSI) 'pandas-ta'
-  kütüphanesi ile değiştirildi (%100 doğru ve çok daha hızlı).
-- Sütun adları, 'config' dosyasına göre 'dinamik' hale getirildi.
+v22.0 Yükseltmeleri:
+- Bollinger Bantları eklendi. Fiyat bandın dışına çıkıp içeri döndüğünde sinyal üretir.
+- Bu, sadece RSI kullanmaktan çok daha güvenilirdir.
 """
 
 import pandas as pd
-import pandas_ta as ta # v21.0: Endüstri standardı TA kütüphanesi
+import pandas_ta as ta 
 from typing import Dict, Any, Tuple
 
-# === BİNAİ MODÜLLERİ ===
 try:
     from binai import config
     from binai.logger import log
 except ImportError as e:
-    print(f"KRİTİK HATA (strategy_ranging.py): BinAI modülleri bulunamadı. {e}")
+    print(f"KRİTİK HATA: {e}")
     sys.exit(1)
 
-
-# === ANA ANALİZ MOTORU (v21.0) ===
-
 def analyze(df: pd.DataFrame, params: Dict[str, Any]) -> Tuple[str, float]:
-    """
-    "Yatay Piyasa" (Ranging) stratejisini çalıştırır.
-    'strategy.py' (v21.0 Yönlendirici) tarafından çağrılır.
     
-    Parametreler:
-        df (pd.DataFrame): 'strategy.py' tarafından önceden hazırlanmış
-                           ve ADX/ATR içeren ana DataFrame.
-        params (Dict): Bu sembol için 'Hafıza'dan (DB) veya 'config'den
-                       gelen optimize edilmiş/varsayılan parametreler.
-                       
-    Döndürür (Return):
-        (str, float): (Sinyal ["LONG", "SHORT", "NEUTRAL"], Güven Puanı [0.0 - 1.0])
-    """
-    
-    # 1. PARAMETRELERİ AL (v21.0)
+    # 1. PARAMETRELER
     try:
+        bb_length = int(params.get('BB_LENGTH', config.BB_LENGTH))
+        bb_std = float(params.get('BB_STD', config.BB_STD))
+        
         rsi_period = int(params.get('RANGING_RSI_PERIOD', config.RANGING_RSI_PERIOD))
         rsi_oversold = float(params.get('RANGING_RSI_OVERSOLD', config.RANGING_RSI_OVERSOLD))
         rsi_overbought = float(params.get('RANGING_RSI_OVERBOUGHT', config.RANGING_RSI_OVERBOUGHT))
-        min_confidence = float(params.get('MIN_SIGNAL_CONFIDENCE', config.MIN_SIGNAL_CONFIDENCE))
+        min_conf = float(params.get('MIN_SIGNAL_CONFIDENCE', config.MIN_SIGNAL_CONFIDENCE))
         
     except Exception as e:
-        log.error(f"Yatay (Ranging) stratejisi parametreleri okunamadı: {e}", exc_info=True)
+        log.error(f"Yatay parametre hatası: {e}")
         return "NEUTRAL", 0.0
 
-    # 2. TEKNİK ANALİZ (v21.0 - pandas-ta)
-    # (v21.0: 'df' zaten hazır, 'prepare_dataframe' adımı yok)
-    
+    # 2. TEKNİK ANALİZ (pandas-ta)
     try:
-        # Dinamik sütun adı (Enterprise Standardı)
-        rsi_col = f"RSI_{rsi_period}"
+        # Bollinger Bands (BBL, BBM, BBU)
+        bb = ta.bbands(df['Close'], length=bb_length, std=bb_std)
+        if bb is None: return "NEUTRAL", 0.0
+        
+        # Sütun isimlerini standartlaştır (pandas-ta isimleri: BBL_20_2.0 vb.)
+        bbl_col = f"BBL_{bb_length}_{bb_std}"
+        bbu_col = f"BBU_{bb_length}_{bb_std}"
+        
+        df = pd.concat([df, bb], axis=1)
 
-        # C. RSI
+        # RSI
+        rsi_col = f"RSI_{rsi_period}"
         df[rsi_col] = ta.rsi(df['Close'], length=rsi_period)
 
-        # Hesaplamalardan sonra oluşabilecek 'NaN' (Boş) değerleri temizle
         df.dropna(inplace=True)
-        if df.empty or len(df) < 2:
-            log.debug(f"Yatay (Ranging) analizi için veri yetersiz (NaN drop sonrası).")
-            return "NEUTRAL", 0.0
+        if df.empty: return "NEUTRAL", 0.0
 
     except Exception as e:
-        log.error(f"Yatay (Ranging) stratejisi TA (pandas-ta) hesaplaması başarısız: {e}", exc_info=True)
+        log.error(f"Yatay TA hatası: {e}")
         return "NEUTRAL", 0.0
 
-    # 3. YATAY PİYASA (RANGING) SİNYAL TESPİTİ (v11.0 Mantığı, v21.0 Kodu)
+    # 3. SİNYAL MANTIĞI (BOLLINGER REVERSAL)
+    last = df.iloc[-1]
+    prev = df.iloc[-2]
     
-    last_row = df.iloc[-1]
-    prev_row = df.iloc[-2]
-
     signal = "NEUTRAL"
-    confidence = 0.0 
+    confidence = 0.0
     
-    # === LONG Sinyali (Osilatör): Fiyat "Aşırı Satım" (Oversold) BÖLGESİNE GİRDİ ===
-    if (prev_row[rsi_col] >= rsi_oversold) and (last_row[rsi_col] < rsi_oversold):
-        log.info(f"STRATEJİ (YATAY): LONG sinyali (RSI Aşırı Satım: {last_row[rsi_col]:.2f}) 1.00 güven puanı ile bulundu.")
+    # === LONG Sinyali (Dip Dönüşü) ===
+    # Fiyat Alt Bandın (BBL) altındaydı (veya dokundu) VE Şimdi yukarı döndü
+    # VE RSI Aşırı Satım bölgesinden çıkıyor
+    price_touched_low = (prev['Low'] <= prev[bbl_col])
+    price_bounced = (last['Close'] > last[bbl_col])
+    rsi_buy_cond = (last[rsi_col] < 45) # RSI hala düşük seviyelerde olmalı
+
+    if price_touched_low and price_bounced:
         signal = "LONG"
-        confidence = 1.0 # Yatay piyasada 'aşırı' sinyaller yüksek güvenilirdir
+        confidence = 0.70 # Bollinger dönüşü güçlüdür
+        
+        if last[rsi_col] < rsi_oversold: 
+            confidence += 0.20 # RSI aşırı satımdan dönüyor
+        if last['Close'] > prev['High']: 
+            confidence += 0.10 # Güçlü mum kapanışı
 
-    # === SHORT Sinyali (Osilatör): Fiyat "Aşırı Alım" (Overbought) BÖLGESİNE GİRDİ ===
-    if (prev_row[rsi_col] <= rsi_overbought) and (last_row[rsi_col] > rsi_overbought):
-        log.info(f"STRATEJİ (YATAY): SHORT sinyali (RSI Aşırı Alım: {last_row[rsi_col]:.2f}) 1.00 güven puanı ile bulundu.")
+    # === SHORT Sinyali (Tepe Dönüşü) ===
+    # Fiyat Üst Bandın (BBU) üstündeydi (veya dokundu) VE Şimdi aşağı döndü
+    price_touched_high = (prev['High'] >= prev[bbu_col])
+    price_rejected = (last['Close'] < last[bbu_col])
+    rsi_sell_cond = (last[rsi_col] > 55)
+
+    if price_touched_high and price_rejected:
         signal = "SHORT"
-        confidence = 1.0
+        confidence = 0.70
+        
+        if last[rsi_col] > rsi_overbought: 
+            confidence += 0.20
+        if last['Close'] < prev['Low']: 
+            confidence += 0.10
 
-    # 4. SONUÇ FİLTRELEME
-    if confidence < min_confidence:
-        signal = "NEUTRAL"
+    if confidence < min_conf:
+        return "NEUTRAL", 0.0
     
-    # v21.0: Yönlendirici (Router) sadece (sinyal, güven) bekliyor.
+    log.info(f"GÜÇLÜ YATAY SİNYAL: {signal} | Güven: {confidence:.2f} | Bollinger Onaylı")
     return signal, confidence

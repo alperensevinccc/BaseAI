@@ -19,7 +19,6 @@ APScheduler
 # Data Handling & Analysis
 pandas
 numpy
-pandas-ta
 
 # Logging & Monitoring
 loguru

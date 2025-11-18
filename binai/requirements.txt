@@ -1,13 +1,30 @@
-# Binance API
+# === ÇEKİRDEK (Core) BİLEŞENLER ===
+
+# Binance API Entegrasyonu (Tetikçi & Veri Hattı)
 python-binance
 
-# Veri işleme ve teknik analiz (Gelecekteki stratejiler için eklendi)
+# Veri İşleme ve Analiz (Beyin & Evrim Motorları)
 numpy
 pandas
 
-
-# HTTP talepleri
-requests
-
-# Loglama için
+# Loglama (Sistem Sesi)
 coloredlogs
+
+# === v21.x YÜKSELTMELERİ (SÜPER ÖZELLİKLER) ===
+
+# Süper Özellik #1 (Dinamik SL/TP) & Strateji Beyni (v21.0)
+# (strategy.py, strategy_trending.py, strategy_ranging.py 
+# dosyalarının 'pandas-ta' (ta.rsi, ta.adx vb.) 
+# fonksiyonlarını kullanması için zorunludur.)
+pandas-ta==0.3.14b
+
+# Süper Özellik #3 (Reaktif Otonomi) & "Yaratıcı Zeka" (v18.1)
+# (optimizer.py dosyasının 'BaseAIEngine' (GeminiBridge) 
+# üzerinden Gemini (ben) ile konuşabilmesi için zorunludur.)
+google-generativeai
+
+# (Not: 'requests' kütüphanesi 'python-binance' tarafından 
+# zaten bir 'alt-bağımlılık' (sub-dependency) olarak 
+# kullanıldığı için listeye ayrıca eklenmiştir, bu "kararlı" (stable) 
+# bir sistem için iyi bir pratiktir.)
+requests

@@ -1,18 +1,17 @@
 """
-BaseAI - BinAI Evrim Motoru (v21.1 - Enterprise Core)
-Geriye Dönük Test (Backtester) Modülü (v21.1 Mimarisi Uyumlu)
+BaseAI - BinAI Evrim Motoru (v21.2 - Enterprise Core)
+Geriye Dönük Test (Backtester) Modülü (v21.2 Mimarisi Uyumlu)
 
-v21.1 Yükseltmeleri (Enterprise+++):
-- "Süper Özellik #1: Dinamik SL/TP" Entegrasyonu:
-  Backtest simülasyonu, 'config.USE_DYNAMIC_SLTP' (v21.1) ayarını okuyacak 
-  ve 'strategy.py' (v21.0) tarafından sağlanan 'last_atr' (Volatilite) 
-  verisini kullanarak 'trade_manager.py' (v21.0) ile %100 aynı 
-  SL/TP mantığını simüle edecek şekilde güncellendi.
-- Veri Hattı (Data Pipeline) Entegrasyonu: 'client.futures_klines' (manuel) 
-  çağrıları kaldırıldı. Artık 'market_data.get_klines' (v21.0 
-  "Birleşik Evrim" motoru) kullanılıyor.
-- Kararlılık (Stability) Düzeltmesi: 'if __name__ == "__main__":' 
-  test bloğundaki kritik çökme (crash) hatası düzeltildi.
+v21.2 Yükseltmeleri (Enterprise+++):
+- "Süper Özellik #2: Dinamik Pozisyon Boyutu" Entegrasyonu:
+  Backtest simülasyonu, 'config.USE_DYNAMIC_POSITION_SIZING' (v21.2) ayarını
+  okuyacak ve 'trade_manager.py' (v21.2) ile %100 aynı "Dinamik Miktar"
+  (Volatilite Tabanlı Risk) mantığını simüle edecek şekilde güncellendi.
+- Doğru PnL (Kâr/Zarar) Raporlaması: PnL (Kâr/Zarar) artık 'pnl_percent' (yüzde) 
+  üzerinden 'tahmin' edilmiyor. Simülasyon motoru artık 'hesaplanmış miktar' 
+  (calculated quantity) ve 'gerçek çıkış fiyatı' (actual exit price) 
+  üzerinden 'gerçek PnL (USDT)'yi hesaplar.
+- 'if __name__' bloğu, v21.2 ayarlarıyla tam uyumlu hale getirildi.
 """
 
 import pandas as pd
@@ -38,38 +37,49 @@ def run_backtest(symbol: str, params: Dict[str, Any]) -> Tuple[float, int, float
     Belirtilen parametrelerle 'Nokta-i Zaman' (Point-in-Time) simülasyonu 
     çalıştırır. 'Optimizer' (v18.0) tarafından çağrılır.
     
-    v21.1: Artık 'strategy' (v21.0) ve 'trade_manager' (v21.0) ile 
-    %100 aynı mantığı (Dinamik SL/TP dahil) test eder.
+    v21.2: Artık 'strategy' (v21.0) ve 'trade_manager' (v21.2) ile 
+    %100 aynı mantığı (Dinamik SL/TP ve Dinamik Miktar) test eder.
     
     Döndürür (Return):
         (Toplam PnL, Toplam İşlem Sayısı, Kazanma Oranı %)
     """
     
-    # === 1. PARAMETRELERİ AYARLA ===
+    # === 1. PARAMETRELERİ AYARLA (v21.2) ===
     try:
+        # Strateji
         interval = params.get('INTERVAL', config.INTERVAL)
         min_signal_confidence = float(params.get('MIN_SIGNAL_CONFIDENCE', config.MIN_SIGNAL_CONFIDENCE))
         
-        # v21.1: Hem Statik hem Dinamik risk parametrelerini al
+        # Risk (Süper Özellik #1 - Dinamik SL/TP)
         use_dynamic_sltp = bool(params.get('USE_DYNAMIC_SLTP', config.USE_DYNAMIC_SLTP))
         static_sl_percent = float(params.get('STOP_LOSS_PERCENT', config.STOP_LOSS_PERCENT))
         static_tp_percent = float(params.get('TAKE_PROFIT_PERCENT', config.TAKE_PROFIT_PERCENT))
         atr_sl_multiplier = float(params.get('ATR_STOP_LOSS_MULTIPLIER', config.ATR_STOP_LOSS_MULTIPLIER))
         atr_tp_multiplier = float(params.get('ATR_TAKE_PROFIT_MULTIPLIER', config.ATR_TAKE_PROFIT_MULTIPLIER))
         
+        # Kasa Doktrini (Süper Özellik #2 - Dinamik Miktar)
         leverage = float(params.get('LEVERAGE', config.LEVERAGE))
-        position_margin = float(params.get('POSITION_SIZE_PERCENT', config.POSITION_SIZE_PERCENT))
+        use_dynamic_sizing = bool(params.get('USE_DYNAMIC_POSITION_SIZING', config.USE_DYNAMIC_POSITION_SIZING))
+        risk_per_trade_percent = float(params.get('RISK_PER_TRADE_PERCENT', config.RISK_PER_TRADE_PERCENT))
+        static_pos_percent = float(params.get('POSITION_SIZE_PERCENT', config.POSITION_SIZE_PERCENT))
+        
+        # (v21.2: Backtester 100 USDT'lik sabit bir kasa varsayar)
+        initial_capital = 100.0 
         
     except Exception as e:
         log.error(f"Backtest parametreleri okunamadı (config'den mi geliyor?): {e}", exc_info=True)
         return 0.0, 0, 0.0
 
-    log.info(f"--- [Evrim Motoru v21.1] Backtest Başlatıldı: {symbol} ---")
+    log.info(f"--- [Evrim Motoru v21.2] Backtest Başlatıldı: {symbol} ---")
     log.info(f"Strateji: Güven Puanı (v6.0) / Rejim (v21.0) | Min. Güven: {min_signal_confidence}")
     if use_dynamic_sltp:
         log.info(f"Risk (Dinamik v21.1): SL (ATR * {atr_sl_multiplier}) | TP (ATR * {atr_tp_multiplier})")
     else:
         log.info(f"Risk (Statik v6.1): SL {static_sl_percent*100}% | TP {static_tp_percent*100}%")
+    if use_dynamic_sizing:
+        log.info(f"Kasa (Dinamik v21.2): Risk/İşlem {risk_per_trade_percent*100}%")
+    else:
+        log.info(f"Kasa (Statik v5.3): Pozisyon Büyüklüğü {static_pos_percent*100}%")
     
     # === 2. VERİ TOPLAMA (v21.1 Entegrasyonu) ===
     client = market_data.get_binance_client()
@@ -78,15 +88,12 @@ def run_backtest(symbol: str, params: Dict[str, Any]) -> Tuple[float, int, float
         return 0.0, 0, 0.0
         
     try:
-        # v21.1: 'market_data' (v21.0) motorunu kullan
         klines = market_data.get_klines(
             client, 
             symbol=symbol, 
             interval=interval,
-            limit=config.BACKTEST_KLINE_LIMIT # (config'den okur, örn: 1500)
+            limit=config.BACKTEST_KLINE_LIMIT
         )
-        
-        # Stratejinin 'ısınması' (warm-up) için gereken minimum veri
         required_data_length = int(config.MIN_KLINES_FOR_STRATEGY + 50) # Güvenlik payı
 
         if len(klines) < required_data_length:
@@ -99,85 +106,97 @@ def run_backtest(symbol: str, params: Dict[str, Any]) -> Tuple[float, int, float
         log.error(f"{symbol} için geçmiş veri çekilemedi: {e}", exc_info=True)
         return 0.0, 0, 0.0
 
-    # === 3. SİMÜLASYON MOTORU (v21.1 Dinamik SL/TP) ===
+    # === 3. SİMÜLASYON MOTORU (v21.2 Dinamik SL/TP + Dinamik Miktar) ===
     trades_log = [] 
-    open_position = None # (side, entry_price, entry_atr)
+    open_position = None # (side, entry_price, quantity, sl_price, tp_price)
     
     start_time = time.time()
     
-    # v11.0: 'required_data_length'ten başla
     for i in range(required_data_length, len(klines)):
         
-        # 'Nokta-i Zaman' (Point-in-Time) verisi (0'dan 'i'ye kadar)
         current_historical_data = klines[0:i] 
-        # Simülasyonun 'o anki' mumu (fiyatın hareket ettiği mum)
         current_candle = klines[i] 
-        # (v21.1: Fiyatın SL/TP'ye değip değmediğini 'Yüksek' ve 'Düşük'e göre kontrol et)
         current_high = float(current_candle[2])
         current_low = float(current_candle[3])
         
-        # --- A. Pozisyon Yönetimi (v21.1 Dinamik SL/TP) ---
+        # --- A. Pozisyon Yönetimi (v21.2 Gerçek PnL Hesabı) ---
         if open_position:
             pos = open_position
-            
-            # === v21.1 SÜPER ÖZELLİK #1 KONTROLÜ ===
-            if use_dynamic_sltp and pos['entry_atr'] > 0:
-                # DİNAMİK (ATR) SL/TP
-                sl_price = pos['entry_price'] - (pos['entry_atr'] * atr_sl_multiplier) if pos['side'] == "LONG" else \
-                           pos['entry_price'] + (pos['entry_atr'] * atr_sl_multiplier)
-                tp_price = pos['entry_price'] + (pos['entry_atr'] * atr_tp_multiplier) if pos['side'] == "LONG" else \
-                           pos['entry_price'] - (pos['entry_atr'] * atr_tp_multiplier)
-            else:
-                # STATİK (%) SL/TP (Fallback)
-                sl_price = pos['entry_price'] * (1 - static_sl_percent) if pos['side'] == "LONG" else \
-                           pos['entry_price'] * (1 + static_sl_percent)
-                tp_price = pos['entry_price'] * (1 + static_tp_percent) if pos['side'] == "LONG" else \
-                           pos['entry_price'] * (1 - static_tp_percent)
-
-            # Pozisyon kapandı mı?
+            pnl_usdt = 0.0
             closed_by = None
+            
             if pos['side'] == "LONG":
-                if current_low <= sl_price: closed_by = "SL"
-                elif current_high >= tp_price: closed_by = "TP"
+                if current_low <= pos['sl_price']: 
+                    closed_by = "SL"
+                    pnl_usdt = (pos['sl_price'] - pos['entry_price']) * pos['quantity']
+                elif current_high >= pos['tp_price']: 
+                    closed_by = "TP"
+                    pnl_usdt = (pos['tp_price'] - pos['entry_price']) * pos['quantity']
+            
             elif pos['side'] == "SHORT":
-                if current_high >= sl_price: closed_by = "SL"
-                elif current_low <= tp_price: closed_by = "TP"
+                if current_high >= pos['sl_price']: 
+                    closed_by = "SL"
+                    pnl_usdt = (pos['entry_price'] - pos['sl_price']) * pos['quantity']
+                elif current_low <= pos['tp_price']: 
+                    closed_by = "TP"
+                    pnl_usdt = (pos['entry_price'] - pos['tp_price']) * pos['quantity']
 
             if closed_by:
-                pnl_percent = static_tp_percent if closed_by == "TP" else -static_sl_percent
-                # (v21.1 Not: Dinamik SL/TP kullanıyorsak bu PnL hesabı
-                # tam doğru değildir, ancak 'roe' hesaplaması için yeterlidir.
-                # 'Optimizer' için 'pnl_usdt' daha önemlidir.)
-                
-                # (v21.1 Düzeltmesi: PnL'i 'dinamik' olarak hesapla)
-                if use_dynamic_sltp and pos['entry_atr'] > 0:
-                    pnl_percent = (tp_price - pos['entry_price']) / pos['entry_price'] if closed_by == "TP" else \
-                                  (sl_price - pos['entry_price']) / pos['entry_price']
-                    if pos['side'] == "SHORT":
-                        pnl_percent = (pos['entry_price'] - tp_price) / pos['entry_price'] if closed_by == "TP" else \
-                                      (pos['entry_price'] - sl_price) / pos['entry_price']
-
-                trades_log.append({'symbol': symbol, 'pnl_percent': pnl_percent})
+                trades_log.append({'pnl_usdt': pnl_usdt, 'reason': closed_by})
                 open_position = None
         
-        # --- B. Yeni Sinyal Arama ---
+        # --- B. Yeni Sinyal Arama (v21.2 Dinamik Miktar Hesabı) ---
         if not open_position:
-            # v21.0: 'strategy.py' (Yönlendirici), otonom olarak 
-            # "Hafıza"dan (DB) (v21.0 Önbellekli) okur ve DOĞRU stratejiyi çağırır.
             signal, confidence, price_at_signal, last_atr = strategy.analyze_symbol(
                 symbol, 
                 current_historical_data,
-                params # (v9.1: Optimizer'ın parametrelerini ilet)
+                params
             )
             
             if signal != "NEUTRAL":
+                
+                # --- v21.2 SÜPER ÖZELLİK #1 ve #2 HESAPLAMALARI ---
+                
+                # 1. SL/TP Fiyatlarını (Prices) Hesapla (Süper Özellik #1)
+                sl_distance_per_unit = 0.0
+                
+                if use_dynamic_sltp and last_atr > 0:
+                    sl_distance_per_unit = last_atr * atr_sl_multiplier
+                    tp_distance_per_unit = last_atr * atr_tp_multiplier
+                else:
+                    sl_distance_per_unit = price_at_signal * static_sl_percent
+                    tp_distance_per_unit = price_at_signal * static_tp_percent
+                
+                if sl_distance_per_unit == 0:
+                    continue # Risk hesaplanamaz, atla
+
+                sl_price = price_at_signal - sl_distance_per_unit if signal == "LONG" else price_at_signal + sl_distance_per_unit
+                tp_price = price_at_signal + tp_distance_per_unit if signal == "LONG" else price_at_signal - tp_distance_per_unit
+
+                # 2. Miktarı (Quantity) Hesapla (Süper Özellik #2)
+                quantity = 0.0
+                if use_dynamic_sizing:
+                    # Dinamik Miktar (Volatilite Tabanlı Risk)
+                    risk_amount_usdt = initial_capital * risk_per_trade_percent
+                    quantity = risk_amount_usdt / sl_distance_per_unit
+                else:
+                    # Statik Miktar (Kasa %'si Tabanlı)
+                    position_size_usdt = initial_capital * static_pos_percent
+                    quantity = (position_size_usdt * leverage) / price_at_signal
+                
+                if quantity == 0.0:
+                    continue # Miktar 0, atla
+
+                # 3. Pozisyonu Aç
                 open_position = {
                     'side': signal,
                     'entry_price': price_at_signal,
-                    'entry_atr': last_atr # v21.1 YENİ: Dinamik SL/TP için ATR'yi kaydet
+                    'quantity': quantity, # v21.2 YENİ: Gerçek PnL için miktarı kaydet
+                    'sl_price': sl_price, # v21.2 YENİ: Çıkış (exit) mantığı için fiyatı kaydet
+                    'tp_price': tp_price  # v21.2 YENİ: Çıkış (exit) mantığı için fiyatı kaydet
                 }
     
-    # === 4. RAPORLAMA ===
+    # === 4. RAPORLAMA (v21.2 Gerçek PnL) ===
     end_time = time.time()
     log.info(f"Simülasyon {end_time - start_time:.2f} saniyede tamamlandı.")
     
@@ -187,14 +206,8 @@ def run_backtest(symbol: str, params: Dict[str, Any]) -> Tuple[float, int, float
 
     df = pd.DataFrame(trades_log)
     
-    # Kasa Doktrini (v9.1 Parametreleri)
-    # (v21.1: 100 USDT Kasa varsayımı)
-    initial_capital = 100 
-    
-    # v21.1: PnL'i 'roe' (Kaldıraçlı ROE) yerine 'pnl_percent' (Kaldıraçsız PnL)
-    # üzerinden hesapla. Bu, 'Dinamik SL/TP' ile daha uyumludur.
-    
-    df['pnl_usdt'] = df['pnl_percent'] * initial_capital * leverage * position_margin
+    # v21.2: PnL Raporlaması (Artık 'pnl_percent' (yüzde) değil, 
+    # 'pnl_usdt' (USDT) üzerinden doğrudan hesaplanır. %100 Doğru.)
     
     total_trades = len(df)
     total_pnl = df['pnl_usdt'].sum()
@@ -203,7 +216,7 @@ def run_backtest(symbol: str, params: Dict[str, Any]) -> Tuple[float, int, float
     losses = df[df['pnl_usdt'] < 0]
     win_rate = (len(wins) / total_trades) * 100 if total_trades > 0 else 0
     
-    log.info("\n--- [Evrim Motoru v21.1: Backtest Raporu] ---")
+    log.info("\n--- [Evrim Motoru v21.2: Backtest Raporu] ---")
     log.info(f"Toplam Net Kâr/Zarar     : {total_pnl:.4f} USDT (100 USDT Kasa Varsayımı)")
     log.info(f"Simüle Edilen İşlem Sayısı : {total_trades}")
     log.info(f"Kazanma Oranı (Win %)      : {win_rate:.2f}% ({len(wins)} Kazanan / {len(losses)} Kaybeden)")
@@ -212,15 +225,14 @@ def run_backtest(symbol: str, params: Dict[str, Any]) -> Tuple[float, int, float
     # v9.1: Optimizasyon için (PNL, Trades, WinRate) Geri Döndür
     return total_pnl, total_trades, win_rate
 
-# === v21.1 KARARLI (STABLE) TEST BLOĞU ===
+# === v21.2 KARARLI (STABLE) TEST BLOĞU ===
 if __name__ == "__main__":
     """
     Bu dosyanın 'python binai/backtester.py' olarak 
-    manuel (manuel) çalıştırılabilmesi için (v21.1 Düzeltmesi).
+    manuel (manuel) çalıştırılabilmesi için (v21.2 Düzeltmesi).
     """
-    log.info("Backtester (v21.1) manuel (manuel) modda çalıştırıldı...")
+    log.info("Backtester (v21.2) manuel (manuel) modda çalıştırıldı...")
     
-    # v21.1: Altyapıyı (DB Yazıcısı) düzgünce başlat ve kapat
     engine_client = None
     try:
         db_manager.initialize_database()
@@ -231,7 +243,7 @@ if __name__ == "__main__":
             
         test_symbol = config.SYMBOLS_WHITELIST[0] if config.SYMBOLS_WHITELIST else "BTCUSDT"
         
-        # v21.1: 'config.py' (v21.1) ile %100 uyumlu 'default_params'
+        # v21.2: 'config.py' (v21.2) ile %100 uyumlu 'default_params'
         default_params = {
             # Çekirdek
             'INTERVAL': config.INTERVAL,
@@ -254,15 +266,19 @@ if __name__ == "__main__":
             'RANGING_RSI_OVERSOLD': config.RANGING_RSI_OVERSOLD,
             'RANGING_RSI_OVERBOUGHT': config.RANGING_RSI_OVERBOUGHT,
             
-            # Kasa Doktrini
+            # Kasa Doktrini (Statik v5.3)
             'LEVERAGE': config.LEVERAGE,
             'POSITION_SIZE_PERCENT': config.POSITION_SIZE_PERCENT,
             
-            # Risk (Statik)
+            # Kasa Doktrini (Dinamik v21.2 - SÜPER ÖZELLİK #2)
+            'USE_DYNAMIC_POSITION_SIZING': config.USE_DYNAMIC_POSITION_SIZING,
+            'RISK_PER_TRADE_PERCENT': config.RISK_PER_TRADE_PERCENT,
+            
+            # Risk (Statik v6.1)
             'STOP_LOSS_PERCENT': config.STOP_LOSS_PERCENT,
             'TAKE_PROFIT_PERCENT': config.TAKE_PROFIT_PERCENT,
             
-            # Risk (Dinamik v21.1)
+            # Risk (Dinamik v21.1 - SÜPER ÖZELLİK #1)
             'USE_DYNAMIC_SLTP': config.USE_DYNAMIC_SLTP,
             'ATR_STOP_LOSS_MULTIPLIER': config.ATR_STOP_LOSS_MULTIPLIER,
             'ATR_TAKE_PROFIT_MULTIPLIER': config.ATR_TAKE_PROFIT_MULTIPLIER
